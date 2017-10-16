@@ -1,4 +1,4 @@
-package se.hig.CN.view;
+package se.hig.cn.view;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
@@ -24,7 +24,7 @@ public class GUI {
 	private FileCreator creator = new FileCreator();
 	private JFrame frame;
 	private JMenuBar menuBar = new JMenuBar();
-	private JMenu menu = new JMenu("Välj filtyp");
+	private JMenu menu = new JMenu("VÃ¤lj filtyp");
 	private JMenuItem item2 = new JMenuItem("BLANKETTER");
 	private JMenuItem item3 = new JMenuItem("INFO");
 	private File file;
@@ -47,7 +47,7 @@ public class GUI {
 
 		JPanel buttonPanel = new JPanel();
 		JButton createbutton = new JButton("Spara");
-		JButton retrievebutton = new JButton("Hämta");
+		JButton retrievebutton = new JButton("HÃ¤mta");
 
 		createbutton.addActionListener(new CreateListener());
 		retrievebutton.addActionListener(new RetrieveListener());
