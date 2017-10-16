@@ -14,8 +14,13 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import se.hig.CN.model.FileCreator;
+import se.hig.cn.model.FileCreator;
 
+/**
+ * Skapandet av formuläret med knapp- och menyval.
+ * @author tfk15nsl
+ * @version 2017-10-16
+ */
 public class GUI {
 
 	private ArrayList<JPanel> panelList = new ArrayList<>();
@@ -27,6 +32,7 @@ public class GUI {
 	private JMenu menu = new JMenu("Välj filtyp");
 	private JMenuItem item2 = new JMenuItem("BLANKETTER");
 	private JMenuItem item3 = new JMenuItem("INFO");
+	private JMenuItem ink2rItem = new JMenuItem("INK2R");
 	private File file;
 	private String inputFromFile;
 	private JPanel p;
@@ -44,6 +50,7 @@ public class GUI {
 		menuBar.add(menu);
 		menu.add(item2);
 		menu.add(item3);
+		menu.add(ink2rItem);
 
 		JPanel buttonPanel = new JPanel();
 		JButton createbutton = new JButton("Spara");
@@ -53,6 +60,7 @@ public class GUI {
 		retrievebutton.addActionListener(new RetrieveListener());
 		item2.addActionListener(new BlanketterListener());
 		item3.addActionListener(new InfoListener());
+		ink2rItem.addActionListener(new Ink2rListener());
 
 		buttonPanel.add(createbutton);
 		buttonPanel.add(retrievebutton);
@@ -64,6 +72,9 @@ public class GUI {
 		frame.setVisible(true);
 	}
 
+	/** 
+	 * Skapar och lägger in alla paneler, etiketter och textfält och lägger in de i GUI.
+	 */
 	public void setContentForFrame() {
 		if (s.equals("INFO")) {
 			for (int i = 0; i < creator.getInfoList().size(); i++) {
@@ -90,8 +101,27 @@ public class GUI {
 
 			frame.pack();
 		}
+		else if (s.equals("INK2R")) {
+			for (int i = 0; i < creator.getInk2r().size(); i++) {
+				panelList.add(new JPanel());
+				labelList.add(new JLabel(creator.getInk2r().get(i)));
+				textFieldList.add(new JTextField("              "));
+
+				panelList.get(i).add(labelList.get(i));
+				panelList.get(i).add(textFieldList.get(i));
+
+				p.add(panelList.get(i));
+			}
+
+			frame.pack();
+		}
+
 	}
 
+	/**
+	 * Lyssnare till Create-knappen 
+	 *
+	 */
 	public class CreateListener implements ActionListener {
 
 		@Override
@@ -140,10 +170,10 @@ public class GUI {
 			chooser = new JFileChooser();
 			chooser.setFileFilter(filter);
 			int returnVal = chooser.showOpenDialog(chooser);
-			
+
 			if(returnVal == JFileChooser.APPROVE_OPTION)
 				file = new File(chooser.getSelectedFile().getAbsolutePath());
-			
+
 			BufferedReader br = null;
 			try {
 				br = new BufferedReader(new FileReader(file));
@@ -187,6 +217,15 @@ public class GUI {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			s = "BLANKETTER";
+			setContentForFrame();
+		}
+	}
+
+	public class Ink2rListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			s = "INK2R";
 			setContentForFrame();
 		}
 	}
