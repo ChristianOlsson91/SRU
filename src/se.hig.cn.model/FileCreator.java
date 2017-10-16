@@ -1,4 +1,4 @@
-package se.hig.CN.model;
+package se.hig.cn.model;
 
 import java.util.ArrayList;
 import java.util.List;
