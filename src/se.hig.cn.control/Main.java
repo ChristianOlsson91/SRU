@@ -1,4 +1,4 @@
-package se.hig.CN.control;
+package se.hig.cn.control;
 
 import se.hig.CN.model.FileCreator;
 import se.hig.CN.view.GUI;
