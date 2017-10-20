@@ -32,7 +32,6 @@ public class GUI {
 	private ArrayList<JTextField> textFieldList = new ArrayList<>();
 	private FileCreator creator = new FileCreator();
 	private JFrame frame;
-	private JMenuBar menuBar = new JMenuBar();
 	private JMenu menu = new JMenu("Välj filtyp");
 	private JMenuItem item2 = new JMenuItem("BLANKETTER");
 	private JMenuItem item3 = new JMenuItem("INFO");
@@ -43,7 +42,6 @@ public class GUI {
 	private String s = "";
 	private JFileChooser chooser = new JFileChooser();
 	private FileNameExtensionFilter filter = new FileNameExtensionFilter("SRU-filer", "sru");
-	private final JLabel lblNewLabel = new JLabel(new ImageIcon("H:\\Oxygen\\SRU\\SkatteverketLogo2.png"));
 	private final JLabel lblNewLabel_1 = new JLabel("Räkenskapsschema");
 	private final JLabel lblInkomstdeklaration = new JLabel("Inkomstdeklaration 2");
 	private final JLabel lblFrom = new JLabel("Fr.o.m.");
@@ -164,6 +162,9 @@ public class GUI {
 	private final JPanel panel_33 = new JPanel();
 	private final JTextArea txtrvrigaAvsttningar = new JTextArea();
 	private final JPanel panel_34 = new JPanel();
+	private final JPanel panel_1 = new JPanel();
+	private final JPanel panel_2 = new JPanel();
+	private final JPanel panel_3 = new JPanel();
 	private final JTextArea txtrvrigaAvsttningar_1 = new JTextArea();
 	private final JTextField textField_36 = new JTextField();
 	private final JTextField textField_37 = new JTextField();
@@ -216,7 +217,14 @@ public class GUI {
 	private final JTextField textField_52 = new JTextField();
 	private final JTextField textField_53 = new JTextField();
 
+	ArrayList<JPanel>ink2rList = new ArrayList<>();
+	public JScrollPane scrollPane = new JScrollPane();
+	
+
+	
+	
 	public GUI() {
+	
 		textField_3.setBounds(614, 77, 230, 20);
 		textField_3.setColumns(10);
 		textField_2.setBounds(393, 77, 223, 20);
@@ -224,77 +232,73 @@ public class GUI {
 		frame = new JFrame("SRU");
 		p = new JPanel();
 		frame.getContentPane().setLayout(null);
-		menuBar.setBounds(0, 0, 60, 20);
+		scrollPane.setLocation(0, 76);
+		
+
 		//p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
 
 		//frame.getContentPane().add(p, BorderLayout.WEST);
-		frame.getContentPane().add(menuBar);
-		menuBar.add(menu);
-		menu.add(item2);
-		menu.add(item3);
-		menu.add(ink2rItem);
 		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(918, 77, 17, 1256);
-		frame.getContentPane().add(scrollBar);
-		lblNewLabel.setBounds(0, 31, 230, 20);
+		//Skapar scrollpanel och kopplar den samma med fönstret som man har formuläret i
 		
-		frame.getContentPane().add(lblNewLabel);
+		
+		scrollPane.setSize(970, 1150);
+		scrollPane.setLayout(null);
+		scrollPane.setVerticalScrollBar(new JScrollBar());
+		scrollPane.setBackground(Color.WHITE);
+		frame.getContentPane().add(scrollPane);
 		lblNewLabel_1.setBounds(393, 21, 238, 14);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		
-		frame.getContentPane().add(lblNewLabel_1);
+		scrollPane.add(lblNewLabel_1);
 		lblInkomstdeklaration.setBounds(393, 37, 176, 14);
 		lblInkomstdeklaration.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		
-		frame.getContentPane().add(lblInkomstdeklaration);
+		scrollPane.add(lblInkomstdeklaration);
 		lblFrom.setBounds(84, 62, 72, 14);
 		lblFrom.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
-		frame.getContentPane().add(lblFrom);
+		scrollPane.add(lblFrom);
 		lblTom.setBounds(210, 62, 72, 14);
 		lblTom.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
-		frame.getContentPane().add(lblTom);
+		scrollPane.add(lblTom);
 		lblOrganisationsnummer.setBounds(393, 62, 104, 14);
 		lblOrganisationsnummer.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
-		frame.getContentPane().add(lblOrganisationsnummer);
+		scrollPane.add(lblOrganisationsnummer);
 		lblDatumNrBlanketten.setBounds(615, 62, 131, 14);
 		lblDatumNrBlanketten.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		
-		frame.getContentPane().add(lblDatumNrBlanketten);
+		scrollPane.add(lblDatumNrBlanketten);
 		lblNewLabel_2.setBounds(762, 21, 140, 45);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 24));
 		
-		frame.getContentPane().add(lblNewLabel_2);
+		scrollPane.add(lblNewLabel_2);
 		
 		textField = new JTextField();
 		textField.setBounds(84, 74, 116, 20);
-		frame.getContentPane().add(textField);
+		scrollPane.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setBounds(210, 74, 130, 20);
 		textField_1.setColumns(10);
-		frame.getContentPane().add(textField_1);
+		scrollPane.add(textField_1);
 		
-		frame.getContentPane().add(textField_2);
+		scrollPane.add(textField_2);
 		
-		frame.getContentPane().add(textField_3);
+		scrollPane.add(textField_3);
 		label_1.setBounds(0, 100, 255, 22);
 		label_1.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		frame.getContentPane().add(label_1);
+		scrollPane.add(label_1);
 		textField_4.setBounds(222, 128, 164, 68);
 		textField_4.setColumns(10);
 		
-		frame.getContentPane().add(textField_4);
+		scrollPane.add(textField_4);
 		
-		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(0, 128, 223, 68);
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(null);
 		
 		Label label_2 = new Label("Immateriella anläggningstillgångar");
 		label_2.setBounds(10, 5, 173, 14);
@@ -303,61 +307,57 @@ public class GUI {
 		txtrKoncessionerPatent_2.setText("2.1 Koncessioner, patent, licenser\r\n      varumärken, hyresrätter, goodwill\r\n      och liknande rättigheter");
 		txtrKoncessionerPatent_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrKoncessionerPatent_2.setBounds(10, 25, 157, 43);
+		txtrKoncessionerPatent_2.setOpaque(false);
 		
 		panel_1.add(txtrKoncessionerPatent_2);
 		
-		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(0, 194, 222, 45);
-		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(null);
-		
 		JTextArea txtrFrskottAvseende = new JTextArea();
-		txtrFrskottAvseende.setBounds(10, 0, 157, 43);
+		txtrFrskottAvseende.setBounds(10, 5, 157, 43);
 		txtrFrskottAvseende.setText("\r\n2.2 Förskott avseende immateriella\r\n      anläggningstillgångar");
 		txtrFrskottAvseende.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		txtrFrskottAvseende.setOpaque(false);
 		panel_2.add(txtrFrskottAvseende);
 		
 		textField_5 = new JTextField();
 		textField_5.setBounds(221, 194, 165, 45);
 		textField_5.setColumns(10);
-		frame.getContentPane().add(textField_5);
+		scrollPane.add(textField_5);
 		
-		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(0, 237, 222, 45);
-		frame.getContentPane().add(panel_3);
-		panel_3.setLayout(null);
+		
 		
 		Label label_3 = new Label("Materiella anläggningstillgångar");
-		label_3.setBounds(10, 0, 172, 20);
+		label_3.setBounds(10, 5, 172, 20);
 		panel_3.add(label_3);
 		label_3.setFont(new Font("Dialog", Font.BOLD, 10));
 		txtrKoncessionerPatent.setBounds(10, 25, 158, 20);
 		txtrKoncessionerPatent.setText("2.3 Byggnader och mark");
 		txtrKoncessionerPatent.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		
+		txtrKoncessionerPatent.setOpaque(false);
 		panel_3.add(txtrKoncessionerPatent);
 		
 		textField_6 = new JTextField();
 		textField_6.setBounds(222, 237, 164, 45);
 		textField_6.setColumns(10);
-		frame.getContentPane().add(textField_6);
+		scrollPane.add(textField_6);
 		panel_4.setBounds(0, 281, 223, 45);
-		panel_4.setLayout(null);
 		
-		frame.getContentPane().add(panel_4);
+		
+		
 		txtrMaskinerInventarier.setText("2.4 Maskiner, inventarier och övriga\r\n      materiella anläggningstillgångar");
 		txtrMaskinerInventarier.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrMaskinerInventarier.setBounds(10, 11, 169, 34);
-		
+		txtrMaskinerInventarier.setOpaque(false);
 		panel_4.add(txtrMaskinerInventarier);
 		textField_7.setBounds(222, 281, 164, 45);
 		textField_7.setColumns(10);
 		
-		frame.getContentPane().add(textField_7);
+		
+		scrollPane.add(textField_7);
 		panel_5.setBounds(0, 326, 222, 35);
 		
-		frame.getContentPane().add(panel_5);
-		panel_5.setLayout(null);
+		
 		txtrFrbttring.setBounds(10, 0, 210, 23);
 		txtrFrbttring.setText("2.5 Förbättringsuppgifter på annans fastighet");
 		txtrFrbttring.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -366,11 +366,12 @@ public class GUI {
 		textField_8.setBounds(222, 326, 164, 35);
 		textField_8.setColumns(10);
 		
-		frame.getContentPane().add(textField_8);
+		scrollPane.add(textField_8);
 		panel_6.setBounds(0, 361, 222, 35);
+		txtrFrbttring.setOpaque(false);
 		
-		frame.getContentPane().add(panel_6);
-		panel_6.setLayout(null);
+		
+		
 		txtrPgendeNyanlggningar.setBounds(10, 0, 212, 35);
 		txtrPgendeNyanlggningar.setText("2.6 Pågående nyanläggningar coh förskott\r\n      avseende materiella anläggningstillgångar");
 		txtrPgendeNyanlggningar.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -379,166 +380,160 @@ public class GUI {
 		textField_9.setBounds(222, 361, 164, 35);
 		textField_9.setColumns(10);
 		
-		frame.getContentPane().add(textField_9);
+		scrollPane.add(textField_9);
 		label_4.setBounds(393, 103, 255, 22);
 		label_4.setFont(new Font("Arial", Font.BOLD, 16));
+		txtrPgendeNyanlggningar.setOpaque(false);
 		
-		frame.getContentPane().add(label_4);
+		scrollPane.add(label_4);
 		panel_7.setBounds(394, 128, 222, 33);
 		
-		frame.getContentPane().add(panel_7);
-		panel_7.setLayout(null);
-		txtrBundetEget.setBounds(10, 0, 212, 17);
+	
+		txtrBundetEget.setBounds(10, 5, 212, 17);
 		txtrBundetEget.setText("2.27 Bundet eget kapital");
 		txtrBundetEget.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		
+		txtrBundetEget.setOpaque(false);
 		panel_7.add(txtrBundetEget);
 		textField_10.setBounds(615, 128, 229, 33);
 		textField_10.setColumns(10);
 		
-		frame.getContentPane().add(textField_10);
+		scrollPane.add(textField_10);
 		panel_8.setBounds(0, 397, 223, 45);
 		
-		frame.getContentPane().add(panel_8);
-		panel_8.setLayout(null);
+			
 		txtrKoncessionerPatent_1.setBounds(10, 21, 203, 13);
 		txtrKoncessionerPatent_1.setText("2.7 Andelar i koncernföretag");
 		txtrKoncessionerPatent_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
 		panel_8.add(txtrKoncessionerPatent_1);
-		label_5.setBounds(10, 0, 172, 20);
+		label_5.setBounds(10, 2, 172, 20);
+		txtrKoncessionerPatent_1.setOpaque(false);
 		label_5.setFont(new Font("Dialog", Font.BOLD, 10));
 		
 		panel_8.add(label_5);
 		textField_11.setBounds(222, 397, 165, 45);
 		textField_11.setColumns(10);
 		
-		frame.getContentPane().add(textField_11);
+		scrollPane.add(textField_11);
 		panel_9.setBounds(0, 440, 222, 33);
-		panel_9.setLayout(null);
-		
-		frame.getContentPane().add(panel_9);
+	
 		txtrAndelarI.setText("2.8 Andelar i intresseföretag");
 		txtrAndelarI.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrAndelarI.setBounds(10, 11, 212, 17);
-		
+		txtrAndelarI.setOpaque(false);
 		panel_9.add(txtrAndelarI);
 		panel_10.setBounds(1, 471, 222, 35);
-		panel_10.setLayout(null);
+	
 		
-		frame.getContentPane().add(panel_10);
+		
 		txtrFordringarHos.setText("2.9 Fordringar hos koncern- och\r\n      intresseföretag");
 		txtrFordringarHos.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFordringarHos.setBounds(10, 0, 212, 35);
+		txtrFordringarHos.setOpaque(false);
 		
 		panel_10.add(txtrFordringarHos);
 		panel_11.setBounds(0, 506, 222, 28);
-		
-		frame.getContentPane().add(panel_11);
-		panel_11.setLayout(null);
+
 		txtrAndraLngfristiga.setBounds(10, 0, 202, 28);
 		txtrAndraLngfristiga.setText("2.10 Andra långfristiga värde-\r\n        pappersinnehav");
 		txtrAndraLngfristiga.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		
 		panel_11.add(txtrAndraLngfristiga);
 		panel_12.setBounds(0, 533, 222, 28);
-		panel_12.setLayout(null);
+		txtrAndraLngfristiga.setOpaque(false);
 		
-		frame.getContentPane().add(panel_12);
+		
 		txtrLnTill.setText("2.11 Lån till delägare eller närstående");
 		txtrLnTill.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrLnTill.setBounds(10, 11, 212, 13);
-		
+		txtrLnTill.setOpaque(false);
 		panel_12.add(txtrLnTill);
 		panel_13.setBounds(0, 559, 222, 28);
-		panel_13.setLayout(null);
 		
-		frame.getContentPane().add(panel_13);
+		
+		
 		txtrAndraLngfristiga_1.setText("2.12 Andra långfristiga fordringar");
 		txtrAndraLngfristiga_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrAndraLngfristiga_1.setBounds(10, 0, 212, 24);
-		
+		txtrAndraLngfristiga_1.setOpaque(false);
 		panel_13.add(txtrAndraLngfristiga_1);
 		textField_12.setBounds(221, 440, 165, 33);
 		textField_12.setColumns(10);
 		
-		frame.getContentPane().add(textField_12);
+		scrollPane.add(textField_12);
 		textField_13.setBounds(222, 471, 164, 35);
 		textField_13.setColumns(10);
 		
-		frame.getContentPane().add(textField_13);
+		scrollPane.add(textField_13);
 		textField_14.setBounds(223, 506, 163, 26);
 		textField_14.setColumns(10);
 		
-		frame.getContentPane().add(textField_14);
+		scrollPane.add(textField_14);
 		textField_15.setBounds(222, 533, 165, 28);
 		textField_15.setColumns(10);
 		
-		frame.getContentPane().add(textField_15);
-		panel_14.setBounds(394, 161, 222, 35);
-		panel_14.setLayout(null);
+		scrollPane.add(textField_15);
+		panel_14.setBounds(394, 161, 222, 33);
 		
-		frame.getContentPane().add(panel_14);
+		
+		
 		txtrFrittEget.setText("2.28 Fritt eget kapital");
 		txtrFrittEget.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		txtrFrittEget.setBounds(10, 0, 212, 17);
-		
+		txtrFrittEget.setBounds(10, 5, 212, 17);
+		txtrFrittEget.setOpaque(false);
 		panel_14.add(txtrFrittEget);
 		textField_17.setBounds(615, 161, 229, 35);
 		textField_17.setColumns(10);
 		
-		frame.getContentPane().add(textField_17);
+		scrollPane.add(textField_17);
 		label_6.setBounds(393, 194, 320, 22);
 		label_6.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		frame.getContentPane().add(label_6);
+		scrollPane.add(label_6);
 		panel_15.setBounds(393, 219, 222, 45);
-		panel_15.setLayout(null);
 		
-		frame.getContentPane().add(panel_15);
+		
+		
 		label_7.setFont(new Font("Dialog", Font.BOLD, 10));
 		label_7.setBounds(4, 5, 172, 20);
 		
 		panel_15.add(label_7);
 		txtrPeriodiseringsfonder.setText("2.29 Periodiseringsfonder");
 		txtrPeriodiseringsfonder.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		txtrPeriodiseringsfonder.setBounds(0, 25, 158, 20);
-		
+		txtrPeriodiseringsfonder.setBounds(10, 25, 158, 20);
+		txtrPeriodiseringsfonder.setOpaque(false);
 		panel_15.add(txtrPeriodiseringsfonder);
 		textField_18.setBounds(615, 219, 230, 45);
 		textField_18.setColumns(10);
 		
-		frame.getContentPane().add(textField_18);
+		scrollPane.add(textField_18);
 		panel_16.setBounds(393, 264, 222, 28);
-		panel_16.setLayout(null);
 		
-		frame.getContentPane().add(panel_16);
+		
+		
 		txtrAckumuleradeveravskrivningar.setText("2.30 Ackumulerade överavskrivningar");
 		txtrAckumuleradeveravskrivningar.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		txtrAckumuleradeveravskrivningar.setBounds(0, 11, 202, 13);
+		txtrAckumuleradeveravskrivningar.setBounds(10, 11, 202, 13);
 		
 		panel_16.add(txtrAckumuleradeveravskrivningar);
 		panel_17.setBounds(393, 290, 222, 36);
-		panel_17.setLayout(null);
 		
-		frame.getContentPane().add(panel_17);
+		
+		
 		txtrvrigaObeskattade.setText("2.31 Övriga obeskattade reserver");
 		txtrvrigaObeskattade.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		txtrvrigaObeskattade.setBounds(0, 11, 157, 13);
-		
+		txtrvrigaObeskattade.setBounds(10, 11, 157, 13);
+		txtrvrigaObeskattade.setOpaque(false);
 		panel_17.add(txtrvrigaObeskattade);
 		textField_19.setBounds(615, 264, 229, 28);
 		textField_19.setColumns(10);
 		
-		frame.getContentPane().add(textField_19);
+		scrollPane.add(textField_19);
 		textField_20.setBounds(615, 290, 229, 35);
 		textField_20.setColumns(10);
 		
-		frame.getContentPane().add(textField_20);
+		scrollPane.add(textField_20);
 		panel_18.setBounds(393, 493, 222, 41);
 		
-		frame.getContentPane().add(panel_18);
-		panel_18.setLayout(null);
 		label_8.setBounds(0, -2, 172, 20);
 		label_8.setFont(new Font("Dialog", Font.BOLD, 10));
 		
@@ -546,135 +541,115 @@ public class GUI {
 		txtrObligationsln.setBounds(0, 22, 158, 19);
 		txtrObligationsln.setText("2.35 Obligationslån");
 		txtrObligationsln.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		
+		txtrObligationsln.setOpaque(false);
 		panel_18.add(txtrObligationsln);
 		
 		Label label = new Label("Räkenskapsår");
 		label.setBounds(0, 69, 78, 22);
-		frame.getContentPane().add(label);
+		scrollPane.add(label);
 		label_9.setBounds(0, 593, 255, 22);
 		label_9.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		frame.getContentPane().add(label_9);
+		scrollPane.add(label_9);
 		panel.setBounds(1, 616, 222, 45);
-		panel.setLayout(null);
 		
-		frame.getContentPane().add(panel);
+		
+		
 		label_10.setFont(new Font("Dialog", Font.BOLD, 10));
-		label_10.setBounds(10, 0, 172, 20);
+		label_10.setBounds(10, 5, 172, 20);
 		
 		panel.add(label_10);
 		txtrRvarorOch.setText("2.13 Råvaror och förnödenheter");
 		txtrRvarorOch.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrRvarorOch.setBounds(10, 26, 158, 20);
-		
+		txtrRvarorOch.setOpaque(false);
 		panel.add(txtrRvarorOch);
 		textField_21.setBounds(222, 616, 164, 45);
 		textField_21.setColumns(10);
 		
-		frame.getContentPane().add(textField_21);
+		scrollPane.add(textField_21);
 		panel_19.setBounds(0, 661, 222, 28);
-		panel_19.setLayout(null);
-		
-		frame.getContentPane().add(panel_19);
+	
+				
 		txtrVarorUnder.setText("2.14 Varor under tillverkning");
 		txtrVarorUnder.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrVarorUnder.setBounds(10, 11, 212, 17);
-		
+		txtrVarorUnder.setOpaque(false);
 		panel_19.add(txtrVarorUnder);
 		textField_22.setBounds(221, 661, 165, 28);
 		textField_22.setColumns(10);
 		
-		frame.getContentPane().add(textField_22);
+		scrollPane.add(textField_22);
 		textField_16.setBounds(222, 559, 165, 28);
 		textField_16.setColumns(10);
 		
-		frame.getContentPane().add(textField_16);
+		scrollPane.add(textField_16);
 		panel_20.setBounds(0, 687, 222, 28);
-		panel_20.setLayout(null);
-		
-		frame.getContentPane().add(panel_20);
+						
 		txtrFrdigaVaror.setText("2.15 Färdiga varor och handelsvaror");
 		txtrFrdigaVaror.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFrdigaVaror.setBounds(10, 11, 212, 17);
-		
+		txtrFrdigaVaror.setOpaque(false);
 		panel_20.add(txtrFrdigaVaror);
 		panel_21.setBounds(0, 717, 222, 28);
-		panel_21.setLayout(null);
 		
-		frame.getContentPane().add(panel_21);
 		txtrvrigaLagertillgngar.setText("2.16 Övriga lagertillgångar");
 		txtrvrigaLagertillgngar.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaLagertillgngar.setBounds(10, 11, 212, 17);
-		
+		txtrvrigaLagertillgngar.setOpaque(false);
 		panel_21.add(txtrvrigaLagertillgngar);
 		panel_22.setBounds(0, 747, 222, 28);
-		panel_22.setLayout(null);
-		
-		frame.getContentPane().add(panel_22);
+	
 		txtrPgendeArbetenFr.setText("2.17 Pågående arbeten för annans räkning");
 		txtrPgendeArbetenFr.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrPgendeArbetenFr.setBounds(10, 11, 212, 17);
-		
+		txtrPgendeArbetenFr.setOpaque(false);
 		panel_22.add(txtrPgendeArbetenFr);
 		panel_23.setBounds(0, 776, 222, 28);
-		panel_23.setLayout(null);
-		
-		frame.getContentPane().add(panel_23);
+			
 		txtrFrskottTill.setText("2.18 Förskott till leverantörer");
 		txtrFrskottTill.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFrskottTill.setBounds(10, 11, 212, 17);
-		
+		txtrFrskottTill.setOpaque(false);
 		panel_23.add(txtrFrskottTill);
 		panel_27.setBounds(0, 847, 222, 28);
-		panel_27.setLayout(null);
 		
-		frame.getContentPane().add(panel_27);
 		txtrFordringarHos_1.setText("2.20 Fordringar hos koncern- och\r\n        intresseföretag");
 		txtrFordringarHos_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		txtrFordringarHos_1.setBounds(10, 0, 212, 34);
-		
+		txtrFordringarHos_1.setBounds(10, 0, 212, 28);
+		txtrFordringarHos_1.setOpaque(false);
 		panel_27.add(txtrFordringarHos_1);
 		panel_28.setBounds(0, 875, 222, 28);
-		panel_28.setLayout(null);
+
 		
-		frame.getContentPane().add(panel_28);
 		txtrvrigaFordringar.setText("2.21 Övriga fordringar");
 		txtrvrigaFordringar.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaFordringar.setBounds(10, 11, 212, 17);
-		
+		txtrvrigaFordringar.setOpaque(false);
 		panel_28.add(txtrvrigaFordringar);
 		panel_29.setBounds(0, 903, 222, 28);
-		panel_29.setLayout(null);
-		
-		frame.getContentPane().add(panel_29);
+	
 		txtrUpparbetadMen.setText("2.22 Upparbetad men ej fakturerad intäkt");
 		txtrUpparbetadMen.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrUpparbetadMen.setBounds(10, 11, 212, 17);
-		
+		txtrUpparbetadMen.setOpaque(false);
 		panel_29.add(txtrUpparbetadMen);
 		panel_30.setBounds(1, 932, 222, 45);
-		panel_30.setLayout(null);
 		
-		frame.getContentPane().add(panel_30);
 		txtrFrutbetaldaKostnader.setText("2.23 Förutbetalda kostnader och upplupna\r\n        intäkter");
 		txtrFrutbetaldaKostnader.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFrutbetaldaKostnader.setBounds(10, 11, 212, 30);
-		
+		txtrFrutbetaldaKostnader.setOpaque(false);
 		panel_30.add(txtrFrutbetaldaKostnader);
 		panel_31.setBounds(0, 1026, 222, 35);
-		panel_31.setLayout(null);
 		
-		frame.getContentPane().add(panel_31);
 		txtrvrigaKostfria.setText("2.25 Övriga kostfria placeringar");
 		txtrvrigaKostfria.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaKostfria.setBounds(10, 11, 212, 17);
-		
+		txtrvrigaKostfria.setOpaque(false);
 		panel_31.add(txtrvrigaKostfria);
 		panel_24.setBounds(0, 802, 222, 45);
-		panel_24.setLayout(null);
-		
-		frame.getContentPane().add(panel_24);
+				
 		label_11.setFont(new Font("Dialog", Font.BOLD, 10));
 		label_11.setBounds(10, 0, 172, 20);
 		
@@ -682,12 +657,10 @@ public class GUI {
 		txtrKundfordringar.setText("2.19 Kundfordringar");
 		txtrKundfordringar.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrKundfordringar.setBounds(10, 26, 158, 20);
-		
+		txtrKundfordringar.setOpaque(false);
 		panel_24.add(txtrKundfordringar);
 		panel_25.setBounds(1, 981, 222, 45);
-		panel_25.setLayout(null);
-		
-		frame.getContentPane().add(panel_25);
+			
 		label_12.setFont(new Font("Dialog", Font.BOLD, 10));
 		label_12.setBounds(10, 10, 172, 10);
 		
@@ -695,12 +668,10 @@ public class GUI {
 		txtrFrutbetaldaKostnader_1.setText("2.24 Andelar i koncernföretag");
 		txtrFrutbetaldaKostnader_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFrutbetaldaKostnader_1.setBounds(10, 26, 202, 20);
-		
+		txtrFrutbetaldaKostnader_1.setOpaque(false);
 		panel_25.add(txtrFrutbetaldaKostnader_1);
 		panel_26.setBounds(0, 1065, 222, 55);
 		
-		frame.getContentPane().add(panel_26);
-		panel_26.setLayout(null);
 		label_13.setBounds(10, 10, 172, 20);
 		label_13.setFont(new Font("Dialog", Font.BOLD, 10));
 		
@@ -711,57 +682,56 @@ public class GUI {
 		
 		panel_26.add(txtrKassaBank);
 		textField_23.setBounds(221, 687, 165, 28);
+		txtrKassaBank.setOpaque(false);
 		textField_23.setColumns(10);
 		
-		frame.getContentPane().add(textField_23);
+		scrollPane.add(textField_23);
 		textField_24.setBounds(221, 717, 165, 28);
 		textField_24.setColumns(10);
 		
-		frame.getContentPane().add(textField_24);
+		scrollPane.add(textField_24);
 		textField_25.setBounds(221, 747, 165, 28);
 		textField_25.setColumns(10);
 		
-		frame.getContentPane().add(textField_25);
+		scrollPane.add(textField_25);
 		textField_26.setBounds(222, 776, 165, 28);
 		textField_26.setColumns(10);
 		
-		frame.getContentPane().add(textField_26);
+		scrollPane.add(textField_26);
 		textField_27.setBounds(222, 802, 164, 45);
 		textField_27.setColumns(10);
 		
-		frame.getContentPane().add(textField_27);
+		scrollPane.add(textField_27);
 		textField_28.setBounds(221, 847, 165, 28);
 		textField_28.setColumns(10);
 		
-		frame.getContentPane().add(textField_28);
+		scrollPane.add(textField_28);
 		textField_29.setBounds(222, 875, 165, 28);
 		textField_29.setColumns(10);
 		
-		frame.getContentPane().add(textField_29);
+		scrollPane.add(textField_29);
 		textField_30.setBounds(222, 903, 165, 28);
 		textField_30.setColumns(10);
 		
-		frame.getContentPane().add(textField_30);
+		scrollPane.add(textField_30);
 		textField_31.setBounds(221, 932, 165, 45);
 		textField_31.setColumns(10);
 		
-		frame.getContentPane().add(textField_31);
+		scrollPane.add(textField_31);
 		textField_32.setBounds(222, 981, 164, 45);
 		textField_32.setColumns(10);
 		
-		frame.getContentPane().add(textField_32);
+		scrollPane.add(textField_32);
 		textField_33.setBounds(222, 1026, 165, 35);
 		textField_33.setColumns(10);
 		
-		frame.getContentPane().add(textField_33);
+		scrollPane.add(textField_33);
 		textField_34.setBounds(222, 1065, 164, 55);
 		textField_34.setColumns(10);
 		
-		frame.getContentPane().add(textField_34);
+		scrollPane.add(textField_34);
 		panel_32.setBounds(393, 326, 223, 61);
-		panel_32.setLayout(null);
-		
-		frame.getContentPane().add(panel_32);
+				
 		label_14.setFont(new Font("Dialog", Font.BOLD, 10));
 		label_14.setBounds(0, 0, 172, 20);
 		
@@ -769,102 +739,89 @@ public class GUI {
 		txtrAvsttningarFr.setText("2.32 Avsättningar för pensioner och liknande\r\n        förpliktelse enligt lag (1967:531) om\r\n        tryggande av pensionsutfästelse m.m.");
 		txtrAvsttningarFr.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrAvsttningarFr.setBounds(0, 15, 206, 47);
-		
+		txtrAvsttningarFr.setOpaque(false);
 		panel_32.add(txtrAvsttningarFr);
 		textField_35.setBounds(615, 326, 229, 61);
 		textField_35.setColumns(10);
 		
-		frame.getContentPane().add(textField_35);
+		scrollPane.add(textField_35);
 		panel_33.setBounds(393, 385, 222, 35);
-		panel_33.setLayout(null);
-		
-		frame.getContentPane().add(panel_33);
+
 		txtrvrigaAvsttningar.setText("2.33 Övriga avsättningar för pensioner och\r\n        liknande förpliktelser");
 		txtrvrigaAvsttningar.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaAvsttningar.setBounds(0, 0, 212, 34);
-		
+		txtrvrigaAvsttningar.setOpaque(false);
 		panel_33.add(txtrvrigaAvsttningar);
 		panel_34.setBounds(394, 418, 222, 45);
-		panel_34.setLayout(null);
-		
-		frame.getContentPane().add(panel_34);
+	
 		txtrvrigaAvsttningar_1.setText("2.34 Övriga avsättningar\r\n");
 		txtrvrigaAvsttningar_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaAvsttningar_1.setBounds(0, 11, 157, 13);
-		
+		txtrvrigaAvsttningar_1.setOpaque(false);
 		panel_34.add(txtrvrigaAvsttningar_1);
 		textField_36.setBounds(615, 385, 229, 35);
 		textField_36.setColumns(10);
 		
-		frame.getContentPane().add(textField_36);
+		scrollPane.add(textField_36);
 		textField_37.setBounds(615, 418, 229, 45);
 		textField_37.setColumns(10);
 		
-		frame.getContentPane().add(textField_37);
+		scrollPane.add(textField_37);
 		label_15.setBounds(393, 471, 299, 22);
 		label_15.setFont(new Font("Arial", Font.BOLD, 16));
 		
-		frame.getContentPane().add(label_15);
+		scrollPane.add(label_15);
 		textField_38.setBounds(615, 493, 229, 41);
 		textField_38.setColumns(10);
 		
-		frame.getContentPane().add(textField_38);
+		scrollPane.add(textField_38);
 		panel_35.setBounds(393, 533, 223, 38);
-		panel_35.setLayout(null);
 		
-		frame.getContentPane().add(panel_35);
 		txtrCheckrkningskredit.setText("2.36 Checkräkningskredit");
 		txtrCheckrkningskredit.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrCheckrkningskredit.setBounds(0, 21, 212, 17);
-		
+		txtrCheckrkningskredit.setOpaque(false);
 		panel_35.add(txtrCheckrkningskredit);
 		textField_39.setBounds(615, 533, 229, 38);
 		textField_39.setColumns(10);
 		
-		frame.getContentPane().add(textField_39);
+		scrollPane.add(textField_39);
 		panel_36.setBounds(393, 572, 223, 29);
-		panel_36.setLayout(null);
 		
-		frame.getContentPane().add(panel_36);
 		txtrvrigaSkulder.setText("2.37 Övriga skulder till kreditinstitut");
 		txtrvrigaSkulder.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaSkulder.setBounds(0, 11, 212, 17);
-		
+		txtrvrigaSkulder.setOpaque(false);
 		panel_36.add(txtrvrigaSkulder);
 		panel_37.setBounds(393, 602, 223, 33);
 		
-		frame.getContentPane().add(panel_37);
-		panel_37.setLayout(null);
 		txtrSkulderTill.setBounds(0, 11, 213, 17);
 		txtrSkulderTill.setText("2.38 Skulder till koncern- och intresseföretag");
 		txtrSkulderTill.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		
 		panel_37.add(txtrSkulderTill);
 		panel_38.setBounds(393, 634, 223, 38);
-		panel_38.setLayout(null);
-		
-		frame.getContentPane().add(panel_38);
+		txtrSkulderTill.setOpaque(false);
+			
 		txtrvrigaSkulder_1.setText("2.39 Övriga skulder");
 		txtrvrigaSkulder_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaSkulder_1.setBounds(0, 21, 212, 17);
-		
+		txtrvrigaSkulder_1.setOpaque(false);
 		panel_38.add(txtrvrigaSkulder_1);
 		textField_40.setBounds(615, 572, 229, 29);
 		textField_40.setColumns(10);
 		
-		frame.getContentPane().add(textField_40);
+		scrollPane.add(textField_40);
 		textField_41.setBounds(615, 602, 229, 33);
 		textField_41.setColumns(10);
 		
-		frame.getContentPane().add(textField_41);
+		scrollPane.add(textField_41);
 		textField_42.setBounds(615, 634, 229, 38);
 		textField_42.setColumns(10);
 		
-		frame.getContentPane().add(textField_42);
+		scrollPane.add(textField_42);
 		panel_39.setBounds(393, 672, 222, 43);
-		panel_39.setLayout(null);
 		
-		frame.getContentPane().add(panel_39);
 		label_16.setFont(new Font("Dialog", Font.BOLD, 10));
 		label_16.setBounds(0, -2, 172, 20);
 		
@@ -872,143 +829,135 @@ public class GUI {
 		txtrCheckrkningskredit_1.setText("2.40 Checkräkningskredit");
 		txtrCheckrkningskredit_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrCheckrkningskredit_1.setBounds(0, 22, 158, 19);
-		
+		txtrCheckrkningskredit_1.setOpaque(false);
 		panel_39.add(txtrCheckrkningskredit_1);
 		textField_43.setBounds(615, 670, 229, 45);
 		textField_43.setColumns(10);
 		
-		frame.getContentPane().add(textField_43);
-		panel_40.setLayout(null);
+		scrollPane.add(textField_43);
 		panel_40.setBounds(393, 717, 223, 38);
 		
-		frame.getContentPane().add(panel_40);
 		txtrvrigaSkulder_2.setText("2.41 Övriga skulder till kreditinstitut");
 		txtrvrigaSkulder_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaSkulder_2.setBounds(0, 21, 212, 17);
-		
+		txtrvrigaSkulder_2.setOpaque(false);
 		panel_40.add(txtrvrigaSkulder_2);
-		panel_41.setLayout(null);
 		panel_41.setBounds(393, 755, 223, 38);
 		
-		frame.getContentPane().add(panel_41);
 		txtrFrskottFrn.setText("2.42 Förskott från kunder");
 		txtrFrskottFrn.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFrskottFrn.setBounds(0, 21, 212, 17);
-		
+		txtrFrskottFrn.setOpaque(false);
 		panel_41.add(txtrFrskottFrn);
-		panel_42.setLayout(null);
 		panel_42.setBounds(393, 791, 223, 38);
 		
-		frame.getContentPane().add(panel_42);
 		txtrPgendeArbeten.setText("2.43 Pågående arbeten för annans räkning");
 		txtrPgendeArbeten.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrPgendeArbeten.setBounds(0, 21, 212, 17);
-		
+		txtrPgendeArbeten.setOpaque(false);
 		panel_42.add(txtrPgendeArbeten);
-		panel_43.setLayout(null);
 		panel_43.setBounds(393, 828, 223, 38);
 		
-		frame.getContentPane().add(panel_43);
 		txtrFaktureradMen.setText("2.44 Fakturerad men ej apparbetad intäkt");
 		txtrFaktureradMen.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrFaktureradMen.setBounds(0, 21, 212, 17);
-		
+		txtrFaktureradMen.setOpaque(false);
 		panel_43.add(txtrFaktureradMen);
-		panel_44.setLayout(null);
 		panel_44.setBounds(393, 865, 223, 38);
 		
-		frame.getContentPane().add(panel_44);
 		txtrLeverantrsskulder.setText("2.45 Leverantörsskulder");
 		txtrLeverantrsskulder.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrLeverantrsskulder.setBounds(0, 21, 212, 17);
-		
+		txtrLeverantrsskulder.setOpaque(false);
 		panel_44.add(txtrLeverantrsskulder);
-		panel_45.setLayout(null);
 		panel_45.setBounds(393, 903, 223, 38);
 		
-		frame.getContentPane().add(panel_45);
 		txtrVxelskulder.setText("2.46 Växelskulder");
 		txtrVxelskulder.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrVxelskulder.setBounds(0, 21, 212, 17);
-		
+		txtrVxelskulder.setOpaque(false);
 		panel_45.add(txtrVxelskulder);
-		panel_46.setLayout(null);
 		panel_46.setBounds(393, 939, 223, 38);
 		
-		frame.getContentPane().add(panel_46);
 		txtrSkulderTill_1.setText("2.47 Skulder till koncern- och intresseföretag");
 		txtrSkulderTill_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrSkulderTill_1.setBounds(10, 21, 212, 17);
-		
+		txtrSkulderTill_1.setOpaque(false);
 		panel_46.add(txtrSkulderTill_1);
-		panel_47.setLayout(null);
 		panel_47.setBounds(393, 977, 223, 38);
 		
-		frame.getContentPane().add(panel_47);
 		txtrLeverantrsskulder_1.setText("2.48 Skatteskulder");
 		txtrLeverantrsskulder_1.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrLeverantrsskulder_1.setBounds(0, 21, 212, 17);
-		
+		txtrLeverantrsskulder_1.setOpaque(false);
 		panel_47.add(txtrLeverantrsskulder_1);
-		panel_48.setLayout(null);
 		panel_48.setBounds(393, 1013, 223, 38);
 		
-		frame.getContentPane().add(panel_48);
 		txtrvrigaSkulder_3.setText("2.49 Övriga skulder");
 		txtrvrigaSkulder_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrvrigaSkulder_3.setBounds(0, 21, 212, 17);
-		
+		txtrvrigaSkulder_3.setOpaque(false);
 		panel_48.add(txtrvrigaSkulder_3);
-		panel_49.setLayout(null);
 		panel_49.setBounds(393, 1050, 223, 45);
 		
-		frame.getContentPane().add(panel_49);
 		txtrUpplupnaKostnader.setText("2.50 Upplupna kostnader och förutbetalda\r\n        intäkter");
 		txtrUpplupnaKostnader.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		txtrUpplupnaKostnader.setBounds(0, 11, 212, 27);
-		
+		txtrUpplupnaKostnader.setOpaque(false);
 		panel_49.add(txtrUpplupnaKostnader);
 		textField_44.setColumns(10);
 		textField_44.setBounds(615, 717, 229, 38);
 		
-		frame.getContentPane().add(textField_44);
+		scrollPane.add(textField_44);
 		textField_45.setColumns(10);
 		textField_45.setBounds(615, 755, 229, 38);
 		
-		frame.getContentPane().add(textField_45);
+		scrollPane.add(textField_45);
 		textField_46.setColumns(10);
 		textField_46.setBounds(615, 791, 229, 38);
 		
-		frame.getContentPane().add(textField_46);
+		scrollPane.add(textField_46);
 		textField_47.setColumns(10);
 		textField_47.setBounds(615, 828, 229, 38);
 		
-		frame.getContentPane().add(textField_47);
+		scrollPane.add(textField_47);
 		textField_48.setColumns(10);
 		textField_48.setBounds(615, 865, 229, 38);
 		
-		frame.getContentPane().add(textField_48);
+		scrollPane.add(textField_48);
 		textField_49.setColumns(10);
 		textField_49.setBounds(615, 903, 229, 38);
 		
-		frame.getContentPane().add(textField_49);
+		scrollPane.add(textField_49);
 		textField_50.setColumns(10);
 		textField_50.setBounds(615, 939, 229, 38);
 		
-		frame.getContentPane().add(textField_50);
+		scrollPane.add(textField_50);
 		textField_51.setColumns(10);
 		textField_51.setBounds(615, 977, 229, 38);
 		
-		frame.getContentPane().add(textField_51);
+		scrollPane.add(textField_51);
 		textField_52.setColumns(10);
 		textField_52.setBounds(615, 1013, 229, 38);
 		
-		frame.getContentPane().add(textField_52);
+		scrollPane.add(textField_52);
 		textField_53.setColumns(10);
 		textField_53.setBounds(615, 1050, 229, 45);
 		
-		frame.getContentPane().add(textField_53);
-
+		scrollPane.add(textField_53);
+		menu.setBounds(0, 0, 105, 41);
+		frame.getContentPane().add(menu);
+		
+		menu.add(item2);
+		menu.add(item3);
+		menu.add(ink2rItem);
+		
+		JLabel lblNewLabel = new JLabel(new ImageIcon("H:\\NewOOdp\\SkatteverketLogo4.png"));
+		lblNewLabel.setBounds(0, 38, 188, 44);
+		frame.getContentPane().add(lblNewLabel);
+		
+		
+		
 //		JPanel buttonPanel = new JPanel();
 //		JButton createbutton = new JButton("Spara");
 //		createbutton.setBounds(105, 5, 61, 23);
@@ -1020,6 +969,9 @@ public class GUI {
 		item2.addActionListener(new BlanketterListener());
 		item3.addActionListener(new InfoListener());
 		ink2rItem.addActionListener(new Ink2rListener());
+
+		addPanel();
+		ultimatePanel();
 //		buttonPanel.setLayout(null);
 //
 //		buttonPanel.add(createbutton);
@@ -1027,11 +979,91 @@ public class GUI {
 //		frame.getContentPane().add(buttonPanel);
 
 		frame.setLocation(1000, 1000);
+		frame.setSize(996, 1200);
 		//frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		
+		
+
 	}
 
+	/** 
+	 * 
+	 * 
+	 */
+	
+	public void addPanel() {
+		
+		ink2rList.add(panel);
+		ink2rList.add(panel_1);
+		ink2rList.add(panel_2);
+		ink2rList.add(panel_3);
+		
+		
+		ink2rList.add(panel_4);
+		ink2rList.add(panel_5);
+		ink2rList.add(panel_6);
+		ink2rList.add(panel_7);
+		ink2rList.add(panel_8);
+		ink2rList.add(panel_9);
+		ink2rList.add(panel_10);
+		ink2rList.add(panel_11);
+		ink2rList.add(panel_12);
+		ink2rList.add(panel_13);
+		ink2rList.add(panel_14);
+		ink2rList.add(panel_15);
+		ink2rList.add(panel_16);
+		ink2rList.add(panel_17);
+		ink2rList.add(panel_18);
+		ink2rList.add(panel_19);
+		ink2rList.add(panel_20);
+		ink2rList.add(panel_21);
+		ink2rList.add(panel_22);
+		ink2rList.add(panel_23);
+		ink2rList.add(panel_24);
+		ink2rList.add(panel_25);
+		ink2rList.add(panel_26);
+		ink2rList.add(panel_27);
+		ink2rList.add(panel_28);
+		ink2rList.add(panel_29);
+		ink2rList.add(panel_30);
+		ink2rList.add(panel_31);
+		ink2rList.add(panel_32);
+		ink2rList.add(panel_33);
+		ink2rList.add(panel_34);
+		ink2rList.add(panel_35);
+		ink2rList.add(panel_36);
+		ink2rList.add(panel_37);
+		ink2rList.add(panel_38);
+		ink2rList.add(panel_39);
+		ink2rList.add(panel_40);
+		ink2rList.add(panel_41);
+		ink2rList.add(panel_42);
+		ink2rList.add(panel_43);
+		ink2rList.add(panel_44);
+		ink2rList.add(panel_45);
+		ink2rList.add(panel_46);
+		ink2rList.add(panel_47);
+		ink2rList.add(panel_48);
+		ink2rList.add(panel_49);
+	
+		
+	}
+	
+	public void ultimatePanel() {
+		
+		for(int i = 0; i <ink2rList.size(); i++)
+		{
+			scrollPane.add(ink2rList.get(i));
+			ink2rList.get(i).setBorder(BorderFactory.createLineBorder(Color.BLACK));
+			ink2rList.get(i).setBackground(Color.WHITE);
+			ink2rList.get(i).setLayout(null);
+			
+		}
+		
+	}
+	
 	/** 
 	 * Skapar och lägger in alla paneler, etiketter och textfält och lägger in de i GUI.
 	 */
