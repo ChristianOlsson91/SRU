@@ -30,9 +30,16 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
 
+/**
+ * Skapar innehållet och visar upp det grafiska användargränssnittet för
+ * programmet.
+ * 
+ * @author Christian Olsson, Nicolas Suau Carvajal
+ * @version 2017-11-14
+ */
 public class GUI {
 
-	private ArrayList<String> textList = new ArrayList<>();
+	private ArrayList<JTextField> textfieldList = new ArrayList<>();
 	private JFrame frame2;
 	private JTextField textField_tom;
 	private JTextField txtDate;
@@ -144,7 +151,7 @@ public class GUI {
 
 	private void initialize() {
 		frame2 = new JFrame();
-		frame2.getContentPane().setBackground(Color.WHITE);
+		frame2.getContentPane().setBackground(Color.YELLOW);
 
 		frame2.getContentPane().setName("7202");
 		frame2.setBounds(100, 160, 799, 975);
@@ -153,7 +160,7 @@ public class GUI {
 
 		JPanel orgPanel = new JPanel();
 		orgPanel.setBackground(Color.WHITE);
-		orgPanel.setBounds(0, 0, 793, 156);
+		orgPanel.setBounds(0, 0, 793, 159);
 		orgPanel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		frame2.getContentPane().add(orgPanel);
 		orgPanel.setLayout(null);
@@ -2756,104 +2763,6 @@ public class GUI {
 		label_122.setBounds(612, 547, 16, 14);
 		panel_2.add(label_122);
 
-		JButton btnControl = new JButton("Kontrollera");
-		btnControl.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnControl.setBounds(652, 656, 89, 23);
-		panel_2.add(btnControl);
-		
-		btnControl.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				textList.add(textField.getText());
-				textList.add(textField_1.getText());
-				textList.add(textField_2.getText());
-				textList.add(textField_3.getText());
-				textList.add(textField_4.getText());
-				textList.add(textField_5.getText());
-				textList.add(textField_6.getText());
-				textList.add(textField_7.getText());
-				textList.add(textField_8.getText());
-				textList.add(textField_9.getText());
-				textList.add(textField_10.getText());
-				textList.add(textField_11.getText());
-				textList.add(textField_12.getText());
-				textList.add(textField_13.getText());
-				textList.add(textField_14.getText());
-				textList.add(textField_15.getText());
-				textList.add(textField_16.getText());
-				textList.add(textField_17.getText());
-				textList.add(textField_18.getText());
-				textList.add(textField_19.getText());
-				textList.add(textField_20.getText());
-				textList.add(textField_23.getText());
-				textList.add(textField_24.getText());
-				textList.add(textField_25.getText());
-				textList.add(textField_26.getText());
-				textList.add(textField_27.getText());
-				textList.add(textField_28.getText());
-				textList.add(textField_29.getText());
-				textList.add(textField_30.getText());
-				textList.add(textField_31.getText());
-				textList.add(textField_32.getText());
-				textList.add(textField_33.getText());
-				textList.add(textField_34.getText());
-				textList.add(textField_35.getText());
-				textList.add(textField_36.getText());
-				textList.add(textField_37.getText());
-				textList.add(textField_38.getText());
-				textList.add(textField_39.getText());
-				textList.add(textField_40.getText());
-				textList.add(textField_41.getText());
-				textList.add(textField_42.getText());
-				textList.add(textField_43.getText());
-				textList.add(textField_44.getText());
-				textList.add(textField_45.getText());
-				textList.add(textField_46.getText());
-				textList.add(textField_47.getText());
-				textList.add(textField_48.getText());
-				textList.add(textField_49.getText());
-				textList.add(textField_50.getText());
-				textList.add(textField_51.getText());
-				textList.add(textField_52.getText());
-				textList.add(textField_53.getText());
-				textList.add(textField_54.getText());
-				textList.add(textField_55.getText());
-				textList.add(textField_56.getText());
-				textList.add(textField_57.getText());
-				textList.add(textField_58.getText());
-				textList.add(textField_59.getText());
-				textList.add(textField_60.getText());
-				textList.add(textField_61.getText());
-				textList.add(textField_62.getText());
-				textList.add(textField_63.getText());
-				textList.add(textField_64.getText());
-				textList.add(textField_65.getText());
-				textList.add(textField_66.getText());
-				textList.add(textField_67.getText());
-				textList.add(textField_68.getText());
-				textList.add(textField_69.getText());
-				textList.add(textField_70.getText());
-				textList.add(textField_71.getText());
-				textList.add(textField_72.getText());
-				textList.add(textField_73.getText());
-				textList.add(textField_74.getText());
-				textList.add(textField_75.getText());
-				textList.add(textField_76.getText());
-				textList.add(textField_77.getText());
-				textList.add(textField_79.getText());
-				textList.add(textField_80.getText());
-				textList.add(textField_81.getText());
-				textList.add(textField_82.getText());
-				textList.add(textField_83.getText());
-				textList.add(textField_84.getText());
-				textList.add(textField_85.getText());
-				
-				TextFieldController textcontroller = new TextFieldController();
-				textcontroller.checkTextFields(textList);
-			}
-		});
-
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBackground(Color.BLACK);
 		separator_1.setOrientation(SwingConstants.VERTICAL);
@@ -2869,10 +2778,115 @@ public class GUI {
 		label_112.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		label_112.setBounds(610, 478, 16, 14);
 		panel_2.add(label_112);
+		
+				JButton btnControl = new JButton("Kontrollera");
+				btnControl.setBounds(659, 853, 100, 23);
+				frame2.getContentPane().add(btnControl);
+				btnControl.setFont(new Font("Tahoma", Font.BOLD, 11));
+				
+						btnControl.addActionListener(new ActionListener() {
+				
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								textfieldList.add(textField);
+								textfieldList.add(textField_1);
+								textfieldList.add(textField_2);
+								textfieldList.add(textField_3);
+								textfieldList.add(textField_4);
+								textfieldList.add(textField_5);
+								textfieldList.add(textField_6);
+								textfieldList.add(textField_7);
+								textfieldList.add(textField_8);
+								textfieldList.add(textField_9);
+								textfieldList.add(textField_10);
+								textfieldList.add(textField_11);
+								textfieldList.add(textField_12);
+								textfieldList.add(textField_13);
+								textfieldList.add(textField_14);
+								textfieldList.add(textField_15);
+								textfieldList.add(textField_16);
+								textfieldList.add(textField_17);
+								textfieldList.add(textField_18);
+								textfieldList.add(textField_19);
+								textfieldList.add(textField_20);
+								textfieldList.add(textField_23);
+								textfieldList.add(textField_24);
+								textfieldList.add(textField_25);
+								textfieldList.add(textField_26);
+								textfieldList.add(textField_27);
+								textfieldList.add(textField_28);
+								textfieldList.add(textField_29);
+								textfieldList.add(textField_30);
+								textfieldList.add(textField_31);
+								textfieldList.add(textField_32);
+								textfieldList.add(textField_33);
+								textfieldList.add(textField_34);
+								textfieldList.add(textField_35);
+								textfieldList.add(textField_36);
+								textfieldList.add(textField_37);
+								textfieldList.add(textField_38);
+								textfieldList.add(textField_39);
+								textfieldList.add(textField_40);
+								textfieldList.add(textField_41);
+								textfieldList.add(textField_42);
+								textfieldList.add(textField_43);
+								textfieldList.add(textField_44);
+								textfieldList.add(textField_45);
+								textfieldList.add(textField_46);
+								textfieldList.add(textField_47);
+								textfieldList.add(textField_48);
+								textfieldList.add(textField_49);
+								textfieldList.add(textField_50);
+								textfieldList.add(textField_51);
+								textfieldList.add(textField_52);
+								textfieldList.add(textField_53);
+								textfieldList.add(textField_54);
+								textfieldList.add(textField_55);
+								textfieldList.add(textField_56);
+								textfieldList.add(textField_57);
+								textfieldList.add(textField_58);
+								textfieldList.add(textField_59);
+								textfieldList.add(textField_60);
+								textfieldList.add(textField_61);
+								textfieldList.add(textField_62);
+								textfieldList.add(textField_63);
+								textfieldList.add(textField_64);
+								textfieldList.add(textField_65);
+								textfieldList.add(textField_66);
+								textfieldList.add(textField_67);
+								textfieldList.add(textField_68);
+								textfieldList.add(textField_69);
+								textfieldList.add(textField_70);
+								textfieldList.add(textField_71);
+								textfieldList.add(textField_72);
+								textfieldList.add(textField_73);
+								textfieldList.add(textField_74);
+								textfieldList.add(textField_75);
+								textfieldList.add(textField_76);
+								textfieldList.add(textField_77);
+								textfieldList.add(textField_79);
+								textfieldList.add(textField_80);
+								textfieldList.add(textField_81);
+								textfieldList.add(textField_82);
+								textfieldList.add(textField_83);
+								textfieldList.add(textField_84);
+								textfieldList.add(textField_85);
+								textfieldList.add(txtPersonalKost);
+				
+								TextFieldController textcontroller = new TextFieldController();
+								ArrayList<JTextField> wrongList = textcontroller.checkTextFields(textfieldList);
+				
+								for (int i = 0; i < wrongList.size(); i++) {
+									wrongList.get(i).setBackground(Color.RED);
+									
+									if(textfieldList.get(i).getText().length() != 0)
+										textfieldList.get(i).setBackground(Color.WHITE);
+								}
+							}
+						});
 
 		frame2.setResizable(false);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame2.setVisible(true);
-
 	}
 }
