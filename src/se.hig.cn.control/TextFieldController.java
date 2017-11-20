@@ -20,15 +20,21 @@ public class TextFieldController {
 	 * @param textfieldList - Lista med alla textfält från GUI-klassen.
 	 * @return wrongList - Lista med alla textfält som är inkorrekta.
 	 */
-	public ArrayList<JTextField> checkTextFields(ArrayList<JTextField> textfieldList) {
+	public ArrayList<JTextField> checkTextFields(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList) {
 		
-		for(int i = 0; i < textfieldList.size(); i++) {
-			if(textfieldList.get(i).getText().length() == 0)
-				wrongList.add(textfieldList.get(i));
+		for(int i = 0; i < numericAList.size(); i++) {
+			if(numericAList.get(i).getText().length() > 0 && !numericAList.get(i).getText().matches("[-0-9]+") || numericAList.get(i).getText().length() > 14)
+				wrongList.add(numericAList.get(i));
 		}
 		
-		for (int i = 0; i < wrongList.size(); i++) {
-			System.out.println(i + ". " + wrongList.get(i).getText());
+		for(int i = 0; i < numericBList.size(); i++) {
+			if(numericBList.get(i).getText().length() > 0 && !numericBList.get(i).getText().matches("[0-9]+") || numericBList.get(i).getText().length() > 13)
+				wrongList.add(numericBList.get(i));
+		}
+		
+		if(numericBList.get(2).getText().length() > 0 && numericBList.get(3).getText().length() > 0) {
+			wrongList.add(numericBList.get(2));
+			wrongList.add(numericBList.get(3));
 		}
 
 		return wrongList;
