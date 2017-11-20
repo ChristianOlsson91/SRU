@@ -39,98 +39,100 @@ import javax.swing.border.LineBorder;
  */
 public class GUI {
 
-	private ArrayList<JTextField> textfieldList = new ArrayList<>();
+	private ArrayList<JTextField> numericAList = new ArrayList<>();
+	private ArrayList<JTextField> numericBList = new ArrayList<>();
+	// private ArrayList<JTextField>
 	private JFrame frame2;
 	private JTextField textField_tom;
-	private JTextField txtDate;
-	private JTextField txtOrgnr;
+	private JTextField textField_Datframst;
+	private JTextField textField_PersOrgnr;
 	private JTextField textField_fom;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_20;
-	private JTextField textField_23;
-	private JTextField textField_24;
-	private JTextField textField_25;
-	private JTextField textField_26;
-	private JTextField textField_27;
-	private JTextField textField_28;
-	private JTextField textField_29;
-	private JTextField textField_30;
-	private JTextField textField_32;
-	private JTextField textField_33;
-	private JTextField textField_34;
-	private JTextField textField_50;
-	private JTextField textField_31;
-	private JTextField textField_51;
-	private JTextField textField_35;
-	private JTextField textField_36;
-	private JTextField textField_37;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_38;
-	private JTextField textField_39;
-	private JTextField textField_40;
-	private JTextField textField_41;
-	private JTextField textField_42;
-	private JTextField textField_43;
-	private JTextField textField_44;
-	private JTextField textField_45;
-	private JTextField textField_46;
-	private JTextField textField_47;
-	private JTextField textField_48;
-	private JTextField textField_8;
-	private JTextField textField_54;
-	private JTextField textField_49;
-	private JTextField textField_52;
-	private JTextField textField_53;
-	private JTextField textField_55;
-	private JTextField textField_56;
-	private JTextField textField_57;
-	private JTextField textField_59;
-	private JTextField textField_60;
-	private JTextField textField_61;
-	private JTextField textField_62;
-	private JTextField textField_64;
-	private JTextField textField_65;
-	private JTextField textField_66;
-	private JTextField textField_67;
-	private JTextField textField_68;
-	private JTextField textField_69;
-	private JTextField textField_71;
-	private JTextField textField_72;
-	private JTextField textField_73;
-	private JTextField textField_74;
-	private JTextField textField_75;
+	private JTextField textField2_1;
+	private JTextField textField2_2;
+	private JTextField textField2_3;
+	private JTextField textField2_4;
+	private JTextField textField2_5;
+	private JTextField textField2_6;
+	private JTextField textField2_7;
+	private JTextField textField2_8;
+	private JTextField textField2_9;
+	private JTextField textField2_10;
+	private JTextField textField2_11;
+	private JTextField textField2_12;
+	private JTextField textField2_16;
+	private JTextField textField2_13;
+	private JTextField textField2_14;
+	private JTextField textField2_15;
+	private JTextField textField2_17;
+	private JTextField textField2_19;
+	private JTextField textField2_22;
+	private JTextField textField2_23;
+	private JTextField textField2_18;
+	private JTextField textField2_20;
+	private JTextField textField2_21;
+	private JTextField textField2_24;
+	private JTextField textField2_25;
+	private JTextField textField2_26;
+	private JTextField textField2_27;
+	private JTextField textField2_28;
+	private JTextField textField2_29;
+	private JTextField textField2_30;
+	private JTextField textField2_31;
+	private JTextField textField2_32;
+	private JTextField textField2_33;
+	private JTextField textField2_34;
+	private JTextField textField2_35;
+	private JTextField textField2_36;
+	private JTextField textField2_37;
+	private JTextField textField2_43;
+	private JTextField textField2_40;
+	private JTextField textField2_41;
+	private JTextField textField2_42;
+	private JTextField textField2_44;
+	private JTextField textField2_46;
+	private JTextField textField2_49;
+	private JTextField textField2_50;
+	private JTextField textField2_45;
+	private JTextField textField2_47;
+	private JTextField textField2_48;
+	private JTextField textField2_38;
+	private JTextField textField2_39;
+	private JTextField textField3_1;
+	private JTextField textField3_2;
+	private JTextField textField3_3;
+	private JTextField textField3_4;
+	private JTextField textField3_5;
+	private JTextField textField3_7;
+	private JTextField textField3_10;
+	private JTextField textField3_12;
+	private JTextField textField3_12_2;
+	private JTextField textField3_13;
+	private JTextField textField3_14_2;
+	private JTextField textField3_15;
+	private JTextField textField3_16;
+	private JTextField textField3_18;
+	private JTextField textField3_20;
+	private JTextField textField3_23;
+	private JTextField textField3_19;
+	private JTextField textField3_21;
+	private JTextField textField3_22;
+	private JTextField textField3_13_2;
+	private JTextField textField3_14;
 
 	JPanel panel, panel_1, panel_2;
-	private JTextField textField_76;
-	private JTextField textField_77;
-	private JTextField txtPersonalKost;
-	private JTextField textField_58;
-	private JTextField textField_79;
-	private JTextField textField_63;
-	private JTextField textField_70;
-	private JTextField textField_80;
-	private JTextField textField_81;
-	private JTextField textField_82;
-	private JTextField textField_83;
-	private JTextField textField_84;
-	private JTextField textField_85;
+	private JTextField textField3_2_2;
+	private JTextField textField3_6;
+	private JTextField textField3_8;
+	private JTextField textField3_9;
+	private JTextField textField3_11;
+	private JTextField textField3_17;
+	private JTextField textField3_24_2;
+	private JTextField textField3_24;
+	private JTextField textField3_25_2;
+	private JTextField textField3_25;
+	private JTextField textField3_26;
+	private JTextField textField3_27;
+	private JTextField textField3_28;
 	private JTextField txtRkernskapsr;
 	private JMenuBar menubar;
 	private JMenu menu;
@@ -197,10 +199,10 @@ public class GUI {
 		lblTom.setBounds(242, 88, 89, 14);
 		orgPanel.add(lblTom);
 
-		txtDate = new JTextField();
-		txtDate.setColumns(10);
-		txtDate.setBounds(551, 102, 190, 30);
-		orgPanel.add(txtDate);
+		textField_Datframst = new JTextField();
+		textField_Datframst.setColumns(10);
+		textField_Datframst.setBounds(551, 102, 190, 30);
+		orgPanel.add(textField_Datframst);
 
 		JLabel lblDatumNrBlanketen = new JLabel("Datum när blanketten fylls i");
 		lblDatumNrBlanketen.setHorizontalAlignment(SwingConstants.LEFT);
@@ -214,10 +216,10 @@ public class GUI {
 		label_18.setBounds(365, 88, 158, 14);
 		orgPanel.add(label_18);
 
-		txtOrgnr = new JTextField();
-		txtOrgnr.setColumns(10);
-		txtOrgnr.setBounds(365, 102, 187, 30);
-		orgPanel.add(txtOrgnr);
+		textField_PersOrgnr = new JTextField();
+		textField_PersOrgnr.setColumns(10);
+		textField_PersOrgnr.setBounds(365, 102, 187, 30);
+		orgPanel.add(textField_PersOrgnr);
 
 		textField_fom = new JTextField();
 		textField_fom.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -285,12 +287,12 @@ public class GUI {
 		label_27.setBounds(5, 47, 25, 14);
 		panel.add(label_27);
 
-		textField_12 = new JTextField();
-		textField_12.setName("7201");
-		textField_12.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_12.setColumns(10);
-		textField_12.setBounds(231, 47, 126, 25);
-		panel.add(textField_12);
+		textField2_1 = new JTextField();
+		textField2_1.setName("7201");
+		textField2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_1.setColumns(10);
+		textField2_1.setBounds(231, 47, 126, 25);
+		panel.add(textField2_1);
 
 		JSeparator separator_29 = new JSeparator();
 		separator_29.setBackground(Color.BLACK);
@@ -309,12 +311,12 @@ public class GUI {
 		label_29.setBounds(5, 107, 25, 14);
 		panel.add(label_29);
 
-		textField_13 = new JTextField();
-		textField_13.setName("7202");
-		textField_13.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_13.setColumns(10);
-		textField_13.setBounds(231, 109, 126, 25);
-		panel.add(textField_13);
+		textField2_2 = new JTextField();
+		textField2_2.setName("7202");
+		textField2_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_2.setColumns(10);
+		textField2_2.setBounds(231, 109, 126, 25);
+		panel.add(textField2_2);
 
 		JLabel label_30 = new JLabel("2.3");
 		label_30.setHorizontalAlignment(SwingConstants.LEFT);
@@ -322,12 +324,12 @@ public class GUI {
 		label_30.setBounds(5, 176, 25, 14);
 		panel.add(label_30);
 
-		textField_14 = new JTextField();
-		textField_14.setName("7214");
-		textField_14.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_14.setColumns(10);
-		textField_14.setBounds(231, 161, 126, 25);
-		panel.add(textField_14);
+		textField2_3 = new JTextField();
+		textField2_3.setName("7214");
+		textField2_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_3.setColumns(10);
+		textField2_3.setBounds(231, 161, 126, 25);
+		panel.add(textField2_3);
 
 		JTextArea textArea_12 = new JTextArea();
 		textArea_12.setEditable(false);
@@ -384,12 +386,12 @@ public class GUI {
 		label_32.setBounds(5, 209, 25, 14);
 		panel.add(label_32);
 
-		textField_15 = new JTextField();
-		textField_15.setName("7215");
-		textField_15.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_15.setColumns(10);
-		textField_15.setBounds(231, 209, 126, 25);
-		panel.add(textField_15);
+		textField2_4 = new JTextField();
+		textField2_4.setName("7215");
+		textField2_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_4.setColumns(10);
+		textField2_4.setBounds(231, 209, 126, 25);
+		panel.add(textField2_4);
 
 		JTextArea textArea_16 = new JTextArea();
 		textArea_16.setEditable(false);
@@ -405,12 +407,12 @@ public class GUI {
 		label_33.setBounds(5, 260, 25, 14);
 		panel.add(label_33);
 
-		textField_16 = new JTextField();
-		textField_16.setName("7216");
-		textField_16.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_16.setColumns(10);
-		textField_16.setBounds(231, 260, 126, 25);
-		panel.add(textField_16);
+		textField2_5 = new JTextField();
+		textField2_5.setName("7216");
+		textField2_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_5.setColumns(10);
+		textField2_5.setBounds(231, 260, 126, 25);
+		panel.add(textField2_5);
 
 		JSeparator separator_32 = new JSeparator();
 		separator_32.setBackground(Color.BLACK);
@@ -436,12 +438,12 @@ public class GUI {
 		label_34.setBounds(5, 303, 25, 14);
 		panel.add(label_34);
 
-		textField_17 = new JTextField();
-		textField_17.setName("7217");
-		textField_17.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_17.setColumns(10);
-		textField_17.setBounds(231, 319, 126, 25);
-		panel.add(textField_17);
+		textField2_6 = new JTextField();
+		textField2_6.setName("7217");
+		textField2_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_6.setColumns(10);
+		textField2_6.setBounds(231, 319, 126, 25);
+		panel.add(textField2_6);
 
 		JSeparator separator_34 = new JSeparator();
 		separator_34.setBackground(Color.BLACK);
@@ -468,12 +470,12 @@ public class GUI {
 		label_36.setBounds(5, 383, 25, 14);
 		panel.add(label_36);
 
-		textField_18 = new JTextField();
-		textField_18.setName("7230");
-		textField_18.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_18.setColumns(10);
-		textField_18.setBounds(231, 371, 126, 25);
-		panel.add(textField_18);
+		textField2_7 = new JTextField();
+		textField2_7.setName("7230");
+		textField2_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_7.setColumns(10);
+		textField2_7.setBounds(231, 371, 126, 25);
+		panel.add(textField2_7);
 
 		JSeparator separator_35 = new JSeparator();
 		separator_35.setBackground(Color.BLACK);
@@ -494,12 +496,12 @@ public class GUI {
 		label_37.setBounds(5, 422, 25, 14);
 		panel.add(label_37);
 
-		textField_19 = new JTextField();
-		textField_19.setName("7231");
-		textField_19.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_19.setColumns(10);
-		textField_19.setBounds(231, 420, 126, 25);
-		panel.add(textField_19);
+		textField2_8 = new JTextField();
+		textField2_8.setName("7231");
+		textField2_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_8.setColumns(10);
+		textField2_8.setBounds(231, 420, 126, 25);
+		panel.add(textField2_8);
 
 		JSeparator separator_36 = new JSeparator();
 		separator_36.setBackground(Color.BLACK);
@@ -520,12 +522,12 @@ public class GUI {
 		label_38.setBounds(5, 463, 25, 14);
 		panel.add(label_38);
 
-		textField_20 = new JTextField();
-		textField_20.setName("7232");
-		textField_20.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_20.setColumns(10);
-		textField_20.setBounds(231, 469, 126, 25);
-		panel.add(textField_20);
+		textField2_9 = new JTextField();
+		textField2_9.setName("7232");
+		textField2_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_9.setColumns(10);
+		textField2_9.setBounds(231, 469, 126, 25);
+		panel.add(textField2_9);
 
 		JSeparator separator_37 = new JSeparator();
 		separator_37.setBackground(Color.BLACK);
@@ -546,12 +548,12 @@ public class GUI {
 		label_39.setBounds(5, 506, 35, 14);
 		panel.add(label_39);
 
-		textField_23 = new JTextField();
-		textField_23.setName("7233");
-		textField_23.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_23.setColumns(10);
-		textField_23.setBounds(231, 512, 126, 25);
-		panel.add(textField_23);
+		textField2_10 = new JTextField();
+		textField2_10.setName("7233");
+		textField2_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_10.setColumns(10);
+		textField2_10.setBounds(231, 512, 126, 25);
+		panel.add(textField2_10);
 
 		JSeparator separator_38 = new JSeparator();
 		separator_38.setBackground(Color.BLACK);
@@ -572,12 +574,12 @@ public class GUI {
 		label_40.setBounds(5, 555, 35, 14);
 		panel.add(label_40);
 
-		textField_24 = new JTextField();
-		textField_24.setName("7234");
-		textField_24.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_24.setColumns(10);
-		textField_24.setBounds(231, 561, 126, 25);
-		panel.add(textField_24);
+		textField2_11 = new JTextField();
+		textField2_11.setName("7234");
+		textField2_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_11.setColumns(10);
+		textField2_11.setBounds(231, 561, 126, 25);
+		panel.add(textField2_11);
 
 		JSeparator separator_39 = new JSeparator();
 		separator_39.setBackground(Color.BLACK);
@@ -598,23 +600,23 @@ public class GUI {
 		textArea_23.setBounds(36, 611, 161, 23);
 		panel.add(textArea_23);
 
-		textField_25 = new JTextField();
-		textField_25.setName("7235");
-		textField_25.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_25.setColumns(10);
-		textField_25.setBounds(231, 610, 126, 25);
-		panel.add(textField_25);
+		textField2_12 = new JTextField();
+		textField2_12.setName("7235");
+		textField2_12.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_12.setColumns(10);
+		textField2_12.setBounds(231, 610, 126, 25);
+		panel.add(textField2_12);
 
 		JLabel lblTillgngaranlggningstillgngar = new JLabel("Tillgångar/Anläggningstillgångar");
 		lblTillgngaranlggningstillgngar.setFont(new Font("Tahoma", Font.BOLD, 18));
 		lblTillgngaranlggningstillgngar.setBounds(5, 5, 360, 22);
 		panel.add(lblTillgngaranlggningstillgngar);
 
-		textField_26 = new JTextField();
-		textField_26.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_26.setColumns(10);
-		textField_26.setBounds(615, 159, 126, 25);
-		panel.add(textField_26);
+		textField2_16 = new JTextField();
+		textField2_16.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_16.setColumns(10);
+		textField2_16.setBounds(615, 159, 126, 25);
+		panel.add(textField2_16);
 
 		JLabel label_43 = new JLabel("Varulager");
 		label_43.setHorizontalAlignment(SwingConstants.LEFT);
@@ -627,11 +629,11 @@ public class GUI {
 		label_44.setBounds(367, 5, 360, 22);
 		panel.add(label_44);
 
-		textField_27 = new JTextField();
-		textField_27.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_27.setColumns(10);
-		textField_27.setBounds(615, 47, 126, 25);
-		panel.add(textField_27);
+		textField2_13 = new JTextField();
+		textField2_13.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_13.setColumns(10);
+		textField2_13.setBounds(615, 47, 126, 25);
+		panel.add(textField2_13);
 
 		JTextArea textArea_24 = new JTextArea();
 		textArea_24.setEditable(false);
@@ -661,17 +663,17 @@ public class GUI {
 		textArea_25.setBounds(415, 85, 152, 15);
 		panel.add(textArea_25);
 
-		textField_28 = new JTextField();
-		textField_28.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_28.setColumns(10);
-		textField_28.setBounds(615, 85, 126, 25);
-		panel.add(textField_28);
+		textField2_14 = new JTextField();
+		textField2_14.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_14.setColumns(10);
+		textField2_14.setBounds(615, 85, 126, 25);
+		panel.add(textField2_14);
 
-		textField_29 = new JTextField();
-		textField_29.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_29.setColumns(10);
-		textField_29.setBounds(615, 122, 126, 25);
-		panel.add(textField_29);
+		textField2_15 = new JTextField();
+		textField2_15.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_15.setColumns(10);
+		textField2_15.setBounds(615, 122, 126, 25);
+		panel.add(textField2_15);
 
 		JTextArea txtrFrdigaVarorOch = new JTextArea();
 		txtrFrdigaVarorOch.setEditable(false);
@@ -712,11 +714,11 @@ public class GUI {
 		separator_43.setBounds(367, 151, 393, 6);
 		panel.add(separator_43);
 
-		textField_30 = new JTextField();
-		textField_30.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_30.setColumns(10);
-		textField_30.setBounds(615, 201, 126, 25);
-		panel.add(textField_30);
+		textField2_17 = new JTextField();
+		textField2_17.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_17.setColumns(10);
+		textField2_17.setBounds(615, 201, 126, 25);
+		panel.add(textField2_17);
 
 		JTextArea txtrPgendeArbetenFr = new JTextArea();
 		txtrPgendeArbetenFr.setEditable(false);
@@ -737,11 +739,11 @@ public class GUI {
 		separator_45.setBounds(368, 237, 395, 2);
 		panel.add(separator_45);
 
-		textField_32 = new JTextField();
-		textField_32.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_32.setColumns(10);
-		textField_32.setBounds(615, 285, 126, 25);
-		panel.add(textField_32);
+		textField2_19 = new JTextField();
+		textField2_19.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_19.setColumns(10);
+		textField2_19.setBounds(615, 285, 126, 25);
+		panel.add(textField2_19);
 
 		JTextArea txtrKundfordringar = new JTextArea();
 		txtrKundfordringar.setEditable(false);
@@ -777,17 +779,17 @@ public class GUI {
 		txtrUpparbetadMenEj.setBounds(415, 400, 150, 35);
 		panel.add(txtrUpparbetadMenEj);
 
-		textField_33 = new JTextField();
-		textField_33.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_33.setColumns(10);
-		textField_33.setBounds(615, 402, 126, 25);
-		panel.add(textField_33);
+		textField2_22 = new JTextField();
+		textField2_22.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_22.setColumns(10);
+		textField2_22.setBounds(615, 402, 126, 25);
+		panel.add(textField2_22);
 
-		textField_34 = new JTextField();
-		textField_34.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_34.setColumns(10);
-		textField_34.setBounds(615, 445, 125, 25);
-		panel.add(textField_34);
+		textField2_23 = new JTextField();
+		textField2_23.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_23.setColumns(10);
+		textField2_23.setBounds(615, 445, 125, 25);
+		panel.add(textField2_23);
 
 		JTextArea txtrFrutbetaldaKostnaderOch = new JTextArea();
 		txtrFrutbetaldaKostnaderOch.setEditable(false);
@@ -843,11 +845,11 @@ public class GUI {
 		label_63.setBounds(376, 250, 35, 14);
 		panel.add(label_63);
 
-		textField_50 = new JTextField();
-		textField_50.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_50.setColumns(10);
-		textField_50.setBounds(615, 245, 126, 25);
-		panel.add(textField_50);
+		textField2_18 = new JTextField();
+		textField2_18.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_18.setColumns(10);
+		textField2_18.setBounds(615, 245, 126, 25);
+		panel.add(textField2_18);
 
 		JSeparator separator_44 = new JSeparator();
 		separator_44.setBackground(Color.BLACK);
@@ -873,12 +875,12 @@ public class GUI {
 		txtrFordringarHosKoncern.setBounds(415, 320, 155, 30);
 		panel.add(txtrFordringarHosKoncern);
 
-		textField_31 = new JTextField();
-		textField_31.setBackground(Color.WHITE);
-		textField_31.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_31.setColumns(10);
-		textField_31.setBounds(615, 327, 126, 25);
-		panel.add(textField_31);
+		textField2_20 = new JTextField();
+		textField2_20.setBackground(Color.WHITE);
+		textField2_20.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_20.setColumns(10);
+		textField2_20.setBounds(615, 327, 126, 25);
+		panel.add(textField2_20);
 
 		JSeparator separator_56 = new JSeparator();
 		separator_56.setBackground(Color.BLACK);
@@ -904,22 +906,22 @@ public class GUI {
 		separator_46.setBounds(368, 395, 395, 2);
 		panel.add(separator_46);
 
-		textField_51 = new JTextField();
-		textField_51.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_51.setColumns(10);
-		textField_51.setBounds(616, 365, 126, 25);
-		panel.add(textField_51);
+		textField2_21 = new JTextField();
+		textField2_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_21.setColumns(10);
+		textField2_21.setBounds(616, 365, 126, 25);
+		panel.add(textField2_21);
 
 		JSeparator separator_47 = new JSeparator();
 		separator_47.setBackground(Color.BLACK);
 		separator_47.setBounds(368, 481, 395, 2);
 		panel.add(separator_47);
 
-		textField_35 = new JTextField();
-		textField_35.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_35.setColumns(10);
-		textField_35.setBounds(615, 490, 126, 25);
-		panel.add(textField_35);
+		textField2_24 = new JTextField();
+		textField2_24.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_24.setColumns(10);
+		textField2_24.setBounds(615, 490, 126, 25);
+		panel.add(textField2_24);
 
 		JLabel lblKortfristigaPlaceringar = new JLabel("Kortfristiga placeringar");
 		lblKortfristigaPlaceringar.setHorizontalAlignment(SwingConstants.LEFT);
@@ -951,11 +953,11 @@ public class GUI {
 		separator_50.setBounds(368, 561, 395, 2);
 		panel.add(separator_50);
 
-		textField_36 = new JTextField();
-		textField_36.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_36.setColumns(10);
-		textField_36.setBounds(616, 531, 126, 25);
-		panel.add(textField_36);
+		textField2_25 = new JTextField();
+		textField2_25.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_25.setColumns(10);
+		textField2_25.setBounds(616, 531, 126, 25);
+		panel.add(textField2_25);
 
 		JTextArea txtrvrigaKortfristigaPlaceringar = new JTextArea();
 		txtrvrigaKortfristigaPlaceringar.setEditable(false);
@@ -977,11 +979,11 @@ public class GUI {
 		lblKassaOchBank.setBounds(376, 564, 188, 14);
 		panel.add(lblKassaOchBank);
 
-		textField_37 = new JTextField();
-		textField_37.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_37.setColumns(10);
-		textField_37.setBounds(615, 574, 126, 25);
-		panel.add(textField_37);
+		textField2_26 = new JTextField();
+		textField2_26.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_26.setColumns(10);
+		textField2_26.setBounds(615, 574, 126, 25);
+		panel.add(textField2_26);
 
 		JTextArea txtrKassaBankOch = new JTextArea();
 		txtrKassaBankOch.setEditable(false);
@@ -1036,12 +1038,12 @@ public class GUI {
 		label.setBounds(5, 45, 34, 15);
 		panel_1.add(label);
 
-		textField = new JTextField();
-		textField.setName("7201");
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField.setColumns(10);
-		textField.setBounds(231, 40, 126, 25);
-		panel_1.add(textField);
+		textField2_27 = new JTextField();
+		textField2_27.setName("7201");
+		textField2_27.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_27.setColumns(10);
+		textField2_27.setBounds(231, 40, 126, 25);
+		panel_1.add(textField2_27);
 
 		JSeparator separator_3 = new JSeparator();
 		separator_3.setBackground(Color.BLACK);
@@ -1054,12 +1056,12 @@ public class GUI {
 		label_2.setBounds(5, 80, 34, 14);
 		panel_1.add(label_2);
 
-		textField_1 = new JTextField();
-		textField_1.setName("7202");
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBounds(231, 80, 126, 25);
-		panel_1.add(textField_1);
+		textField2_28 = new JTextField();
+		textField2_28.setName("7202");
+		textField2_28.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_28.setColumns(10);
+		textField2_28.setBounds(231, 80, 126, 25);
+		panel_1.add(textField2_28);
 
 		JLabel label_3 = new JLabel("2.29");
 		label_3.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1067,12 +1069,12 @@ public class GUI {
 		label_3.setBounds(5, 170, 34, 15);
 		panel_1.add(label_3);
 
-		textField_2 = new JTextField();
-		textField_2.setName("7214");
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_2.setColumns(10);
-		textField_2.setBounds(231, 160, 126, 25);
-		panel_1.add(textField_2);
+		textField2_29 = new JTextField();
+		textField2_29.setName("7214");
+		textField2_29.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_29.setColumns(10);
+		textField2_29.setBounds(231, 160, 126, 25);
+		panel_1.add(textField2_29);
 
 		JTextArea txtrBundetEgetKapital = new JTextArea();
 		txtrBundetEgetKapital.setEditable(false);
@@ -1128,12 +1130,12 @@ public class GUI {
 		label_5.setBounds(5, 209, 34, 14);
 		panel_1.add(label_5);
 
-		textField_3 = new JTextField();
-		textField_3.setName("7215");
-		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_3.setColumns(10);
-		textField_3.setBounds(231, 209, 126, 25);
-		panel_1.add(textField_3);
+		textField2_30 = new JTextField();
+		textField2_30.setName("7215");
+		textField2_30.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_30.setColumns(10);
+		textField2_30.setBounds(231, 209, 126, 25);
+		panel_1.add(textField2_30);
 
 		JTextArea txtrvrigaObeskattadeReserver = new JTextArea();
 		txtrvrigaObeskattadeReserver.setEditable(false);
@@ -1149,12 +1151,12 @@ public class GUI {
 		label_6.setBounds(5, 260, 34, 14);
 		panel_1.add(label_6);
 
-		textField_4 = new JTextField();
-		textField_4.setName("7216");
-		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_4.setColumns(10);
-		textField_4.setBounds(231, 260, 126, 25);
-		panel_1.add(textField_4);
+		textField2_31 = new JTextField();
+		textField2_31.setName("7216");
+		textField2_31.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_31.setColumns(10);
+		textField2_31.setBounds(231, 260, 126, 25);
+		panel_1.add(textField2_31);
 
 		JSeparator separator_6 = new JSeparator();
 		separator_6.setBackground(Color.BLACK);
@@ -1181,12 +1183,12 @@ public class GUI {
 		label_7.setBounds(5, 315, 34, 14);
 		panel_1.add(label_7);
 
-		textField_5 = new JTextField();
-		textField_5.setName("7217");
-		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_5.setColumns(10);
-		textField_5.setBounds(231, 315, 126, 25);
-		panel_1.add(textField_5);
+		textField2_32 = new JTextField();
+		textField2_32.setName("7217");
+		textField2_32.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_32.setColumns(10);
+		textField2_32.setBounds(231, 315, 126, 25);
+		panel_1.add(textField2_32);
 
 		JSeparator separator_8 = new JSeparator();
 		separator_8.setBackground(Color.BLACK);
@@ -1207,12 +1209,12 @@ public class GUI {
 		label_9.setBounds(5, 385, 34, 14);
 		panel_1.add(label_9);
 
-		textField_6 = new JTextField();
-		textField_6.setName("7230");
-		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_6.setColumns(10);
-		textField_6.setBounds(231, 385, 126, 25);
-		panel_1.add(textField_6);
+		textField2_33 = new JTextField();
+		textField2_33.setName("7230");
+		textField2_33.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_33.setColumns(10);
+		textField2_33.setBounds(231, 385, 126, 25);
+		panel_1.add(textField2_33);
 
 		JSeparator separator_9 = new JSeparator();
 		separator_9.setBackground(Color.BLACK);
@@ -1233,12 +1235,12 @@ public class GUI {
 		label_10.setBounds(5, 425, 34, 14);
 		panel_1.add(label_10);
 
-		textField_7 = new JTextField();
-		textField_7.setName("7231");
-		textField_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_7.setColumns(10);
-		textField_7.setBounds(231, 425, 126, 25);
-		panel_1.add(textField_7);
+		textField2_34 = new JTextField();
+		textField2_34.setName("7231");
+		textField2_34.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_34.setColumns(10);
+		textField2_34.setBounds(231, 425, 126, 25);
+		panel_1.add(textField2_34);
 
 		JSeparator separator_10 = new JSeparator();
 		separator_10.setBackground(Color.BLACK);
@@ -1264,12 +1266,12 @@ public class GUI {
 		label_12.setBounds(5, 505, 35, 14);
 		panel_1.add(label_12);
 
-		textField_9 = new JTextField();
-		textField_9.setName("7233");
-		textField_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_9.setColumns(10);
-		textField_9.setBounds(231, 500, 126, 25);
-		panel_1.add(textField_9);
+		textField2_35 = new JTextField();
+		textField2_35.setName("7233");
+		textField2_35.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_35.setColumns(10);
+		textField2_35.setBounds(231, 500, 126, 25);
+		panel_1.add(textField2_35);
 
 		JSeparator separator_12 = new JSeparator();
 		separator_12.setBackground(Color.BLACK);
@@ -1290,12 +1292,12 @@ public class GUI {
 		label_13.setBounds(5, 537, 35, 14);
 		panel_1.add(label_13);
 
-		textField_10 = new JTextField();
-		textField_10.setName("7234");
-		textField_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_10.setColumns(10);
-		textField_10.setBounds(231, 537, 126, 25);
-		panel_1.add(textField_10);
+		textField2_36 = new JTextField();
+		textField2_36.setName("7234");
+		textField2_36.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_36.setColumns(10);
+		textField2_36.setBounds(231, 537, 126, 25);
+		panel_1.add(textField2_36);
 
 		JSeparator separator_13 = new JSeparator();
 		separator_13.setBackground(Color.BLACK);
@@ -1316,12 +1318,12 @@ public class GUI {
 		txtrvrigaSkulderTill.setBounds(50, 573, 161, 20);
 		panel_1.add(txtrvrigaSkulderTill);
 
-		textField_11 = new JTextField();
-		textField_11.setName("7235");
-		textField_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_11.setColumns(10);
-		textField_11.setBounds(231, 573, 126, 25);
-		panel_1.add(textField_11);
+		textField2_37 = new JTextField();
+		textField2_37.setName("7235");
+		textField2_37.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_37.setColumns(10);
+		textField2_37.setBounds(231, 573, 126, 25);
+		panel_1.add(textField2_37);
 
 		JSeparator separator_14 = new JSeparator();
 		separator_14.setBackground(Color.BLACK);
@@ -1333,11 +1335,11 @@ public class GUI {
 		lblEgetKapital.setBounds(5, 5, 360, 22);
 		panel_1.add(lblEgetKapital);
 
-		textField_38 = new JTextField();
-		textField_38.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_38.setColumns(10);
-		textField_38.setBounds(615, 160, 126, 25);
-		panel_1.add(textField_38);
+		textField2_43 = new JTextField();
+		textField2_43.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_43.setColumns(10);
+		textField2_43.setBounds(615, 160, 126, 25);
+		panel_1.add(textField2_43);
 
 		JLabel lblVarulagerkortfristigaSkulder = new JLabel("Kortfristiga skulder");
 		lblVarulagerkortfristigaSkulder.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1345,11 +1347,11 @@ public class GUI {
 		lblVarulagerkortfristigaSkulder.setBounds(376, 37, 207, 14);
 		panel_1.add(lblVarulagerkortfristigaSkulder);
 
-		textField_39 = new JTextField();
-		textField_39.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_39.setColumns(10);
-		textField_39.setBounds(615, 40, 126, 25);
-		panel_1.add(textField_39);
+		textField2_40 = new JTextField();
+		textField2_40.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_40.setColumns(10);
+		textField2_40.setBounds(615, 40, 126, 25);
+		panel_1.add(textField2_40);
 
 		JTextArea txtrCheckrkningskredit_1 = new JTextArea();
 		txtrCheckrkningskredit_1.setEditable(false);
@@ -1379,17 +1381,17 @@ public class GUI {
 		txtrvrigaSkulderTill_1.setBounds(425, 80, 152, 31);
 		panel_1.add(txtrvrigaSkulderTill_1);
 
-		textField_40 = new JTextField();
-		textField_40.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_40.setColumns(10);
-		textField_40.setBounds(615, 80, 126, 25);
-		panel_1.add(textField_40);
+		textField2_41 = new JTextField();
+		textField2_41.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_41.setColumns(10);
+		textField2_41.setBounds(615, 80, 126, 25);
+		panel_1.add(textField2_41);
 
-		textField_41 = new JTextField();
-		textField_41.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_41.setColumns(10);
-		textField_41.setBounds(615, 120, 126, 25);
-		panel_1.add(textField_41);
+		textField2_42 = new JTextField();
+		textField2_42.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_42.setColumns(10);
+		textField2_42.setBounds(615, 120, 126, 25);
+		panel_1.add(textField2_42);
 
 		JTextArea txtrFaktureradMenEj = new JTextArea();
 		txtrFaktureradMenEj.setEditable(false);
@@ -1430,11 +1432,11 @@ public class GUI {
 		separator_16.setBounds(367, 148, 395, 2);
 		panel_1.add(separator_16);
 
-		textField_42 = new JTextField();
-		textField_42.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_42.setColumns(10);
-		textField_42.setBounds(615, 201, 126, 25);
-		panel_1.add(textField_42);
+		textField2_44 = new JTextField();
+		textField2_44.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_44.setColumns(10);
+		textField2_44.setBounds(615, 201, 126, 25);
+		panel_1.add(textField2_44);
 
 		JTextArea txtrFaktureradMenEj_1 = new JTextArea();
 		txtrFaktureradMenEj_1.setEditable(false);
@@ -1455,11 +1457,11 @@ public class GUI {
 		separator_17.setBounds(367, 237, 395, 2);
 		panel_1.add(separator_17);
 
-		textField_43 = new JTextField();
-		textField_43.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_43.setColumns(10);
-		textField_43.setBounds(615, 289, 126, 25);
-		panel_1.add(textField_43);
+		textField2_46 = new JTextField();
+		textField2_46.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_46.setColumns(10);
+		textField2_46.setBounds(615, 289, 126, 25);
+		panel_1.add(textField2_46);
 
 		JTextArea txtrVxelskulder = new JTextArea();
 		txtrVxelskulder.setEditable(false);
@@ -1489,17 +1491,17 @@ public class GUI {
 		txtrvrigaSkulder_1.setBounds(425, 405, 150, 20);
 		panel_1.add(txtrvrigaSkulder_1);
 
-		textField_44 = new JTextField();
-		textField_44.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_44.setColumns(10);
-		textField_44.setBounds(615, 402, 126, 25);
-		panel_1.add(textField_44);
+		textField2_49 = new JTextField();
+		textField2_49.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_49.setColumns(10);
+		textField2_49.setBounds(615, 402, 126, 25);
+		panel_1.add(textField2_49);
 
-		textField_45 = new JTextField();
-		textField_45.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_45.setColumns(10);
-		textField_45.setBounds(616, 450, 125, 25);
-		panel_1.add(textField_45);
+		textField2_50 = new JTextField();
+		textField2_50.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_50.setColumns(10);
+		textField2_50.setBounds(616, 450, 125, 25);
+		panel_1.add(textField2_50);
 
 		JTextArea txtrUpplupnaKostnaderOch = new JTextArea();
 		txtrUpplupnaKostnaderOch.setEditable(false);
@@ -1555,11 +1557,11 @@ public class GUI {
 		label_58.setBounds(376, 250, 35, 14);
 		panel_1.add(label_58);
 
-		textField_46 = new JTextField();
-		textField_46.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_46.setColumns(10);
-		textField_46.setBounds(615, 245, 126, 25);
-		panel_1.add(textField_46);
+		textField2_45 = new JTextField();
+		textField2_45.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_45.setColumns(10);
+		textField2_45.setBounds(615, 245, 126, 25);
+		panel_1.add(textField2_45);
 
 		JSeparator separator_23 = new JSeparator();
 		separator_23.setBackground(Color.BLACK);
@@ -1585,11 +1587,11 @@ public class GUI {
 		txtrSkulderTillKoncern_1.setBounds(425, 322, 155, 32);
 		panel_1.add(txtrSkulderTillKoncern_1);
 
-		textField_47 = new JTextField();
-		textField_47.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_47.setColumns(10);
-		textField_47.setBounds(615, 327, 126, 25);
-		panel_1.add(textField_47);
+		textField2_47 = new JTextField();
+		textField2_47.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_47.setColumns(10);
+		textField2_47.setBounds(615, 327, 126, 25);
+		panel_1.add(textField2_47);
 
 		JSeparator separator_25 = new JSeparator();
 		separator_25.setBackground(Color.BLACK);
@@ -1615,11 +1617,11 @@ public class GUI {
 		separator_26.setBounds(367, 395, 395, 2);
 		panel_1.add(separator_26);
 
-		textField_48 = new JTextField();
-		textField_48.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_48.setColumns(10);
-		textField_48.setBounds(616, 365, 126, 25);
-		panel_1.add(textField_48);
+		textField2_48 = new JTextField();
+		textField2_48.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_48.setColumns(10);
+		textField2_48.setBounds(616, 365, 126, 25);
+		panel_1.add(textField2_48);
 
 		JSeparator separator_27 = new JSeparator();
 		separator_27.setBackground(Color.BLACK);
@@ -1679,12 +1681,12 @@ public class GUI {
 		separator_64.setBounds(0, 601, 367, 2);
 		panel_1.add(separator_64);
 
-		textField_8 = new JTextField();
-		textField_8.setName("7235");
-		textField_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_8.setColumns(10);
-		textField_8.setBounds(231, 610, 126, 25);
-		panel_1.add(textField_8);
+		textField2_38 = new JTextField();
+		textField2_38.setName("7235");
+		textField2_38.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_38.setColumns(10);
+		textField2_38.setBounds(231, 610, 126, 25);
+		panel_1.add(textField2_38);
 
 		JTextArea txtrSkulderTillKoncern = new JTextArea();
 		txtrSkulderTillKoncern.setEditable(false);
@@ -1706,12 +1708,12 @@ public class GUI {
 		label_4.setBounds(376, 5, 35, 14);
 		panel_1.add(label_4);
 
-		textField_54 = new JTextField();
-		textField_54.setName("7235");
-		textField_54.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_54.setColumns(10);
-		textField_54.setBounds(615, 6, 126, 25);
-		panel_1.add(textField_54);
+		textField2_39 = new JTextField();
+		textField2_39.setName("7235");
+		textField2_39.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField2_39.setColumns(10);
+		textField2_39.setBounds(615, 6, 126, 25);
+		panel_1.add(textField2_39);
 
 		JTextArea txtrvrigaSkulder = new JTextArea();
 		txtrvrigaSkulder.setEditable(false);
@@ -1761,12 +1763,12 @@ public class GUI {
 		label_8.setBounds(5, 42, 34, 14);
 		panel_2.add(label_8);
 
-		textField_49 = new JTextField();
-		textField_49.setName("7410");
-		textField_49.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_49.setColumns(10);
-		textField_49.setBounds(260, 42, 100, 25);
-		panel_2.add(textField_49);
+		textField3_1 = new JTextField();
+		textField3_1.setName("7410");
+		textField3_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_1.setColumns(10);
+		textField3_1.setBounds(260, 42, 100, 25);
+		panel_2.add(textField3_1);
 
 		JSeparator separator_58 = new JSeparator();
 		separator_58.setBackground(Color.BLACK);
@@ -1779,12 +1781,12 @@ public class GUI {
 		label_11.setBounds(5, 76, 29, 14);
 		panel_2.add(label_11);
 
-		textField_52 = new JTextField();
-		textField_52.setName("7411");
-		textField_52.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_52.setColumns(10);
-		textField_52.setBounds(260, 76, 100, 25);
-		panel_2.add(textField_52);
+		textField3_2 = new JTextField();
+		textField3_2.setName("7411");
+		textField3_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_2.setColumns(10);
+		textField3_2.setBounds(260, 76, 100, 25);
+		panel_2.add(textField3_2);
 
 		JLabel label_15 = new JLabel("3.3");
 		label_15.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1792,12 +1794,12 @@ public class GUI {
 		label_15.setBounds(5, 144, 34, 14);
 		panel_2.add(label_15);
 
-		textField_53 = new JTextField();
-		textField_53.setName("7412");
-		textField_53.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_53.setColumns(10);
-		textField_53.setBounds(260, 145, 100, 25);
-		panel_2.add(textField_53);
+		textField3_3 = new JTextField();
+		textField3_3.setName("7412");
+		textField3_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_3.setColumns(10);
+		textField3_3.setBounds(260, 145, 100, 25);
+		panel_2.add(textField3_3);
 
 		JTextArea txtrNettoomsttning = new JTextArea();
 		txtrNettoomsttning.setText("Nettoomsättning");
@@ -1848,12 +1850,12 @@ public class GUI {
 		label_17.setBounds(5, 185, 34, 14);
 		panel_2.add(label_17);
 
-		textField_55 = new JTextField();
-		textField_55.setName("7413");
-		textField_55.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_55.setColumns(10);
-		textField_55.setBounds(260, 181, 100, 25);
-		panel_2.add(textField_55);
+		textField3_4 = new JTextField();
+		textField3_4.setName("7413");
+		textField3_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_4.setColumns(10);
+		textField3_4.setBounds(260, 181, 100, 25);
+		panel_2.add(textField3_4);
 
 		JTextArea txtrRvarorOchFrndenheter = new JTextArea();
 		txtrRvarorOchFrndenheter.setText("Råvaror och förnödenheter");
@@ -1869,12 +1871,12 @@ public class GUI {
 		label_24.setBounds(5, 217, 34, 14);
 		panel_2.add(label_24);
 
-		textField_56 = new JTextField();
-		textField_56.setName("7511");
-		textField_56.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_56.setColumns(10);
-		textField_56.setBounds(260, 215, 100, 25);
-		panel_2.add(textField_56);
+		textField3_5 = new JTextField();
+		textField3_5.setName("7511");
+		textField3_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_5.setColumns(10);
+		textField3_5.setBounds(260, 215, 100, 25);
+		panel_2.add(textField3_5);
 
 		JSeparator separator_67 = new JSeparator();
 		separator_67.setBackground(Color.BLACK);
@@ -1886,12 +1888,12 @@ public class GUI {
 		separator_68.setBounds(0, 245, 367, 2);
 		panel_2.add(separator_68);
 
-		textField_57 = new JTextField();
-		textField_57.setName("7513");
-		textField_57.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_57.setColumns(10);
-		textField_57.setBounds(260, 289, 100, 25);
-		panel_2.add(textField_57);
+		textField3_7 = new JTextField();
+		textField3_7.setName("7513");
+		textField3_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_7.setColumns(10);
+		textField3_7.setBounds(260, 289, 100, 25);
+		panel_2.add(textField3_7);
 
 		JSeparator separator_70 = new JSeparator();
 		separator_70.setBackground(Color.BLACK);
@@ -1913,12 +1915,12 @@ public class GUI {
 		label_65.setBounds(5, 420, 34, 14);
 		panel_2.add(label_65);
 
-		textField_59 = new JTextField();
-		textField_59.setName("7516");
-		textField_59.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_59.setColumns(10);
-		textField_59.setBounds(260, 418, 100, 25);
-		panel_2.add(textField_59);
+		textField3_10 = new JTextField();
+		textField3_10.setName("7516");
+		textField3_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_10.setColumns(10);
+		textField3_10.setBounds(260, 418, 100, 25);
+		panel_2.add(textField3_10);
 
 		JSeparator separator_71 = new JSeparator();
 		separator_71.setBackground(Color.BLACK);
@@ -1930,12 +1932,12 @@ public class GUI {
 		separator_72.setBounds(0, 490, 367, 2);
 		panel_2.add(separator_72);
 
-		textField_60 = new JTextField();
-		textField_60.setName("7414");
-		textField_60.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_60.setColumns(10);
-		textField_60.setBounds(260, 497, 100, 25);
-		panel_2.add(textField_60);
+		textField3_12 = new JTextField();
+		textField3_12.setName("7414");
+		textField3_12.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_12.setColumns(10);
+		textField3_12.setBounds(260, 497, 100, 25);
+		panel_2.add(textField3_12);
 
 		JSeparator separator_73 = new JSeparator();
 		separator_73.setBackground(Color.BLACK);
@@ -1956,12 +1958,12 @@ public class GUI {
 		label_67.setBounds(5, 527, 35, 14);
 		panel_2.add(label_67);
 
-		textField_61 = new JTextField();
-		textField_61.setName("7518");
-		textField_61.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_61.setColumns(10);
-		textField_61.setBounds(260, 534, 100, 25);
-		panel_2.add(textField_61);
+		textField3_12_2 = new JTextField();
+		textField3_12_2.setName("7518");
+		textField3_12_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_12_2.setColumns(10);
+		textField3_12_2.setBounds(260, 534, 100, 25);
+		panel_2.add(textField3_12_2);
 
 		JSeparator separator_74 = new JSeparator();
 		separator_74.setBackground(Color.BLACK);
@@ -1982,12 +1984,12 @@ public class GUI {
 		txtrResultatFrnAndelar_1.setBounds(40, 605, 155, 35);
 		panel_2.add(txtrResultatFrnAndelar_1);
 
-		textField_62 = new JTextField();
-		textField_62.setName("7415");
-		textField_62.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_62.setColumns(10);
-		textField_62.setBounds(260, 569, 100, 25);
-		panel_2.add(textField_62);
+		textField3_13 = new JTextField();
+		textField3_13.setName("7415");
+		textField3_13.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_13.setColumns(10);
+		textField3_13.setBounds(260, 569, 100, 25);
+		panel_2.add(textField3_13);
 
 		JSeparator separator_75 = new JSeparator();
 		separator_75.setBackground(Color.BLACK);
@@ -1999,12 +2001,12 @@ public class GUI {
 		lblResultatrkning.setBounds(7, 5, 360, 22);
 		panel_2.add(lblResultatrkning);
 
-		textField_64 = new JTextField();
-		textField_64.setName("7520");
-		textField_64.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_64.setColumns(10);
-		textField_64.setBounds(652, 42, 100, 25);
-		panel_2.add(textField_64);
+		textField3_14_2 = new JTextField();
+		textField3_14_2.setName("7520");
+		textField3_14_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_14_2.setColumns(10);
+		textField3_14_2.setBounds(652, 42, 100, 25);
+		panel_2.add(textField3_14_2);
 
 		JLabel label_72 = new JLabel("3.15");
 		label_72.setHorizontalAlignment(SwingConstants.LEFT);
@@ -2020,17 +2022,17 @@ public class GUI {
 		txtrvrigaRnteintkterOch.setBounds(425, 75, 152, 30);
 		panel_2.add(txtrvrigaRnteintkterOch);
 
-		textField_65 = new JTextField();
-		textField_65.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_65.setColumns(10);
-		textField_65.setBounds(652, 76, 100, 25);
-		panel_2.add(textField_65);
+		textField3_15 = new JTextField();
+		textField3_15.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_15.setColumns(10);
+		textField3_15.setBounds(652, 76, 100, 25);
+		panel_2.add(textField3_15);
 
-		textField_66 = new JTextField();
-		textField_66.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_66.setColumns(10);
-		textField_66.setBounds(652, 129, 100, 25);
-		panel_2.add(textField_66);
+		textField3_16 = new JTextField();
+		textField3_16.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_16.setColumns(10);
+		textField3_16.setBounds(652, 129, 100, 25);
+		panel_2.add(textField3_16);
 
 		JTextArea txtrNedskrivningarAvFinansiella = new JTextArea();
 		txtrNedskrivningarAvFinansiella
@@ -2053,11 +2055,11 @@ public class GUI {
 		separator_76.setBounds(597, 0, 13, 651);
 		panel_2.add(separator_76);
 
-		textField_67 = new JTextField();
-		textField_67.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_67.setColumns(10);
-		textField_67.setBounds(653, 206, 100, 25);
-		panel_2.add(textField_67);
+		textField3_18 = new JTextField();
+		textField3_18.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_18.setColumns(10);
+		textField3_18.setBounds(653, 206, 100, 25);
+		panel_2.add(textField3_18);
 
 		JTextArea txtrExtraordinraIntkter = new JTextArea();
 		txtrExtraordinraIntkter.setText("Extraordinära intäkter");
@@ -2078,11 +2080,11 @@ public class GUI {
 		separator_78.setBounds(367, 237, 395, 2);
 		panel_2.add(separator_78);
 
-		textField_68 = new JTextField();
-		textField_68.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_68.setColumns(10);
-		textField_68.setBounds(652, 279, 100, 25);
-		panel_2.add(textField_68);
+		textField3_20 = new JTextField();
+		textField3_20.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_20.setColumns(10);
+		textField3_20.setBounds(652, 279, 100, 25);
+		panel_2.add(textField3_20);
 
 		JTextArea txtrLmnadeKoncernbidrag = new JTextArea();
 		txtrLmnadeKoncernbidrag.setText("Lämnade koncernbidrag");
@@ -2112,11 +2114,11 @@ public class GUI {
 		txtrAvsttningTillPeriodiseringsfond.setBounds(425, 376, 150, 29);
 		panel_2.add(txtrAvsttningTillPeriodiseringsfond);
 
-		textField_69 = new JTextField();
-		textField_69.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_69.setColumns(10);
-		textField_69.setBounds(652, 377, 100, 25);
-		panel_2.add(textField_69);
+		textField3_23 = new JTextField();
+		textField3_23.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_23.setColumns(10);
+		textField3_23.setBounds(652, 377, 100, 25);
+		panel_2.add(textField3_23);
 
 		JSeparator separator_79 = new JSeparator();
 		separator_79.setBackground(Color.BLACK);
@@ -2158,11 +2160,11 @@ public class GUI {
 		label_79.setBounds(380, 250, 35, 14);
 		panel_2.add(label_79);
 
-		textField_71 = new JTextField();
-		textField_71.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_71.setColumns(10);
-		textField_71.setBounds(652, 245, 100, 25);
-		panel_2.add(textField_71);
+		textField3_19 = new JTextField();
+		textField3_19.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_19.setColumns(10);
+		textField3_19.setBounds(652, 245, 100, 25);
+		panel_2.add(textField3_19);
 
 		JSeparator separator_84 = new JSeparator();
 		separator_84.setBackground(Color.BLACK);
@@ -2188,11 +2190,11 @@ public class GUI {
 		txtrExtraordinraKostnader.setBounds(425, 314, 152, 21);
 		panel_2.add(txtrExtraordinraKostnader);
 
-		textField_72 = new JTextField();
-		textField_72.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_72.setColumns(10);
-		textField_72.setBounds(652, 315, 100, 25);
-		panel_2.add(textField_72);
+		textField3_21 = new JTextField();
+		textField3_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_21.setColumns(10);
+		textField3_21.setBounds(652, 315, 100, 25);
+		panel_2.add(textField3_21);
 
 		JSeparator separator_86 = new JSeparator();
 		separator_86.setBackground(Color.BLACK);
@@ -2218,11 +2220,11 @@ public class GUI {
 		separator_87.setBounds(367, 373, 398, 5);
 		panel_2.add(separator_87);
 
-		textField_73 = new JTextField();
-		textField_73.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_73.setColumns(10);
-		textField_73.setBounds(652, 345, 100, 25);
-		panel_2.add(textField_73);
+		textField3_22 = new JTextField();
+		textField3_22.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_22.setColumns(10);
+		textField3_22.setBounds(652, 345, 100, 25);
+		panel_2.add(textField3_22);
 
 		JSeparator separator_88 = new JSeparator();
 		separator_88.setBackground(Color.BLACK);
@@ -2244,12 +2246,12 @@ public class GUI {
 		separator_94.setBounds(211, 598, 156, 6);
 		panel_2.add(separator_94);
 
-		textField_74 = new JTextField();
-		textField_74.setName("7519");
-		textField_74.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_74.setColumns(10);
-		textField_74.setBounds(260, 608, 100, 25);
-		panel_2.add(textField_74);
+		textField3_13_2 = new JTextField();
+		textField3_13_2.setName("7519");
+		textField3_13_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_13_2.setColumns(10);
+		textField3_13_2.setBounds(260, 608, 100, 25);
+		panel_2.add(textField3_13_2);
 
 		JLabel label_87 = new JLabel("3.14");
 		label_87.setHorizontalAlignment(SwingConstants.LEFT);
@@ -2257,12 +2259,12 @@ public class GUI {
 		label_87.setBounds(380, 15, 35, 14);
 		panel_2.add(label_87);
 
-		textField_75 = new JTextField();
-		textField_75.setName("7416");
-		textField_75.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_75.setColumns(10);
-		textField_75.setBounds(651, 5, 100, 25);
-		panel_2.add(textField_75);
+		textField3_14 = new JTextField();
+		textField3_14.setName("7416");
+		textField3_14.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_14.setColumns(10);
+		textField3_14.setBounds(651, 5, 100, 25);
+		panel_2.add(textField3_14);
 
 		JTextArea txtrResultatFrnvriga = new JTextArea();
 		txtrResultatFrnvriga.setText("Resultat från övriga \r\nfinansiella anläggnings-\r\ntillgångar");
@@ -2289,12 +2291,12 @@ public class GUI {
 		btnPage2fr3.setBounds(10, 656, 110, 23);
 		panel_2.add(btnPage2fr3);
 
-		textField_76 = new JTextField();
-		textField_76.setName("7510");
-		textField_76.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_76.setColumns(10);
-		textField_76.setBounds(260, 112, 100, 25);
-		panel_2.add(textField_76);
+		textField3_2_2 = new JTextField();
+		textField3_2_2.setName("7510");
+		textField3_2_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_2_2.setColumns(10);
+		textField3_2_2.setBounds(260, 112, 100, 25);
+		panel_2.add(textField3_2_2);
 
 		JTextArea txtrHandelsvaror = new JTextArea();
 		txtrHandelsvaror.setText("Handelsvaror");
@@ -2310,12 +2312,12 @@ public class GUI {
 		label_16.setBounds(5, 256, 34, 14);
 		panel_2.add(label_16);
 
-		textField_77 = new JTextField();
-		textField_77.setName("7512");
-		textField_77.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_77.setColumns(10);
-		textField_77.setBounds(260, 253, 100, 25);
-		panel_2.add(textField_77);
+		textField3_6 = new JTextField();
+		textField3_6.setName("7512");
+		textField3_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_6.setColumns(10);
+		textField3_6.setBounds(260, 253, 100, 25);
+		panel_2.add(textField3_6);
 
 		JSeparator separator_93 = new JSeparator();
 		separator_93.setBackground(Color.BLACK);
@@ -2355,12 +2357,12 @@ public class GUI {
 		txtrPersonalkostnader_1.setBounds(40, 327, 145, 22);
 		panel_2.add(txtrPersonalkostnader_1);
 
-		txtPersonalKost = new JTextField();
-		txtPersonalKost.setName("7514");
-		txtPersonalKost.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		txtPersonalKost.setColumns(10);
-		txtPersonalKost.setBounds(260, 325, 100, 25);
-		panel_2.add(txtPersonalKost);
+		textField3_8 = new JTextField();
+		textField3_8.setName("7514");
+		textField3_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_8.setColumns(10);
+		textField3_8.setBounds(260, 325, 100, 25);
+		panel_2.add(textField3_8);
 
 		JSeparator separator_96 = new JSeparator();
 		separator_96.setBackground(Color.BLACK);
@@ -2382,12 +2384,12 @@ public class GUI {
 		txtrPersonalkostnader.setBounds(40, 357, 145, 45);
 		panel_2.add(txtrPersonalkostnader);
 
-		textField_58 = new JTextField();
-		textField_58.setName("7515");
-		textField_58.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_58.setColumns(10);
-		textField_58.setBounds(260, 369, 100, 25);
-		panel_2.add(textField_58);
+		textField3_9 = new JTextField();
+		textField3_9.setName("7515");
+		textField3_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_9.setColumns(10);
+		textField3_9.setBounds(260, 369, 100, 25);
+		panel_2.add(textField3_9);
 
 		JTextArea txtrvrigaRrelsekostnader = new JTextArea();
 		txtrvrigaRrelsekostnader.setText("Övriga rörelsekostnader");
@@ -2397,12 +2399,12 @@ public class GUI {
 		txtrvrigaRrelsekostnader.setBounds(40, 464, 145, 23);
 		panel_2.add(txtrvrigaRrelsekostnader);
 
-		textField_79 = new JTextField();
-		textField_79.setName("7517");
-		textField_79.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_79.setColumns(10);
-		textField_79.setBounds(260, 460, 100, 25);
-		panel_2.add(textField_79);
+		textField3_11 = new JTextField();
+		textField3_11.setName("7517");
+		textField3_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_11.setColumns(10);
+		textField3_11.setBounds(260, 460, 100, 25);
+		panel_2.add(textField3_11);
 
 		JLabel label_83 = new JLabel("3.11");
 		label_83.setHorizontalAlignment(SwingConstants.LEFT);
@@ -2444,24 +2446,24 @@ public class GUI {
 		label_66.setBounds(380, 173, 35, 14);
 		panel_2.add(label_66);
 
-		textField_63 = new JTextField();
-		textField_63.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_63.setColumns(10);
-		textField_63.setBounds(653, 168, 100, 25);
-		panel_2.add(textField_63);
+		textField3_17 = new JTextField();
+		textField3_17.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_17.setColumns(10);
+		textField3_17.setBounds(653, 168, 100, 25);
+		panel_2.add(textField3_17);
 
-		textField_70 = new JTextField();
-		textField_70.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_70.setColumns(10);
-		textField_70.setBounds(653, 443, 100, 25);
-		panel_2.add(textField_70);
+		textField3_24_2 = new JTextField();
+		textField3_24_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_24_2.setColumns(10);
+		textField3_24_2.setBounds(653, 443, 100, 25);
+		panel_2.add(textField3_24_2);
 
-		textField_80 = new JTextField();
-		textField_80.setName("7235");
-		textField_80.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_80.setColumns(10);
-		textField_80.setBounds(653, 410, 100, 25);
-		panel_2.add(textField_80);
+		textField3_24 = new JTextField();
+		textField3_24.setName("7235");
+		textField3_24.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_24.setColumns(10);
+		textField3_24.setBounds(653, 410, 100, 25);
+		panel_2.add(textField3_24);
 
 		JSeparator separator_99 = new JSeparator();
 		separator_99.setBackground(Color.BLACK);
@@ -2487,23 +2489,23 @@ public class GUI {
 		separator_100.setBounds(367, 539, 395, 2);
 		panel_2.add(separator_100);
 
-		textField_81 = new JTextField();
-		textField_81.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_81.setColumns(10);
-		textField_81.setBounds(652, 509, 100, 25);
-		panel_2.add(textField_81);
+		textField3_25_2 = new JTextField();
+		textField3_25_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_25_2.setColumns(10);
+		textField3_25_2.setBounds(652, 509, 100, 25);
+		panel_2.add(textField3_25_2);
 
 		JSeparator separator_101 = new JSeparator();
 		separator_101.setBackground(Color.BLACK);
 		separator_101.setBounds(596, 503, 165, 3);
 		panel_2.add(separator_101);
 
-		textField_82 = new JTextField();
-		textField_82.setName("7235");
-		textField_82.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_82.setColumns(10);
-		textField_82.setBounds(652, 474, 100, 25);
-		panel_2.add(textField_82);
+		textField3_25 = new JTextField();
+		textField3_25.setName("7235");
+		textField3_25.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_25.setColumns(10);
+		textField3_25.setBounds(652, 474, 100, 25);
+		panel_2.add(textField3_25);
 
 		JTextArea txtrvrigaBokslutsdispositioner = new JTextArea();
 		txtrvrigaBokslutsdispositioner.setText("Övriga bokslutsdispositioner");
@@ -2533,11 +2535,11 @@ public class GUI {
 		txtrSkattPrets.setBounds(425, 546, 152, 17);
 		panel_2.add(txtrSkattPrets);
 
-		textField_83 = new JTextField();
-		textField_83.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_83.setColumns(10);
-		textField_83.setBounds(652, 544, 100, 25);
-		panel_2.add(textField_83);
+		textField3_26 = new JTextField();
+		textField3_26.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_26.setColumns(10);
+		textField3_26.setBounds(652, 544, 100, 25);
+		panel_2.add(textField3_26);
 
 		JSeparator separator_102 = new JSeparator();
 		separator_102.setBackground(Color.BLACK);
@@ -2558,11 +2560,11 @@ public class GUI {
 		txtrretsResultatVinst.setBounds(425, 575, 130, 35);
 		panel_2.add(txtrretsResultatVinst);
 
-		textField_84 = new JTextField();
-		textField_84.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_84.setColumns(10);
-		textField_84.setBounds(653, 580, 100, 25);
-		panel_2.add(textField_84);
+		textField3_27 = new JTextField();
+		textField3_27.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_27.setColumns(10);
+		textField3_27.setBounds(653, 580, 100, 25);
+		panel_2.add(textField3_27);
 
 		JSeparator separator_103 = new JSeparator();
 		separator_103.setBackground(Color.BLACK);
@@ -2583,11 +2585,11 @@ public class GUI {
 		txtrretsResultatFrlust.setBounds(425, 612, 120, 35);
 		panel_2.add(txtrretsResultatFrlust);
 
-		textField_85 = new JTextField();
-		textField_85.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_85.setColumns(10);
-		textField_85.setBounds(653, 617, 100, 25);
-		panel_2.add(textField_85);
+		textField3_28 = new JTextField();
+		textField3_28.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField3_28.setColumns(10);
+		textField3_28.setBounds(653, 617, 100, 25);
+		panel_2.add(textField3_28);
 
 		JSeparator separator_104 = new JSeparator();
 		separator_104.setBounds(367, 650, 395, 2);
@@ -2778,112 +2780,114 @@ public class GUI {
 		label_112.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		label_112.setBounds(610, 478, 16, 14);
 		panel_2.add(label_112);
-		
-				JButton btnControl = new JButton("Kontrollera");
-				btnControl.setBounds(659, 853, 100, 23);
-				frame2.getContentPane().add(btnControl);
-				btnControl.setFont(new Font("Tahoma", Font.BOLD, 11));
-				
-						btnControl.addActionListener(new ActionListener() {
-				
-							@Override
-							public void actionPerformed(ActionEvent e) {
-								textfieldList.add(textField);
-								textfieldList.add(textField_1);
-								textfieldList.add(textField_2);
-								textfieldList.add(textField_3);
-								textfieldList.add(textField_4);
-								textfieldList.add(textField_5);
-								textfieldList.add(textField_6);
-								textfieldList.add(textField_7);
-								textfieldList.add(textField_8);
-								textfieldList.add(textField_9);
-								textfieldList.add(textField_10);
-								textfieldList.add(textField_11);
-								textfieldList.add(textField_12);
-								textfieldList.add(textField_13);
-								textfieldList.add(textField_14);
-								textfieldList.add(textField_15);
-								textfieldList.add(textField_16);
-								textfieldList.add(textField_17);
-								textfieldList.add(textField_18);
-								textfieldList.add(textField_19);
-								textfieldList.add(textField_20);
-								textfieldList.add(textField_23);
-								textfieldList.add(textField_24);
-								textfieldList.add(textField_25);
-								textfieldList.add(textField_26);
-								textfieldList.add(textField_27);
-								textfieldList.add(textField_28);
-								textfieldList.add(textField_29);
-								textfieldList.add(textField_30);
-								textfieldList.add(textField_31);
-								textfieldList.add(textField_32);
-								textfieldList.add(textField_33);
-								textfieldList.add(textField_34);
-								textfieldList.add(textField_35);
-								textfieldList.add(textField_36);
-								textfieldList.add(textField_37);
-								textfieldList.add(textField_38);
-								textfieldList.add(textField_39);
-								textfieldList.add(textField_40);
-								textfieldList.add(textField_41);
-								textfieldList.add(textField_42);
-								textfieldList.add(textField_43);
-								textfieldList.add(textField_44);
-								textfieldList.add(textField_45);
-								textfieldList.add(textField_46);
-								textfieldList.add(textField_47);
-								textfieldList.add(textField_48);
-								textfieldList.add(textField_49);
-								textfieldList.add(textField_50);
-								textfieldList.add(textField_51);
-								textfieldList.add(textField_52);
-								textfieldList.add(textField_53);
-								textfieldList.add(textField_54);
-								textfieldList.add(textField_55);
-								textfieldList.add(textField_56);
-								textfieldList.add(textField_57);
-								textfieldList.add(textField_58);
-								textfieldList.add(textField_59);
-								textfieldList.add(textField_60);
-								textfieldList.add(textField_61);
-								textfieldList.add(textField_62);
-								textfieldList.add(textField_63);
-								textfieldList.add(textField_64);
-								textfieldList.add(textField_65);
-								textfieldList.add(textField_66);
-								textfieldList.add(textField_67);
-								textfieldList.add(textField_68);
-								textfieldList.add(textField_69);
-								textfieldList.add(textField_70);
-								textfieldList.add(textField_71);
-								textfieldList.add(textField_72);
-								textfieldList.add(textField_73);
-								textfieldList.add(textField_74);
-								textfieldList.add(textField_75);
-								textfieldList.add(textField_76);
-								textfieldList.add(textField_77);
-								textfieldList.add(textField_79);
-								textfieldList.add(textField_80);
-								textfieldList.add(textField_81);
-								textfieldList.add(textField_82);
-								textfieldList.add(textField_83);
-								textfieldList.add(textField_84);
-								textfieldList.add(textField_85);
-								textfieldList.add(txtPersonalKost);
-				
-								TextFieldController textcontroller = new TextFieldController();
-								ArrayList<JTextField> wrongList = textcontroller.checkTextFields(textfieldList);
-				
-								for (int i = 0; i < wrongList.size(); i++) {
-									wrongList.get(i).setBackground(Color.RED);
-									
-									if(textfieldList.get(i).getText().length() != 0)
-										textfieldList.get(i).setBackground(Color.WHITE);
-								}
-							}
-						});
+
+		JButton btnControl = new JButton("Kontrollera");
+		btnControl.setBounds(659, 853, 100, 23);
+		frame2.getContentPane().add(btnControl);
+		btnControl.setFont(new Font("Tahoma", Font.BOLD, 11));
+
+		btnControl.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				numericAList.add(textField2_27);
+				numericAList.add(textField2_28);
+				numericAList.add(textField2_29);
+				numericAList.add(textField2_30);
+
+				numericAList.add(textField2_31);
+				numericAList.add(textField2_32);
+				numericAList.add(textField2_33);
+				numericAList.add(textField2_34);
+				numericAList.add(textField2_38);
+				numericAList.add(textField2_35);
+				numericAList.add(textField2_36);
+				numericAList.add(textField2_37);
+				numericAList.add(textField2_1);
+				numericAList.add(textField2_2);
+				numericAList.add(textField2_3);
+				numericAList.add(textField2_4);
+				numericAList.add(textField2_5);
+				numericAList.add(textField2_6);
+				numericAList.add(textField2_7);
+				numericAList.add(textField2_8);
+				numericAList.add(textField2_9);
+				numericAList.add(textField2_10);
+				numericAList.add(textField2_11);
+				numericAList.add(textField2_12);
+				numericAList.add(textField2_16);
+				numericAList.add(textField2_13);
+				numericAList.add(textField2_14);
+				numericAList.add(textField2_15);
+				numericAList.add(textField2_17);
+				numericAList.add(textField2_20);
+				numericAList.add(textField2_19);
+				numericAList.add(textField2_22);
+				numericAList.add(textField2_23);
+				numericAList.add(textField2_24);
+				numericAList.add(textField2_25);
+				numericAList.add(textField2_26);
+				numericAList.add(textField2_43);
+				numericAList.add(textField2_40);
+				numericAList.add(textField2_41);
+				numericAList.add(textField2_42);
+				numericAList.add(textField2_44);
+				numericAList.add(textField2_46);
+				numericAList.add(textField2_49);
+				numericAList.add(textField2_50);
+				numericAList.add(textField2_45);
+				numericAList.add(textField2_47);
+				numericAList.add(textField2_48);
+				numericAList.add(textField3_1);
+				numericAList.add(textField2_18);
+				numericAList.add(textField2_21);
+				numericAList.add(textField3_2);
+				numericAList.add(textField3_3);
+				numericAList.add(textField2_39);
+				numericAList.add(textField3_4);
+				numericAList.add(textField3_5);
+				numericAList.add(textField3_7);
+				numericAList.add(textField3_9);
+				numericAList.add(textField3_10);
+				numericAList.add(textField3_12);
+				numericAList.add(textField3_12_2);
+				numericAList.add(textField3_13);
+				numericAList.add(textField3_17);
+				numericAList.add(textField3_14_2);
+				numericAList.add(textField3_15);
+				numericAList.add(textField3_16);
+				numericAList.add(textField3_18);
+				numericAList.add(textField3_20);
+				numericAList.add(textField3_24_2);
+				numericAList.add(textField3_19);
+				numericAList.add(textField3_21);
+				numericAList.add(textField3_13_2);
+				numericAList.add(textField3_14);
+				numericAList.add(textField3_2_2);
+				numericAList.add(textField3_6);
+				numericAList.add(textField3_11);
+				numericAList.add(textField3_24);
+				numericAList.add(textField3_25_2);
+				numericAList.add(textField3_25);
+				numericAList.add(textField3_26);
+				numericAList.add(textField3_8);
+
+				numericBList.add(textField3_22);
+				numericBList.add(textField3_23);
+				numericBList.add(textField3_27);
+				numericBList.add(textField3_28);
+
+				TextFieldController textcontroller = new TextFieldController();
+				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList);
+
+				for (int i = 0; i < wrongList.size(); i++) {
+					wrongList.get(i).setBackground(Color.RED);
+
+					if (numericAList.get(i).getText().length() != 0)
+						numericAList.get(i).setBackground(Color.WHITE);
+				}
+			}
+		});
 
 		frame2.setResizable(false);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
