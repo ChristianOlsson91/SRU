@@ -12,6 +12,12 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+/**
+ * Låter användaren välja en fil som ska visas i ett separat fönster.
+ * 
+ * @author Christian Olsson, Nicolas Suau Carvajal
+ * @version 2017-11-14
+ */
 public class ShowFilesListener implements ActionListener {
 
 	@Override
