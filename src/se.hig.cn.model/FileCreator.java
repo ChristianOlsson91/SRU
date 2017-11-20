@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Denna klass tillhandahåller inlägg av poster och har metoder att returnera listorna.
- * @author tfk15nsl & tfk12coo
+ * Denna klass tillhandahåller inlägg av poster och har metoder för att returnera listorna.
+ * 
+ * @author Christian Olsson, Nicolas Suau Carvajal
  * @version 2017-10-16
  */
 public class FileCreator {
@@ -18,7 +19,7 @@ public class FileCreator {
 		initializeLists();
 	}
 
-	public void initializeList() {
+	public void initializeLists() {
 		infoList.add("#DATABESKRIVNINGSTART");
 		infoList.add("#PRODUKT");
 		infoList.add("#PERIOD");
