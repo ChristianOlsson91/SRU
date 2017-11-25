@@ -20,15 +20,14 @@ public class FileCreator {
 	}
 
 	public void initializeLists() {
-		infoList.add("#DATABESKRIVNINGSTART");
-		infoList.add("#PRODUKT");
-		infoList.add("#PERIOD");
+		infoList.add("#DATABESKRIVNING_START");
+		infoList.add("#PRODUKT SRU");
 		infoList.add("#MEDIAID");
 		infoList.add("#SKAPAD");
 		infoList.add("#PROGRAM");
 		infoList.add("#FILNAMN");
-		infoList.add("#DATABESKRIVNINGSLUT");
-		infoList.add("#MEDIELEV");
+		infoList.add("#DATABESKRIVNING_SLUT");
+		infoList.add("#MEDIELEV_START");
 		infoList.add("#ORGNR");
 		infoList.add("#NAMN");
 		infoList.add("#ADRESS");
@@ -39,7 +38,7 @@ public class FileCreator {
 		infoList.add("#EMAIL");
 		infoList.add("#TELEFON");
 		infoList.add("#FAX");
-		infoList.add("#MEDIELEVSLUT");
+		infoList.add("#MEDIELEV_SLUT");
 		
 		blanketterList.add("#BLANKETT");
 		blanketterList.add("#IDENTITET");
