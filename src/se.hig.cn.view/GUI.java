@@ -41,7 +41,7 @@ public class GUI {
 
 	private ArrayList<JTextField> numericAList = new ArrayList<>();
 	private ArrayList<JTextField> numericBList = new ArrayList<>();
-	// private ArrayList<JTextField>
+	private ArrayList<JTextField> fieldList = new ArrayList<>();
 	private JFrame frame2;
 	private JTextField textField_tom;
 	private JTextField textField_Datframst;
@@ -140,6 +140,9 @@ public class GUI {
 	private JMenuItem showFilesItem;
 	private JMenuItem getFilesItem;
 
+	private CreateFilesListener createFilesListener = new CreateFilesListener();
+	private GetFilesListener getFilesListener = new GetFilesListener();
+
 	/**
 	 * Create the application.
 	 */
@@ -150,7 +153,6 @@ public class GUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-
 	private void initialize() {
 		frame2 = new JFrame();
 		frame2.getContentPane().setBackground(Color.YELLOW);
@@ -179,10 +181,6 @@ public class GUI {
 		menu.add(createFilesItem);
 		menu.add(showFilesItem);
 		menu.add(getFilesItem);
-
-		createFilesItem.addActionListener(new CreateFilesListener());
-		showFilesItem.addActionListener(new ShowFilesListener());
-		getFilesItem.addActionListener(new GetFilesListener());
 
 		textField_tom = new JTextField();
 		textField_tom.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -2781,6 +2779,10 @@ public class GUI {
 		label_112.setBounds(610, 478, 16, 14);
 		panel_2.add(label_112);
 
+		JPanel panel_3 = new JPanel();
+		firstPage.add(panel_3, "name_536297812370552");
+		panel_3.setBackground(Color.WHITE);
+
 		JButton btnControl = new JButton("Kontrollera");
 		btnControl.setBounds(659, 853, 100, 23);
 		frame2.getContentPane().add(btnControl);
@@ -2790,107 +2792,227 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				numericAList.add(textField2_27);
-				numericAList.add(textField2_28);
-				numericAList.add(textField2_29);
-				numericAList.add(textField2_30);
-
-				numericAList.add(textField2_31);
-				numericAList.add(textField2_32);
-				numericAList.add(textField2_33);
-				numericAList.add(textField2_34);
-				numericAList.add(textField2_38);
-				numericAList.add(textField2_35);
-				numericAList.add(textField2_36);
-				numericAList.add(textField2_37);
-				numericAList.add(textField2_1);
-				numericAList.add(textField2_2);
-				numericAList.add(textField2_3);
-				numericAList.add(textField2_4);
-				numericAList.add(textField2_5);
-				numericAList.add(textField2_6);
-				numericAList.add(textField2_7);
-				numericAList.add(textField2_8);
-				numericAList.add(textField2_9);
-				numericAList.add(textField2_10);
-				numericAList.add(textField2_11);
-				numericAList.add(textField2_12);
-				numericAList.add(textField2_16);
-				numericAList.add(textField2_13);
-				numericAList.add(textField2_14);
-				numericAList.add(textField2_15);
-				numericAList.add(textField2_17);
-				numericAList.add(textField2_20);
-				numericAList.add(textField2_19);
-				numericAList.add(textField2_22);
-				numericAList.add(textField2_23);
-				numericAList.add(textField2_24);
-				numericAList.add(textField2_25);
-				numericAList.add(textField2_26);
-				numericAList.add(textField2_43);
-				numericAList.add(textField2_40);
-				numericAList.add(textField2_41);
-				numericAList.add(textField2_42);
-				numericAList.add(textField2_44);
-				numericAList.add(textField2_46);
-				numericAList.add(textField2_49);
-				numericAList.add(textField2_50);
-				numericAList.add(textField2_45);
-				numericAList.add(textField2_47);
-				numericAList.add(textField2_48);
-				numericAList.add(textField3_1);
-				numericAList.add(textField2_18);
-				numericAList.add(textField2_21);
-				numericAList.add(textField3_2);
-				numericAList.add(textField3_3);
-				numericAList.add(textField2_39);
-				numericAList.add(textField3_4);
-				numericAList.add(textField3_5);
-				numericAList.add(textField3_7);
-				numericAList.add(textField3_9);
-				numericAList.add(textField3_10);
-				numericAList.add(textField3_12);
-				numericAList.add(textField3_12_2);
-				numericAList.add(textField3_13);
-				numericAList.add(textField3_17);
-				numericAList.add(textField3_14_2);
-				numericAList.add(textField3_15);
-				numericAList.add(textField3_16);
-				numericAList.add(textField3_18);
-				numericAList.add(textField3_20);
-				numericAList.add(textField3_24_2);
-				numericAList.add(textField3_19);
-				numericAList.add(textField3_21);
-				numericAList.add(textField3_13_2);
-				numericAList.add(textField3_14);
-				numericAList.add(textField3_2_2);
-				numericAList.add(textField3_6);
-				numericAList.add(textField3_11);
-				numericAList.add(textField3_24);
-				numericAList.add(textField3_25_2);
-				numericAList.add(textField3_25);
-				numericAList.add(textField3_26);
-				numericAList.add(textField3_8);
-
-				numericBList.add(textField3_22);
-				numericBList.add(textField3_23);
-				numericBList.add(textField3_27);
-				numericBList.add(textField3_28);
+				initializeLists();
 
 				TextFieldController textcontroller = new TextFieldController();
-				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList);
+				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList, fieldList);
 
-				for (int i = 0; i < wrongList.size(); i++) {
+				for (int i = 0; i < textcontroller.getCorrectList().size(); i++)
+					textcontroller.getCorrectList().get(i).setBackground(Color.GREEN);
+
+				for (int i = 0; i < wrongList.size(); i++)
 					wrongList.get(i).setBackground(Color.RED);
 
-					if (numericAList.get(i).getText().length() != 0)
-						numericAList.get(i).setBackground(Color.WHITE);
-				}
+				if (wrongList.size() > 0)
+					javax.swing.JOptionPane.showMessageDialog(frame2,
+							"Kolla på hjälpsidan för mer information om hur fälten ska vara ifyllda");
+			}
+		});
+
+		createFilesItem.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				initializeLists();
+				createFilesListener.save(numericAList, numericBList, fieldList);
+				createFilesListener.createFiles();
+			}
+		});
+		showFilesItem.addActionListener(new ShowFilesListener());
+		getFilesItem.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				initializeLists();
+				getFilesListener.save(numericAList, numericBList, fieldList);
+				getFilesListener.readFromFiles();
+
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText()); 
+				textField2_28.setText(getFilesListener.getNumericAList().get(1).getText());
+				textField2_29.setText(getFilesListener.getNumericAList().get(2).getText());
+				textField2_30.setText(getFilesListener.getNumericAList().get(3).getText());
+				textField2_31.setText(getFilesListener.getNumericAList().get(4).getText());
+				textField2_32.setText(getFilesListener.getNumericAList().get(5).getText());
+				textField2_33.setText(getFilesListener.getNumericAList().get(6).getText());
+				textField2_34.setText(getFilesListener.getNumericAList().get(7).getText());
+				textField2_35.setText(getFilesListener.getNumericAList().get(8).getText());
+		/*		textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
+				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());*/
+				
+
+				/*
+				 * for(int i = 0; i < getFilesListener.getNumericAList().size(); i++)
+				 * numericAList.get(i).setText(getFilesListener.getNumericAList().get(i).getText
+				 * ());
+				 * 
+				 * for(int i = 0; i < getFilesListener.getNumericBList().size(); i++)
+				 * numericBList.get(i).setText(getFilesListener.getNumericBList().get(i).getText
+				 * ());
+				 */
 			}
 		});
 
 		frame2.setResizable(false);
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame2.setVisible(true);
+	}
+
+	public void initializeLists() {
+		numericAList.add(textField2_27);
+		numericAList.add(textField2_28);
+		numericAList.add(textField2_29);
+		numericAList.add(textField2_30);
+
+		numericAList.add(textField2_31);
+		numericAList.add(textField2_32);
+		numericAList.add(textField2_33);
+		numericAList.add(textField2_34);
+		numericAList.add(textField2_38);
+		numericAList.add(textField2_35);
+		numericAList.add(textField2_36);
+		numericAList.add(textField2_37);
+		numericAList.add(textField2_1);
+		numericAList.add(textField2_2);
+		numericAList.add(textField2_3);
+		numericAList.add(textField2_4);
+		numericAList.add(textField2_5);
+		numericAList.add(textField2_6);
+		numericAList.add(textField2_7);
+		numericAList.add(textField2_8);
+		numericAList.add(textField2_9);
+		numericAList.add(textField2_10);
+		numericAList.add(textField2_11);
+		numericAList.add(textField2_12);
+		numericAList.add(textField2_16);
+		numericAList.add(textField2_13);
+		numericAList.add(textField2_14);
+		numericAList.add(textField2_15);
+		numericAList.add(textField2_17);
+		numericAList.add(textField2_20);
+		numericAList.add(textField2_19);
+		numericAList.add(textField2_22);
+		numericAList.add(textField2_23);
+		numericAList.add(textField2_24);
+		numericAList.add(textField2_25);
+		numericAList.add(textField2_26);
+		numericAList.add(textField2_43);
+		numericAList.add(textField2_40);
+		numericAList.add(textField2_41);
+		numericAList.add(textField2_42);
+		numericAList.add(textField2_44);
+		numericAList.add(textField2_46);
+		numericAList.add(textField2_49);
+		numericAList.add(textField2_50);
+		numericAList.add(textField2_45);
+		numericAList.add(textField2_47);
+		numericAList.add(textField2_48);
+		numericAList.add(textField3_1);
+		numericAList.add(textField2_18);
+		numericAList.add(textField2_21);
+		numericAList.add(textField3_2);
+		numericAList.add(textField3_3);
+		numericAList.add(textField2_39);
+		numericAList.add(textField3_4);
+		numericAList.add(textField3_5);
+		numericAList.add(textField3_7);
+		numericAList.add(textField3_9);
+		numericAList.add(textField3_10);
+		numericAList.add(textField3_12);
+		numericAList.add(textField3_12_2);
+		numericAList.add(textField3_13);
+		numericAList.add(textField3_17);
+		numericAList.add(textField3_14_2);
+		numericAList.add(textField3_15);
+		numericAList.add(textField3_16);
+		numericAList.add(textField3_18);
+		numericAList.add(textField3_20);
+		numericAList.add(textField3_24_2);
+		numericAList.add(textField3_19);
+		numericAList.add(textField3_21);
+		numericAList.add(textField3_13_2);
+		numericAList.add(textField3_14);
+		numericAList.add(textField3_2_2);
+		numericAList.add(textField3_6);
+		numericAList.add(textField3_11);
+		numericAList.add(textField3_24);
+		numericAList.add(textField3_25_2);
+		numericAList.add(textField3_25);
+		numericAList.add(textField3_26);
+		numericAList.add(textField3_8);
+
+		numericBList.add(textField3_22);
+		numericBList.add(textField3_23);
+		numericBList.add(textField3_27);
+		numericBList.add(textField3_28);
+
+		fieldList.add(textField_PersOrgnr);
+		fieldList.add(textField_Datframst);
+	}
+
+	public ArrayList<JTextField> getNumericAList() {
+		return numericAList;
+	}
+
+	public ArrayList<JTextField> getNumericBList() {
+		return numericBList;
+	}
+
+	public ArrayList<JTextField> getFieldList() {
+		return fieldList;
 	}
 }
