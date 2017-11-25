@@ -22,7 +22,10 @@ import javax.swing.JTextArea;
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -42,6 +45,7 @@ public class GUI {
 	private ArrayList<JTextField> numericAList = new ArrayList<>();
 	private ArrayList<JTextField> numericBList = new ArrayList<>();
 	private ArrayList<JTextField> fieldList = new ArrayList<>();
+	private ArrayList<JTextField> personuppgiftsList = new ArrayList<>();
 	private JFrame frame2;
 	private JTextField textField_tom;
 	private JTextField textField_Datframst;
@@ -134,6 +138,15 @@ public class GUI {
 	private JTextField textField3_27;
 	private JTextField textField3_28;
 	private JTextField txtRkernskapsr;
+	private JTextField textField_fax;
+	private JTextField textField_telefon;
+	private JTextField textField_email;
+	private JTextField textField_kontakt;
+	private JTextField textField_postort;
+	private JTextField textField_postnummer;
+	private JTextField textField_adress;
+	private JTextField textField_namn;
+	private JTextField textField_avdelning;
 	private JMenuBar menubar;
 	private JMenu menu;
 	private JMenuItem createFilesItem;
@@ -611,6 +624,7 @@ public class GUI {
 		panel.add(lblTillgngaranlggningstillgngar);
 
 		textField2_16 = new JTextField();
+		textField2_16.setName("7244");
 		textField2_16.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_16.setColumns(10);
 		textField2_16.setBounds(615, 159, 126, 25);
@@ -628,6 +642,7 @@ public class GUI {
 		panel.add(label_44);
 
 		textField2_13 = new JTextField();
+		textField2_13.setName("7241");
 		textField2_13.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_13.setColumns(10);
 		textField2_13.setBounds(615, 47, 126, 25);
@@ -662,12 +677,14 @@ public class GUI {
 		panel.add(textArea_25);
 
 		textField2_14 = new JTextField();
+		textField2_14.setName("7242");
 		textField2_14.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_14.setColumns(10);
 		textField2_14.setBounds(615, 85, 126, 25);
 		panel.add(textField2_14);
 
 		textField2_15 = new JTextField();
+		textField2_15.setName("7243");
 		textField2_15.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_15.setColumns(10);
 		textField2_15.setBounds(615, 122, 126, 25);
@@ -713,6 +730,7 @@ public class GUI {
 		panel.add(separator_43);
 
 		textField2_17 = new JTextField();
+		textField2_17.setName("7245");
 		textField2_17.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_17.setColumns(10);
 		textField2_17.setBounds(615, 201, 126, 25);
@@ -738,6 +756,7 @@ public class GUI {
 		panel.add(separator_45);
 
 		textField2_19 = new JTextField();
+		textField2_19.setName("7251");
 		textField2_19.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_19.setColumns(10);
 		textField2_19.setBounds(615, 285, 126, 25);
@@ -778,12 +797,14 @@ public class GUI {
 		panel.add(txtrUpparbetadMenEj);
 
 		textField2_22 = new JTextField();
+		textField2_22.setName("7262");
 		textField2_22.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_22.setColumns(10);
 		textField2_22.setBounds(615, 402, 126, 25);
 		panel.add(textField2_22);
 
 		textField2_23 = new JTextField();
+		textField2_23.setName("7263");
 		textField2_23.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_23.setColumns(10);
 		textField2_23.setBounds(615, 445, 125, 25);
@@ -844,6 +865,7 @@ public class GUI {
 		panel.add(label_63);
 
 		textField2_18 = new JTextField();
+		textField2_18.setName("7246");
 		textField2_18.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_18.setColumns(10);
 		textField2_18.setBounds(615, 245, 126, 25);
@@ -874,6 +896,7 @@ public class GUI {
 		panel.add(txtrFordringarHosKoncern);
 
 		textField2_20 = new JTextField();
+		textField2_20.setName("7252");
 		textField2_20.setBackground(Color.WHITE);
 		textField2_20.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_20.setColumns(10);
@@ -905,6 +928,7 @@ public class GUI {
 		panel.add(separator_46);
 
 		textField2_21 = new JTextField();
+		textField2_21.setName("7261");
 		textField2_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_21.setColumns(10);
 		textField2_21.setBounds(616, 365, 126, 25);
@@ -916,6 +940,7 @@ public class GUI {
 		panel.add(separator_47);
 
 		textField2_24 = new JTextField();
+		textField2_24.setName("7270");
 		textField2_24.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_24.setColumns(10);
 		textField2_24.setBounds(615, 490, 126, 25);
@@ -952,6 +977,7 @@ public class GUI {
 		panel.add(separator_50);
 
 		textField2_25 = new JTextField();
+		textField2_25.setName("7271");
 		textField2_25.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_25.setColumns(10);
 		textField2_25.setBounds(616, 531, 126, 25);
@@ -978,6 +1004,7 @@ public class GUI {
 		panel.add(lblKassaOchBank);
 
 		textField2_26 = new JTextField();
+		textField2_26.setName("7281");
 		textField2_26.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_26.setColumns(10);
 		textField2_26.setBounds(615, 574, 126, 25);
@@ -1037,7 +1064,7 @@ public class GUI {
 		panel_1.add(label);
 
 		textField2_27 = new JTextField();
-		textField2_27.setName("7201");
+		textField2_27.setName("7301");
 		textField2_27.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_27.setColumns(10);
 		textField2_27.setBounds(231, 40, 126, 25);
@@ -1055,7 +1082,7 @@ public class GUI {
 		panel_1.add(label_2);
 
 		textField2_28 = new JTextField();
-		textField2_28.setName("7202");
+		textField2_28.setName("7302");
 		textField2_28.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_28.setColumns(10);
 		textField2_28.setBounds(231, 80, 126, 25);
@@ -1068,7 +1095,7 @@ public class GUI {
 		panel_1.add(label_3);
 
 		textField2_29 = new JTextField();
-		textField2_29.setName("7214");
+		textField2_29.setName("7321");
 		textField2_29.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_29.setColumns(10);
 		textField2_29.setBounds(231, 160, 126, 25);
@@ -1129,7 +1156,7 @@ public class GUI {
 		panel_1.add(label_5);
 
 		textField2_30 = new JTextField();
-		textField2_30.setName("7215");
+		textField2_30.setName("7322");
 		textField2_30.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_30.setColumns(10);
 		textField2_30.setBounds(231, 209, 126, 25);
@@ -1150,7 +1177,7 @@ public class GUI {
 		panel_1.add(label_6);
 
 		textField2_31 = new JTextField();
-		textField2_31.setName("7216");
+		textField2_31.setName("7323");
 		textField2_31.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_31.setColumns(10);
 		textField2_31.setBounds(231, 260, 126, 25);
@@ -1182,7 +1209,7 @@ public class GUI {
 		panel_1.add(label_7);
 
 		textField2_32 = new JTextField();
-		textField2_32.setName("7217");
+		textField2_32.setName("7331");
 		textField2_32.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_32.setColumns(10);
 		textField2_32.setBounds(231, 315, 126, 25);
@@ -1208,7 +1235,7 @@ public class GUI {
 		panel_1.add(label_9);
 
 		textField2_33 = new JTextField();
-		textField2_33.setName("7230");
+		textField2_33.setName("7332");
 		textField2_33.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_33.setColumns(10);
 		textField2_33.setBounds(231, 385, 126, 25);
@@ -1234,7 +1261,7 @@ public class GUI {
 		panel_1.add(label_10);
 
 		textField2_34 = new JTextField();
-		textField2_34.setName("7231");
+		textField2_34.setName("7333");
 		textField2_34.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_34.setColumns(10);
 		textField2_34.setBounds(231, 425, 126, 25);
@@ -1265,7 +1292,7 @@ public class GUI {
 		panel_1.add(label_12);
 
 		textField2_35 = new JTextField();
-		textField2_35.setName("7233");
+		textField2_35.setName("7350");
 		textField2_35.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_35.setColumns(10);
 		textField2_35.setBounds(231, 500, 126, 25);
@@ -1291,7 +1318,7 @@ public class GUI {
 		panel_1.add(label_13);
 
 		textField2_36 = new JTextField();
-		textField2_36.setName("7234");
+		textField2_36.setName("7351");
 		textField2_36.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_36.setColumns(10);
 		textField2_36.setBounds(231, 537, 126, 25);
@@ -1317,7 +1344,7 @@ public class GUI {
 		panel_1.add(txtrvrigaSkulderTill);
 
 		textField2_37 = new JTextField();
-		textField2_37.setName("7235");
+		textField2_37.setName("7352");
 		textField2_37.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_37.setColumns(10);
 		textField2_37.setBounds(231, 573, 126, 25);
@@ -1334,6 +1361,7 @@ public class GUI {
 		panel_1.add(lblEgetKapital);
 
 		textField2_43 = new JTextField();
+		textField2_43.setName("7363");
 		textField2_43.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_43.setColumns(10);
 		textField2_43.setBounds(615, 160, 126, 25);
@@ -1346,6 +1374,7 @@ public class GUI {
 		panel_1.add(lblVarulagerkortfristigaSkulder);
 
 		textField2_40 = new JTextField();
+		textField2_40.setName("7360");
 		textField2_40.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_40.setColumns(10);
 		textField2_40.setBounds(615, 40, 126, 25);
@@ -1380,12 +1409,14 @@ public class GUI {
 		panel_1.add(txtrvrigaSkulderTill_1);
 
 		textField2_41 = new JTextField();
+		textField2_41.setName("7361");
 		textField2_41.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_41.setColumns(10);
 		textField2_41.setBounds(615, 80, 126, 25);
 		panel_1.add(textField2_41);
 
 		textField2_42 = new JTextField();
+		textField2_42.setName("7362");
 		textField2_42.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_42.setColumns(10);
 		textField2_42.setBounds(615, 120, 126, 25);
@@ -1431,6 +1462,7 @@ public class GUI {
 		panel_1.add(separator_16);
 
 		textField2_44 = new JTextField();
+		textField2_44.setName("7364");
 		textField2_44.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_44.setColumns(10);
 		textField2_44.setBounds(615, 201, 126, 25);
@@ -1456,6 +1488,7 @@ public class GUI {
 		panel_1.add(separator_17);
 
 		textField2_46 = new JTextField();
+		textField2_46.setName("7366");
 		textField2_46.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_46.setColumns(10);
 		textField2_46.setBounds(615, 289, 126, 25);
@@ -1490,12 +1523,14 @@ public class GUI {
 		panel_1.add(txtrvrigaSkulder_1);
 
 		textField2_49 = new JTextField();
+		textField2_49.setName("7369");
 		textField2_49.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_49.setColumns(10);
 		textField2_49.setBounds(615, 402, 126, 25);
 		panel_1.add(textField2_49);
 
 		textField2_50 = new JTextField();
+		textField2_50.setName("7370");
 		textField2_50.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_50.setColumns(10);
 		textField2_50.setBounds(616, 450, 125, 25);
@@ -1556,6 +1591,7 @@ public class GUI {
 		panel_1.add(label_58);
 
 		textField2_45 = new JTextField();
+		textField2_45.setName("7365");
 		textField2_45.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_45.setColumns(10);
 		textField2_45.setBounds(615, 245, 126, 25);
@@ -1586,6 +1622,7 @@ public class GUI {
 		panel_1.add(txtrSkulderTillKoncern_1);
 
 		textField2_47 = new JTextField();
+		textField2_47.setName("7367");
 		textField2_47.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_47.setColumns(10);
 		textField2_47.setBounds(615, 327, 126, 25);
@@ -1616,6 +1653,7 @@ public class GUI {
 		panel_1.add(separator_26);
 
 		textField2_48 = new JTextField();
+		textField2_48.setName("7368");
 		textField2_48.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_48.setColumns(10);
 		textField2_48.setBounds(616, 365, 126, 25);
@@ -1680,7 +1718,7 @@ public class GUI {
 		panel_1.add(separator_64);
 
 		textField2_38 = new JTextField();
-		textField2_38.setName("7235");
+		textField2_38.setName("7353");
 		textField2_38.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_38.setColumns(10);
 		textField2_38.setBounds(231, 610, 126, 25);
@@ -1707,7 +1745,7 @@ public class GUI {
 		panel_1.add(label_4);
 
 		textField2_39 = new JTextField();
-		textField2_39.setName("7235");
+		textField2_39.setName("7354");
 		textField2_39.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField2_39.setColumns(10);
 		textField2_39.setBounds(615, 6, 126, 25);
@@ -2021,12 +2059,14 @@ public class GUI {
 		panel_2.add(txtrvrigaRnteintkterOch);
 
 		textField3_15 = new JTextField();
+		textField3_15.setName("7417");
 		textField3_15.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_15.setColumns(10);
 		textField3_15.setBounds(652, 76, 100, 25);
 		panel_2.add(textField3_15);
 
 		textField3_16 = new JTextField();
+		textField3_16.setName("7521");
 		textField3_16.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_16.setColumns(10);
 		textField3_16.setBounds(652, 129, 100, 25);
@@ -2054,6 +2094,7 @@ public class GUI {
 		panel_2.add(separator_76);
 
 		textField3_18 = new JTextField();
+		textField3_18.setName("7418");
 		textField3_18.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_18.setColumns(10);
 		textField3_18.setBounds(653, 206, 100, 25);
@@ -2079,6 +2120,7 @@ public class GUI {
 		panel_2.add(separator_78);
 
 		textField3_20 = new JTextField();
+		textField3_20.setName("7524");
 		textField3_20.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_20.setColumns(10);
 		textField3_20.setBounds(652, 279, 100, 25);
@@ -2113,6 +2155,7 @@ public class GUI {
 		panel_2.add(txtrAvsttningTillPeriodiseringsfond);
 
 		textField3_23 = new JTextField();
+		textField3_23.setName("7525");
 		textField3_23.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_23.setColumns(10);
 		textField3_23.setBounds(652, 377, 100, 25);
@@ -2159,6 +2202,7 @@ public class GUI {
 		panel_2.add(label_79);
 
 		textField3_19 = new JTextField();
+		textField3_19.setName("7523");
 		textField3_19.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_19.setColumns(10);
 		textField3_19.setBounds(652, 245, 100, 25);
@@ -2189,6 +2233,7 @@ public class GUI {
 		panel_2.add(txtrExtraordinraKostnader);
 
 		textField3_21 = new JTextField();
+		textField3_21.setName("7419");
 		textField3_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_21.setColumns(10);
 		textField3_21.setBounds(652, 315, 100, 25);
@@ -2219,6 +2264,7 @@ public class GUI {
 		panel_2.add(separator_87);
 
 		textField3_22 = new JTextField();
+		textField3_22.setName("7420");
 		textField3_22.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_22.setColumns(10);
 		textField3_22.setBounds(652, 345, 100, 25);
@@ -2445,19 +2491,21 @@ public class GUI {
 		panel_2.add(label_66);
 
 		textField3_17 = new JTextField();
+		textField3_17.setName("7522");
 		textField3_17.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_17.setColumns(10);
 		textField3_17.setBounds(653, 168, 100, 25);
 		panel_2.add(textField3_17);
 
 		textField3_24_2 = new JTextField();
+		textField3_24_2.setName("7526");
 		textField3_24_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_24_2.setColumns(10);
 		textField3_24_2.setBounds(653, 443, 100, 25);
 		panel_2.add(textField3_24_2);
 
 		textField3_24 = new JTextField();
-		textField3_24.setName("7235");
+		textField3_24.setName("7421");
 		textField3_24.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_24.setColumns(10);
 		textField3_24.setBounds(653, 410, 100, 25);
@@ -2488,6 +2536,7 @@ public class GUI {
 		panel_2.add(separator_100);
 
 		textField3_25_2 = new JTextField();
+		textField3_25_2.setName("7527");
 		textField3_25_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_25_2.setColumns(10);
 		textField3_25_2.setBounds(652, 509, 100, 25);
@@ -2499,7 +2548,7 @@ public class GUI {
 		panel_2.add(separator_101);
 
 		textField3_25 = new JTextField();
-		textField3_25.setName("7235");
+		textField3_25.setName("7422");
 		textField3_25.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_25.setColumns(10);
 		textField3_25.setBounds(652, 474, 100, 25);
@@ -2534,6 +2583,7 @@ public class GUI {
 		panel_2.add(txtrSkattPrets);
 
 		textField3_26 = new JTextField();
+		textField3_26.setName("7528");
 		textField3_26.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_26.setColumns(10);
 		textField3_26.setBounds(652, 544, 100, 25);
@@ -2559,6 +2609,7 @@ public class GUI {
 		panel_2.add(txtrretsResultatVinst);
 
 		textField3_27 = new JTextField();
+		textField3_27.setName("7450");
 		textField3_27.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_27.setColumns(10);
 		textField3_27.setBounds(653, 580, 100, 25);
@@ -2584,6 +2635,7 @@ public class GUI {
 		panel_2.add(txtrretsResultatFrlust);
 
 		textField3_28 = new JTextField();
+		textField3_28.setName("7550");
 		textField3_28.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField3_28.setColumns(10);
 		textField3_28.setBounds(653, 617, 100, 25);
@@ -2779,9 +2831,198 @@ public class GUI {
 		label_112.setBounds(610, 478, 16, 14);
 		panel_2.add(label_112);
 
+		JButton btnPage4fr3 = new JButton("Nästa");
+		btnPage4fr3.setBounds(663, 656, 89, 23);
+		panel_2.add(btnPage4fr3);
+
 		JPanel panel_3 = new JPanel();
+		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		firstPage.add(panel_3, "name_536297812370552");
 		panel_3.setBackground(Color.WHITE);
+		panel_3.setLayout(null);
+
+		btnPage4fr3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel_2.setVisible(false);
+				panel_3.setVisible(true);
+			}
+		});
+
+		JLabel lblPersonuppgifter = new JLabel("Personuppgifter");
+		lblPersonuppgifter.setBounds(10, 9, 178, 22);
+		lblPersonuppgifter.setFont(new Font("Tahoma", Font.BOLD, 18));
+		panel_3.add(lblPersonuppgifter);
+
+		JLabel lblNewLabel_1 = new JLabel("Namn");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNewLabel_1.setBounds(10, 48, 46, 14);
+		panel_3.add(lblNewLabel_1);
+
+		JSeparator separator_40 = new JSeparator();
+		separator_40.setBackground(Color.BLACK);
+		separator_40.setBounds(0, 40, 762, 2);
+		panel_3.add(separator_40);
+
+		textField_namn = new JTextField();
+		textField_namn.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_namn.setColumns(10);
+		textField_namn.setBounds(192, 50, 442, 25);
+		panel_3.add(textField_namn);
+
+		JSeparator separator_92 = new JSeparator();
+		separator_92.setOrientation(SwingConstants.VERTICAL);
+		separator_92.setBackground(Color.BLACK);
+		separator_92.setBounds(186, 0, 9, 690);
+		panel_3.add(separator_92);
+
+		JSeparator separator_105 = new JSeparator();
+		separator_105.setBackground(Color.BLACK);
+		separator_105.setBounds(0, 80, 762, 2);
+		panel_3.add(separator_105);
+
+		JSeparator separator_106 = new JSeparator();
+		separator_106.setBackground(Color.BLACK);
+		separator_106.setBounds(0, 160, 762, 2);
+		panel_3.add(separator_106);
+
+		JSeparator separator_107 = new JSeparator();
+		separator_107.setBackground(Color.BLACK);
+		separator_107.setBounds(0, 200, 762, 2);
+		panel_3.add(separator_107);
+
+		JSeparator separator_108 = new JSeparator();
+		separator_108.setBackground(Color.BLACK);
+		separator_108.setBounds(0, 240, 762, 2);
+		panel_3.add(separator_108);
+
+		JSeparator separator_109 = new JSeparator();
+		separator_109.setBackground(Color.BLACK);
+		separator_109.setBounds(0, 280, 762, 2);
+		panel_3.add(separator_109);
+
+		JLabel lblAdress = new JLabel("Adress");
+		lblAdress.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblAdress.setBounds(10, 96, 46, 14);
+		panel_3.add(lblAdress);
+
+		JLabel lblPostnummer = new JLabel("Postnummer");
+		lblPostnummer.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPostnummer.setBounds(10, 170, 84, 14);
+		panel_3.add(lblPostnummer);
+
+		JLabel lblPostort = new JLabel("Postort");
+		lblPostort.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPostort.setBounds(10, 210, 46, 14);
+		panel_3.add(lblPostort);
+
+		JLabel lblAvdelning = new JLabel("Avdelning");
+		lblAvdelning.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblAvdelning.setBounds(10, 250, 71, 14);
+		panel_3.add(lblAvdelning);
+
+		textField_adress = new JTextField();
+		textField_adress.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_adress.setColumns(10);
+		textField_adress.setBounds(192, 89, 442, 60);
+		panel_3.add(textField_adress);
+
+		textField_postnummer = new JTextField();
+		textField_postnummer.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_postnummer.setColumns(10);
+		textField_postnummer.setBounds(192, 170, 143, 25);
+		panel_3.add(textField_postnummer);
+
+		textField_postort = new JTextField();
+		textField_postort.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_postort.setColumns(10);
+		textField_postort.setBounds(192, 210, 442, 25);
+		panel_3.add(textField_postort);
+
+		textField_avdelning = new JTextField();
+		textField_avdelning.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_avdelning.setColumns(10);
+		textField_avdelning.setBounds(192, 250, 442, 25);
+		panel_3.add(textField_avdelning);
+
+		JSeparator separator_110 = new JSeparator();
+		separator_110.setBackground(Color.BLACK);
+		separator_110.setBounds(0, 320, 762, 2);
+		panel_3.add(separator_110);
+
+		JSeparator separator_111 = new JSeparator();
+		separator_111.setBackground(Color.BLACK);
+		separator_111.setBounds(0, 360, 762, 2);
+		panel_3.add(separator_111);
+
+		JSeparator separator_112 = new JSeparator();
+		separator_112.setBackground(Color.BLACK);
+		separator_112.setBounds(0, 400, 762, 2);
+		panel_3.add(separator_112);
+
+		JSeparator separator_113 = new JSeparator();
+		separator_113.setBackground(Color.BLACK);
+		separator_113.setBounds(0, 440, 762, 2);
+		panel_3.add(separator_113);
+
+		JLabel lblKontakt = new JLabel("Kontakt");
+		lblKontakt.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblKontakt.setBounds(10, 290, 71, 14);
+		panel_3.add(lblKontakt);
+
+		JLabel lblEmail = new JLabel("Email");
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblEmail.setBounds(10, 330, 71, 14);
+		panel_3.add(lblEmail);
+
+		JLabel lblTelefon = new JLabel("Telefon");
+		lblTelefon.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTelefon.setBounds(10, 370, 71, 14);
+		panel_3.add(lblTelefon);
+
+		JLabel lblFax = new JLabel("Fax");
+		lblFax.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblFax.setBounds(10, 410, 71, 14);
+		panel_3.add(lblFax);
+
+		textField_kontakt = new JTextField();
+		textField_kontakt.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_kontakt.setColumns(10);
+		textField_kontakt.setBounds(192, 290, 442, 25);
+		panel_3.add(textField_kontakt);
+
+		textField_email = new JTextField();
+		textField_email.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_email.setColumns(10);
+		textField_email.setBounds(192, 330, 442, 25);
+		panel_3.add(textField_email);
+
+		textField_telefon = new JTextField();
+		textField_telefon.setName("7410");
+		textField_telefon.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_telefon.setColumns(10);
+		textField_telefon.setBounds(192, 370, 442, 25);
+		panel_3.add(textField_telefon);
+
+		textField_fax = new JTextField();
+		textField_fax.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_fax.setColumns(10);
+		textField_fax.setBounds(192, 410, 442, 25);
+		panel_3.add(textField_fax);
+
+		JButton btnPage3fr4 = new JButton("Föregående");
+		btnPage3fr4.setBounds(5, 656, 110, 23);
+		panel_3.add(btnPage3fr4);
+		btnPage3fr4.setFont(new Font("Tahoma", Font.BOLD, 11));
+
+		btnPage3fr4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				panel_2.setVisible(true);
+			}
+		});
 
 		JButton btnControl = new JButton("Kontrollera");
 		btnControl.setBounds(659, 853, 100, 23);
@@ -2793,12 +3034,12 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				initializeLists();
-
+				
 				TextFieldController textcontroller = new TextFieldController();
 				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList, fieldList);
 
 				for (int i = 0; i < textcontroller.getCorrectList().size(); i++)
-					textcontroller.getCorrectList().get(i).setBackground(Color.GREEN);
+					textcontroller.getCorrectList().get(i).setBackground(Color.WHITE);
 
 				for (int i = 0; i < wrongList.size(); i++)
 					wrongList.get(i).setBackground(Color.RED);
@@ -2814,7 +3055,7 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				initializeLists();
-				createFilesListener.save(numericAList, numericBList, fieldList);
+				createFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList);
 				createFilesListener.createFiles();
 			}
 		});
@@ -2824,86 +3065,263 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				initializeLists();
-				getFilesListener.save(numericAList, numericBList, fieldList);
+				getFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList);
 				getFilesListener.readFromFiles();
 
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText()); 
-				textField2_28.setText(getFilesListener.getNumericAList().get(1).getText());
-				textField2_29.setText(getFilesListener.getNumericAList().get(2).getText());
-				textField2_30.setText(getFilesListener.getNumericAList().get(3).getText());
-				textField2_31.setText(getFilesListener.getNumericAList().get(4).getText());
-				textField2_32.setText(getFilesListener.getNumericAList().get(5).getText());
-				textField2_33.setText(getFilesListener.getNumericAList().get(6).getText());
-				textField2_34.setText(getFilesListener.getNumericAList().get(7).getText());
-				textField2_35.setText(getFilesListener.getNumericAList().get(8).getText());
-		/*		textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());
-				textField2_27.setText(getFilesListener.getNumericAList().get(0).getText());*/
-				
-
-				/*
-				 * for(int i = 0; i < getFilesListener.getNumericAList().size(); i++)
-				 * numericAList.get(i).setText(getFilesListener.getNumericAList().get(i).getText
-				 * ());
-				 * 
-				 * for(int i = 0; i < getFilesListener.getNumericBList().size(); i++)
-				 * numericBList.get(i).setText(getFilesListener.getNumericBList().get(i).getText
-				 * ());
-				 */
+				for (int i = 0; i < getFilesListener.getUppgiftsList().size(); i++) {
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7201"))
+						textField2_1.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7202"))
+						textField2_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7214"))
+						textField2_3.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7215"))
+						textField2_4.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7216"))
+						textField2_5.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7217"))
+						textField2_6.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7230"))
+						textField2_7.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7231"))
+						textField2_8.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7232"))
+						textField2_9.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7233"))
+						textField2_10.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7234"))
+						textField2_11.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7235"))
+						textField2_12.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7241"))
+						textField2_13.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7242"))
+						textField2_14.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7243"))
+						textField2_15.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7244"))
+						textField2_16.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7245"))
+						textField2_17.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7246"))
+						textField2_18.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7251"))
+						textField2_19.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7252"))
+						textField2_20.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7261"))
+						textField2_21.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7262"))
+						textField2_22.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7263"))
+						textField2_23.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7270"))
+						textField2_24.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7271"))
+						textField2_25.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7281"))
+						textField2_26.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7301"))
+						textField2_27.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7302"))
+						textField2_28.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7321"))
+						textField2_29.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7322"))
+						textField2_30.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7323"))
+						textField2_31.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7331"))
+						textField2_32.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7332"))
+						textField2_33.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7333"))
+						textField2_34.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7350"))
+						textField2_35.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7351"))
+						textField2_36.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7352"))
+						textField2_37.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7353"))
+						textField2_38.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7354"))
+						textField2_39.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7360"))
+						textField2_40.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7361"))
+						textField2_41.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7362"))
+						textField2_42.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7363"))
+						textField2_43.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7364"))
+						textField2_44.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7365"))
+						textField2_45.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7366"))
+						textField2_46.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7367"))
+						textField2_47.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7368"))
+						textField2_48.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7369"))
+						textField2_49.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7370"))
+						textField2_50.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7410"))
+						textField3_1.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7411"))
+						textField3_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7510"))
+						textField3_2_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7412"))
+						textField3_3.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7413"))
+						textField3_4.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7511"))
+						textField3_5.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7512"))
+						textField3_6.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7513"))
+						textField3_7.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7514"))
+						textField3_8.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7515"))
+						textField3_9.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7516"))
+						textField3_10.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7517"))
+						textField3_11.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7414"))
+						textField3_12.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7518"))
+						textField3_12_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7415"))
+						textField3_13.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7519"))
+						textField3_13_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7416"))
+						textField3_14.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7520"))
+						textField3_14_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7417"))
+						textField3_19.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7521"))
+						textField3_20.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7522"))
+						textField3_21.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7418"))
+						textField3_22.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7523"))
+						textField3_23.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7524"))
+						textField3_24.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7419"))
+						textField3_25.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7420"))
+						textField3_26.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7525"))
+						textField2_3.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7421"))
+						textField3_24.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7526"))
+						textField3_24_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7422"))
+						textField3_25.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7527"))
+						textField3_25_2.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7528"))
+						textField3_26.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7450"))
+						textField3_27.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7550"))
+						textField3_28.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
+								getFilesListener.getUppgiftsList().get(i).length()));
+				}
 			}
 		});
 
@@ -3002,6 +3420,16 @@ public class GUI {
 
 		fieldList.add(textField_PersOrgnr);
 		fieldList.add(textField_Datframst);
+		
+		personuppgiftsList.add(textField_namn);
+		personuppgiftsList.add(textField_adress);
+		personuppgiftsList.add(textField_postnummer);
+		personuppgiftsList.add(textField_postort);
+		personuppgiftsList.add(textField_avdelning);
+		personuppgiftsList.add(textField_kontakt);
+		personuppgiftsList.add(textField_email);
+		personuppgiftsList.add(textField_telefon);
+		personuppgiftsList.add(textField_fax);
 	}
 
 	public ArrayList<JTextField> getNumericAList() {
@@ -3014,5 +3442,9 @@ public class GUI {
 
 	public ArrayList<JTextField> getFieldList() {
 		return fieldList;
+	}
+	
+	public ArrayList<JTextField> getPersonuppgiftsList() {
+		return personuppgiftsList;
 	}
 }
