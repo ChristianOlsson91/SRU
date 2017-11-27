@@ -48,7 +48,7 @@ public class FileCreator {
 		blanketterList.add("#MEDIAID");
 		blanketterList.add("#SKAPAD");
 		blanketterList.add("#PROGRAM");
-		blanketterList.add("#FILNAMN");
+		blanketterList.add("#FILNAMN BLANKETTER.SRU");
 		blanketterList.add("#DATABESKRIVNNG");
 		blanketterList.add("#MEDIELEV");
 		blanketterList.add("#ORGNR");
