@@ -1,10 +1,13 @@
 package se.hig.cn.control;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
@@ -24,13 +27,14 @@ public class GetFilesListener {
 	ArrayList<JTextField> fieldList = new ArrayList<>();
 	ArrayList<JTextField> personuppgiftsList = new ArrayList<>();
 	ArrayList<String> uppgiftsList = new ArrayList<>();
+	ArrayList<String> infoList = new ArrayList<>();
 	String filename = "";
 
 	public void readFromFiles() {
 		File file = null;
 		JFileChooser chooser = new JFileChooser();
 		chooser.setDialogTitle("Välj fil");
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("SRU (*.sru)", ".sru");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("SRU (*.SRU)", "SRU");
 		chooser.setFileFilter(filter);
 		chooser.setVisible(true);
 
@@ -50,49 +54,59 @@ public class GetFilesListener {
 
 		String s = "";
 		ArrayList<String> list = new ArrayList<>();
+		ArrayList<String> infoList = new ArrayList<>();
 
-		try {
-			while ((s = buffer.readLine()) != null) {
-				String[] sArray = s.split(" ");
+		if (filename.equals("BLANKETTER.SRU")) {
+			try {
+				while ((s = buffer.readLine()) != null) {
+					String[] sArray = s.split(" ");
 
-				if (sArray.length == 2) {
-					list.add(sArray[0] + " " + sArray[1]);
-				} else if (sArray.length == 3 && sArray[0].equals("#UPPGIFT")) {
-					uppgiftsList.add(sArray[1] + " " + sArray[2]);
+					if (sArray.length == 2) {
+						list.add(sArray[0] + " " + sArray[1]);
+					} else if (sArray.length == 3 && sArray[0].equals("#UPPGIFT")) {
+						uppgiftsList.add(sArray[1] + " " + sArray[2]);
+					}
 				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
 			}
-		} catch (IOException e1) {
-			e1.printStackTrace();
+		} else if (filename.equals("INFO.SRU")) {
+			try {
+				while ((s = buffer.readLine()) != null) {
+					String[] sArray = s.split(" ");
+
+					if (sArray.length == 2) {
+						infoList.add(sArray[0] + " " + sArray[1]);
+					} else if (sArray.length == 3) {
+						infoList.add(sArray[0] + " " + sArray[1] + " " + sArray[2]);
+					}
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
-		
-		for(int i = 0; i < uppgiftsList.size(); i++)
-			System.out.println(uppgiftsList.get(i));
-		
-		/*for (int i = 0; i < uppgiftsList.size()+1; i += 2) {
-		
-			for (int j = 0; j < numericAList.size(); j++) {
-				if (uppgiftsList.get(i) == numericAList.get(j).getName()) {
-					numericAList.get(j).setText(uppgiftsList.get(i));
-				} else if (uppgiftsList.get(i) == numericBList.get(j).getName()) {
-					numericBList.get(j).setText(uppgiftsList.get(i));
-				}
-			}
-		}*/
+		for(String m : infoList)
+			System.out.println(m);
 	}
 
 	public ArrayList<JTextField> getNumericAList() {
 		return numericAList;
 	}
-	
+
 	public ArrayList<JTextField> getNumericBList() {
 		return numericBList;
 	}
-	
+
 	public ArrayList<String> getUppgiftsList() {
 		return uppgiftsList;
 	}
 	
-	public void save(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList, ArrayList<JTextField> fieldList, ArrayList<JTextField> personuppgiftsList) {
+	public ArrayList<String> getInfoList() {
+		return infoList;
+	}
+
+	public void save(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList,
+			ArrayList<JTextField> fieldList, ArrayList<JTextField> personuppgiftsList) {
 		this.numericAList = numericAList;
 		this.numericBList = numericBList;
 		this.fieldList = fieldList;

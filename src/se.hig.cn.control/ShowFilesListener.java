@@ -1,54 +1,60 @@
 package se.hig.cn.control;
 
-import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
-import javax.swing.JTextField;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- * Kollar att alla textfält är korrekta.
+ * Låter användaren välja en fil som ska visas i ett separat fönster.
  * 
  * @author Christian Olsson, Nicolas Suau Carvajal
  * @version 2017-11-14
- *
  */
-public class TextFieldController {
-	ArrayList<JTextField> wrongList = new ArrayList<>();
-	ArrayList<JTextField> correctList = new ArrayList<>();
+public class ShowFilesListener implements ActionListener {
 
-	/**
-	 * Tar emot en lista med alla textfält från GUI-klassen och kollar igenom dem och skickar sedan tillbaka textfälten som är inkorrrekta.
-	 * 
-	 * @param textfieldList - Lista med alla textfält från GUI-klassen.
-	 * @return wrongList - Lista med alla textfält som är inkorrekta.
-	 */
-	public ArrayList<JTextField> checkTextFields(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList, ArrayList<JTextField> fieldList) {
-		
-		for(int i = 0; i < numericAList.size(); i++) {
-			if(numericAList.get(i).getText().length() > 0 && !numericAList.get(i).getText().matches("[-0-9]+") || numericAList.get(i).getText().length() > 14)
-				wrongList.add(numericAList.get(i));
-			else
-				correctList.add(numericAList.get(i));
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JFrame frame = new JFrame();
+		JTextArea area = new JTextArea();
+		area.setEditable(false);
+		frame.add(area);
+
+		JFileChooser chooser = new JFileChooser();
+		chooser.setDialogTitle("Välj fil");
+		chooser.setApproveButtonText("Öppna");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("SRU (*.SRU)", "SRU");
+		chooser.setFileFilter(filter);
+		chooser.setVisible(true);
+
+		File file = null;
+		BufferedReader reader = null;
+
+		int returnVal = chooser.showOpenDialog(chooser);
+		if (returnVal == JFileChooser.APPROVE_OPTION)
+			file = new File(chooser.getSelectedFile().getAbsolutePath());
+
+		try {
+			reader = new BufferedReader(new FileReader(file));
+			String input = "";
+
+			while ((input = reader.readLine()) != null)
+				area.append(input + "\n");
+
+			reader.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
-		
-		for(int i = 0; i < numericBList.size(); i++) {
-			if(numericBList.get(i).getText().length() > 0 && !numericBList.get(i).getText().matches("[0-9]+") || numericBList.get(i).getText().length() > 13)
-				wrongList.add(numericBList.get(i));
-			else
-				correctList.add(numericBList.get(i));
-		}
-		
-		if(numericBList.get(2).getText().length() > 0 && numericBList.get(3).getText().length() > 0) {
-			wrongList.add(numericBList.get(2));
-			wrongList.add(numericBList.get(3));
-		}
-		
-		
-	//	if(Double.parseDouble(fieldList.get(0).getText().substring(0, 4) < )
-				
-		return wrongList;
-	}
-	
-	public ArrayList<JTextField> getCorrectList() {
-		return correctList;
+
+		frame.pack();
+		frame.setLocation(500, 500);
+		frame.setVisible(true);
 	}
 }

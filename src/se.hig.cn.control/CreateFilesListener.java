@@ -36,7 +36,7 @@ public class CreateFilesListener {
 		JFileChooser chooser = new JFileChooser();
 		chooser.setDialogTitle("Skapa SRU-filer");
 		chooser.setApproveButtonText("Spara");
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("SRU (*.sru)", ".sru");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("SRU (*.SRU)", "SRU");
 		chooser.setFileFilter(filter);
 		chooser.setVisible(true);
 
@@ -93,29 +93,13 @@ public class CreateFilesListener {
 			Date date = new Date();
 			date = Calendar.getInstance().getTime();
 
+
 			for (int i = 0; i < creator.getInfoList().size(); i++) {
 				try {
-					writer.write(creator.getInfoList().get(i) + "\n");
-					if (creator.getInfoList().get(i).equals("#SKAPAD"))
-						writer.write(creator.getInfoList().get(i) + " " + simpleDateFormat.format(date) + "\n");
-					if (creator.getInfoList().get(i).equals("#NAMN"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(0).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#ADRESS"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(1).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#POSTNR"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(2).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#POSTORT"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(3).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#AVDELNING"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(4).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#KONTAKT"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(5).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#EMAIL"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(6).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#TELEFON"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(7).getText() + "\n");
-					if (creator.getInfoList().get(i).equals("#FAX"))
-						writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(8).getText() + "\n");
+					if(creator.getInfoList().get(i).equals("#SKAPAD"))
+						writer.write(creator.getInfoList().get(3) + " " + simpleDateFormat.format(date));
+					
+					writer.write(creator.getInfoList().get(i) + " " + personuppgiftsList.get(i).getText() + "\n");
 				} catch (IOException e1) {
 					e1.printStackTrace();
 				}
