@@ -22,12 +22,16 @@ import javax.swing.JTextArea;
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Desktop;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -46,7 +50,7 @@ public class GUI {
 	private ArrayList<JTextField> numericBList = new ArrayList<>();
 	private ArrayList<JTextField> fieldList = new ArrayList<>();
 	private ArrayList<JTextField> personuppgiftsList = new ArrayList<>();
-	private JFrame frame2;
+	private JFrame frame;
 	private JTextField textField_tom;
 	private JTextField textField_Datframst;
 	private JTextField textField_PersOrgnr;
@@ -152,9 +156,12 @@ public class GUI {
 	private JMenuItem createFilesItem;
 	private JMenuItem showFilesItem;
 	private JMenuItem getFilesItem;
+	private JMenuItem submitFilesItem;
+	private JMenuItem helpItem;
 
 	private CreateFilesListener createFilesListener = new CreateFilesListener();
 	private GetFilesListener getFilesListener = new GetFilesListener();
+	private TextFieldController textcontroller = new TextFieldController();
 
 	/**
 	 * Create the application.
@@ -167,19 +174,19 @@ public class GUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame2 = new JFrame();
-		frame2.getContentPane().setBackground(Color.YELLOW);
+		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.YELLOW);
 
-		frame2.getContentPane().setName("7202");
-		frame2.setBounds(100, 160, 799, 975);
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame2.getContentPane().setLayout(null);
+		frame.getContentPane().setName("7202");
+		frame.setBounds(100, 160, 799, 975);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
 
 		JPanel orgPanel = new JPanel();
 		orgPanel.setBackground(Color.WHITE);
 		orgPanel.setBounds(0, 0, 793, 159);
 		orgPanel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		frame2.getContentPane().add(orgPanel);
+		frame.getContentPane().add(orgPanel);
 		orgPanel.setLayout(null);
 
 		menubar = new JMenuBar();
@@ -187,6 +194,8 @@ public class GUI {
 		createFilesItem = new JMenuItem("Skapa filer");
 		showFilesItem = new JMenuItem("Visa filer");
 		getFilesItem = new JMenuItem("Hämta filer");
+		submitFilesItem = new JMenuItem("Lämna in filer till Skatteverket");
+		helpItem = new JMenuItem("Hjälp");
 
 		orgPanel.add(menubar);
 		menubar.setBounds(0, 0, 40, 20);
@@ -194,12 +203,12 @@ public class GUI {
 		menu.add(createFilesItem);
 		menu.add(showFilesItem);
 		menu.add(getFilesItem);
+		menu.add(submitFilesItem);
+		menu.add(helpItem);
 
 		textField_tom = new JTextField();
 		textField_tom.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textField_tom.setBackground(Color.WHITE);
-		textField_tom.setEditable(false);
-		textField_tom.setText("2016-12-31");
 		textField_tom.setColumns(10);
 		textField_tom.setBounds(240, 102, 113, 30);
 		orgPanel.add(textField_tom);
@@ -211,6 +220,9 @@ public class GUI {
 		orgPanel.add(lblTom);
 
 		textField_Datframst = new JTextField();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+		Date date = new Date();
+		textField_Datframst.setText(simpleDateFormat.format(date));
 		textField_Datframst.setColumns(10);
 		textField_Datframst.setBounds(551, 102, 190, 30);
 		orgPanel.add(textField_Datframst);
@@ -235,8 +247,6 @@ public class GUI {
 		textField_fom = new JTextField();
 		textField_fom.setFont(new Font("Tahoma", Font.BOLD, 11));
 		textField_fom.setBackground(Color.WHITE);
-		textField_fom.setEditable(false);
-		textField_fom.setText("2016-01-01");
 		textField_fom.setColumns(10);
 		textField_fom.setBounds(116, 102, 125, 30);
 		orgPanel.add(textField_fom);
@@ -277,7 +287,7 @@ public class GUI {
 
 		JPanel firstPage = new JPanel();
 		firstPage.setBounds(10, 160, 762, 690);
-		frame2.getContentPane().add(firstPage);
+		frame.getContentPane().add(firstPage);
 		firstPage.setLayout(new CardLayout(0, 0));
 
 		panel = new JPanel();
@@ -3026,7 +3036,7 @@ public class GUI {
 
 		JButton btnControl = new JButton("Kontrollera");
 		btnControl.setBounds(659, 853, 100, 23);
-		frame2.getContentPane().add(btnControl);
+		frame.getContentPane().add(btnControl);
 		btnControl.setFont(new Font("Tahoma", Font.BOLD, 11));
 
 		btnControl.addActionListener(new ActionListener() {
@@ -3034,9 +3044,9 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				initializeLists();
-				
-				TextFieldController textcontroller = new TextFieldController();
-				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList, fieldList);
+
+				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList, fieldList,
+						personuppgiftsList);
 
 				for (int i = 0; i < textcontroller.getCorrectList().size(); i++)
 					textcontroller.getCorrectList().get(i).setBackground(Color.WHITE);
@@ -3045,7 +3055,7 @@ public class GUI {
 					wrongList.get(i).setBackground(Color.RED);
 
 				if (wrongList.size() > 0)
-					javax.swing.JOptionPane.showMessageDialog(frame2,
+					javax.swing.JOptionPane.showMessageDialog(frame,
 							"Kolla på hjälpsidan för mer information om hur fälten ska vara ifyllda");
 			}
 		});
@@ -3054,9 +3064,14 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				initializeLists();
-				createFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList);
-				createFilesListener.createFiles();
+				textcontroller.checkTextFields(numericAList, numericBList, fieldList, personuppgiftsList);
+				if (textcontroller.canCreateFiles() == true) {
+					initializeLists();
+					createFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList);
+					createFilesListener.createFiles();
+				} else {
+					javax.swing.JOptionPane.showMessageDialog(frame, "Alla textfält är inte korrekt ifyllda");
+				}
 			}
 		});
 		showFilesItem.addActionListener(new ShowFilesListener());
@@ -3322,12 +3337,58 @@ public class GUI {
 						textField3_28.setText(getFilesListener.getUppgiftsList().get(i).substring(5,
 								getFilesListener.getUppgiftsList().get(i).length()));
 				}
+
+				for (int i = 0; i < getFilesListener.getInfoList().size(); i++) {
+					if (getFilesListener.getInfoList().get(i).substring(0, 7).equals("#SKAPAD")) {
+						textField_fom.setText(getFilesListener.getInfoList().get(i).substring(8, 16));
+						textField_tom.setText(getFilesListener.getInfoList().get(i).substring(17,
+								getFilesListener.getInfoList().get(i).length()));
+					}
+					if (getFilesListener.getInfoList().get(i).substring(0, 5).equals("#NAMN"))
+						textField_namn.setText(getFilesListener.getInfoList().get(i).substring(5,
+								getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, ))
+				}
 			}
 		});
 
-		frame2.setResizable(false);
-		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame2.setVisible(true);
+		submitFilesItem.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (Desktop.isDesktopSupported()) {
+					try {
+						Desktop.getDesktop().browse(new URI(
+								"https://www.skatteverket.se/foretagochorganisationer/sjalvservice/allaetjanster/tjanster/filoverforing.4.1f604301062bf0c47e8000527.html"));
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (URISyntaxException e2) {
+						e2.printStackTrace();
+					}
+				}
+			}
+		});
+
+		helpItem.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (Desktop.isDesktopSupported()) {
+					try {
+						Desktop.getDesktop().browse(new URI(
+								"https://www.skatteverket.se/download/18.64a656d113f4c75970147da/1378299381180/SKV269_20_10.pdf"));
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (URISyntaxException e2) {
+						e2.printStackTrace();
+					}
+				}
+			}
+		});
+
+		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
 	}
 
 	public void initializeLists() {
@@ -3420,7 +3481,7 @@ public class GUI {
 
 		fieldList.add(textField_PersOrgnr);
 		fieldList.add(textField_Datframst);
-		
+
 		personuppgiftsList.add(textField_namn);
 		personuppgiftsList.add(textField_adress);
 		personuppgiftsList.add(textField_postnummer);
@@ -3443,7 +3504,7 @@ public class GUI {
 	public ArrayList<JTextField> getFieldList() {
 		return fieldList;
 	}
-	
+
 	public ArrayList<JTextField> getPersonuppgiftsList() {
 		return personuppgiftsList;
 	}
