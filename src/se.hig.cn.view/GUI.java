@@ -34,8 +34,11 @@ import java.awt.Color;
 import java.awt.Desktop;
 
 import javax.swing.BorderFactory;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
+import javax.swing.JComboBox;
 
 /**
  * Skapar innehållet och visar upp det grafiska användargränssnittet för
@@ -127,7 +130,7 @@ public class GUI {
 	private JTextField textField3_13_2;
 	private JTextField textField3_14;
 
-	JPanel panel, panel_1, panel_2;
+	JPanel panel, panel_1, panel_2, panel_3;
 	private JTextField textField3_2_2;
 	private JTextField textField3_6;
 	private JTextField textField3_8;
@@ -158,6 +161,8 @@ public class GUI {
 	private JMenuItem getFilesItem;
 	private JMenuItem submitFilesItem;
 	private JMenuItem helpItem;
+	private JComboBox<String> comboBox;
+	private String period = "";
 
 	private CreateFilesListener createFilesListener = new CreateFilesListener();
 	private GetFilesListener getFilesListener = new GetFilesListener();
@@ -284,6 +289,11 @@ public class GUI {
 		txtRkernskapsr.setBackground(Color.WHITE);
 		txtRkernskapsr.setBounds(7, 102, 109, 30);
 		orgPanel.add(txtRkernskapsr);
+		
+		comboBox = new JComboBox<>();
+		comboBox.setModel(new DefaultComboBoxModel(new String[]{"Välj period", "P1", "P2", "P3", "P4"}));
+		comboBox.setBounds(17, 135, 90, 20);
+		orgPanel.add(comboBox);
 
 		JPanel firstPage = new JPanel();
 		firstPage.setBounds(10, 160, 762, 690);
@@ -1052,6 +1062,7 @@ public class GUI {
 				panel.setVisible(false);
 				panel_1.setVisible(true);
 				panel_2.setVisible(false);
+				panel_3.setVisible(false);
 			}
 		});
 
@@ -1775,6 +1786,7 @@ public class GUI {
 				panel.setVisible(true);
 				panel_1.setVisible(false);
 				panel_2.setVisible(false);
+				panel_3.setVisible(false);
 			}
 		});
 		btnPage1.setBounds(10, 656, 104, 23);
@@ -1786,6 +1798,7 @@ public class GUI {
 				panel.setVisible(false);
 				panel_1.setVisible(false);
 				panel_2.setVisible(true);
+				panel_3.setVisible(false);
 			}
 		});
 		btnPage3.setBounds(663, 656, 89, 23);
@@ -2340,6 +2353,7 @@ public class GUI {
 				panel.setVisible(false);
 				panel_1.setVisible(true);
 				panel_2.setVisible(false);
+				panel_3.setVisible(false);
 			}
 		});
 		btnPage2fr3.setBounds(10, 656, 110, 23);
@@ -2845,7 +2859,7 @@ public class GUI {
 		btnPage4fr3.setBounds(663, 656, 89, 23);
 		panel_2.add(btnPage4fr3);
 
-		JPanel panel_3 = new JPanel();
+		panel_3 = new JPanel();
 		panel_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		firstPage.add(panel_3, "name_536297812370552");
 		panel_3.setBackground(Color.WHITE);
@@ -2855,6 +2869,8 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				panel_1.setVisible(false);
 				panel_2.setVisible(false);
 				panel_3.setVisible(true);
 			}
@@ -3030,7 +3046,10 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				panel.setVisible(false);
+				panel_1.setVisible(false);
 				panel_2.setVisible(true);
+				panel_3.setVisible(false);
 			}
 		});
 
@@ -3046,13 +3065,18 @@ public class GUI {
 				initializeLists();
 
 				ArrayList<JTextField> wrongList = textcontroller.checkTextFields(numericAList, numericBList, fieldList,
-						personuppgiftsList);
-
-				for (int i = 0; i < textcontroller.getCorrectList().size(); i++)
-					textcontroller.getCorrectList().get(i).setBackground(Color.WHITE);
+						personuppgiftsList, period);
 
 				for (int i = 0; i < wrongList.size(); i++)
 					wrongList.get(i).setBackground(Color.RED);
+				
+				if(comboBox.getSelectedItem() == "Välj period")
+					comboBox.setBackground(Color.RED);
+				else
+					comboBox.setBackground(Color.WHITE);
+				
+				for (int i = 0; i < textcontroller.getCorrectList().size(); i++)
+					textcontroller.getCorrectList().get(i).setBackground(Color.WHITE);
 
 				if (wrongList.size() > 0)
 					javax.swing.JOptionPane.showMessageDialog(frame,
@@ -3064,14 +3088,19 @@ public class GUI {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				textcontroller.checkTextFields(numericAList, numericBList, fieldList, personuppgiftsList);
-				if (textcontroller.canCreateFiles() == true) {
+				//textcontroller.checkTextFields(numericAList, numericBList, fieldList, personuppgiftsList);
+				//if (textcontroller.canCreateFiles() == true) {
 					initializeLists();
-					createFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList);
-					createFilesListener.createFiles();
-				} else {
-					javax.swing.JOptionPane.showMessageDialog(frame, "Alla textfält är inte korrekt ifyllda");
-				}
+					period = comboBox.getSelectedItem().toString();
+					createFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList, period);
+					try {
+						createFilesListener.createFiles();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+				//} else {
+				//	javax.swing.JOptionPane.showMessageDialog(frame, "Alla textfält är inte korrekt ifyllda");
+				//}
 			}
 		});
 		showFilesItem.addActionListener(new ShowFilesListener());
@@ -3081,7 +3110,11 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				initializeLists();
 				getFilesListener.save(numericAList, numericBList, fieldList, personuppgiftsList);
-				getFilesListener.readFromFiles();
+				try {
+					getFilesListener.readFromFiles();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 
 				for (int i = 0; i < getFilesListener.getUppgiftsList().size(); i++) {
 					if (getFilesListener.getUppgiftsList().get(i).substring(0, 4).equals("7201"))
@@ -3347,7 +3380,23 @@ public class GUI {
 					if (getFilesListener.getInfoList().get(i).substring(0, 5).equals("#NAMN"))
 						textField_namn.setText(getFilesListener.getInfoList().get(i).substring(5,
 								getFilesListener.getInfoList().get(i).length()));
-					if(getFilesListener.getInfoList().get(i).substring(0, ))
+					if(getFilesListener.getInfoList().get(i).substring(0, 7).equals("#ADRESS"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(8, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 7).equals("#POSTNR"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(7, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 8).equals("#POSTORT"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(9, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 10).equals("#AVDELNING"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(11, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 8).equals("#KONTAKT"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(9, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 6).equals("#EMAIL"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(7, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 8).equals("#TELEFON"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(9, getFilesListener.getInfoList().get(i).length()));
+					if(getFilesListener.getInfoList().get(i).substring(0, 4).equals("#FAX"))
+						textField_adress.setText(getFilesListener.getInfoList().get(i).substring(5, getFilesListener.getInfoList().get(i).length()));
+					
 				}
 			}
 		});
@@ -3481,6 +3530,8 @@ public class GUI {
 
 		fieldList.add(textField_PersOrgnr);
 		fieldList.add(textField_Datframst);
+		fieldList.add(textField_fom);
+		fieldList.add(textField_tom);
 
 		personuppgiftsList.add(textField_namn);
 		personuppgiftsList.add(textField_adress);
