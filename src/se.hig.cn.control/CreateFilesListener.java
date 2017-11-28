@@ -29,6 +29,7 @@ public class CreateFilesListener {
 	private ArrayList<JTextField> numericBList = new ArrayList<>();
 	private ArrayList<JTextField> fieldList = new ArrayList<>();
 	private ArrayList<JTextField> personuppgiftsList = new ArrayList<>();
+	private String period = "";
 
 	public void createFiles() {
 		File file = null;
@@ -114,10 +115,11 @@ public class CreateFilesListener {
 	}
 
 	public void save(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList,
-			ArrayList<JTextField> fieldList, ArrayList<JTextField> personuppgiftsList) {
+			ArrayList<JTextField> fieldList, ArrayList<JTextField> personuppgiftsList, String period) {
 		this.numericAList = numericAList;
 		this.numericBList = numericBList;
 		this.fieldList = fieldList;
 		this.personuppgiftsList = personuppgiftsList;
+		this.period = period;
 	}
 }
