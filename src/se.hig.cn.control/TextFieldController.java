@@ -16,6 +16,7 @@ public class TextFieldController {
 	ArrayList<JTextField> wrongList = new ArrayList<>();
 	ArrayList<JTextField> correctList = new ArrayList<>();
 	private boolean canCreateFiles = false;
+	private boolean rightPeriod = false;
 
 	/**
 	 * Tar emot en lista med alla textfält från GUI-klassen och kollar igenom dem och skickar sedan tillbaka textfälten som är inkorrrekta.
@@ -23,7 +24,7 @@ public class TextFieldController {
 	 * @param textfieldList - Lista med alla textfält från GUI-klassen.
 	 * @return wrongList - Lista med alla textfält som är inkorrekta.
 	 */
-	public ArrayList<JTextField> checkTextFields(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList, ArrayList<JTextField> fieldList, ArrayList<JTextField> personuppgiftsList) {
+	public ArrayList<JTextField> checkTextFields(ArrayList<JTextField> numericAList, ArrayList<JTextField> numericBList, ArrayList<JTextField> fieldList, ArrayList<JTextField> personuppgiftsList, String period) {
 		
 		if(fieldList.get(0).getText().length() == 12 && fieldList.get(0).getText().matches("[0-9]+"))
 			correctList.add(fieldList.get(0));
@@ -36,6 +37,20 @@ public class TextFieldController {
 				correctList.add(fieldList.get(1));
 		else
 			wrongList.add(fieldList.get(1));
+		
+		if(fieldList.get(2).getText().length() != 0 && Integer.parseInt(fieldList.get(2).getText().substring(0, 4)) >= 1900 && (Integer.parseInt(fieldList.get(2).getText().substring(0, 4)) < 2018)
+				&& (Integer.parseInt(fieldList.get(2).getText().substring(4, 6)) >= 01) && (Integer.parseInt(fieldList.get(2).getText().substring(4, 6)) <= 12)
+				&& (Integer.parseInt(fieldList.get(2).getText().substring(6, 8)) >= 01) && (Integer.parseInt(fieldList.get(2).getText().substring(6, 8)) <= 31))
+					correctList.add(fieldList.get(2));
+			else
+				wrongList.add(fieldList.get(1));
+		
+		if(fieldList.get(3).getText().length() != 0 && Integer.parseInt(fieldList.get(1).getText().substring(0, 4)) >= 1900 && (Integer.parseInt(fieldList.get(3).getText().substring(0, 4)) < 2018)
+				&& (Integer.parseInt(fieldList.get(3).getText().substring(4, 6)) >= 01) && (Integer.parseInt(fieldList.get(3).getText().substring(4, 6)) <= 12)
+				&& (Integer.parseInt(fieldList.get(3).getText().substring(6, 8)) >= 01) && (Integer.parseInt(fieldList.get(3).getText().substring(6, 8)) <= 31))
+					correctList.add(fieldList.get(3));
+			else
+				wrongList.add(fieldList.get(3));
 		
 		for(int i = 0; i < numericAList.size(); i++) {
 			if(numericAList.get(i).getText().length() > 0 && !numericAList.get(i).getText().matches("[-0-9]+") || numericAList.get(i).getText().length() > 14)
@@ -95,6 +110,11 @@ public class TextFieldController {
 				correctList.add(personuppgiftsList.get(7));
 			else
 				wrongList.add(personuppgiftsList.get(7));
+		
+		if(period.equals("P1") || period.equals("P2") || period.equals("P3") || period.equals("P4"))
+			rightPeriod = true;
+		else
+			rightPeriod = false;
 
 		if(wrongList.size() == 0)
 			canCreateFiles = true;
@@ -104,6 +124,10 @@ public class TextFieldController {
 	
 	public boolean canCreateFiles() {
 		return canCreateFiles;
+	}
+	
+	public boolean rightPeriod() {
+		return rightPeriod;
 	}
 
 	public ArrayList<JTextField> getCorrectList() {
