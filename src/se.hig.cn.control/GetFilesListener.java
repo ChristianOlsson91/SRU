@@ -30,7 +30,7 @@ public class GetFilesListener {
 	ArrayList<String> infoList = new ArrayList<>();
 	String filename = "";
 
-	public void readFromFiles() {
+	public void readFromFiles() throws IOException {
 		File file = null;
 		JFileChooser chooser = new JFileChooser();
 		chooser.setDialogTitle("Välj fil");
@@ -46,47 +46,29 @@ public class GetFilesListener {
 
 		BufferedReader buffer = null;
 
-		try {
-			buffer = new BufferedReader(new FileReader(file));
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
+		buffer = new BufferedReader(new FileReader(file));
 
 		String s = "";
 		ArrayList<String> list = new ArrayList<>();
 		ArrayList<String> infoList = new ArrayList<>();
 
 		if (filename.equals("BLANKETTER.SRU")) {
-			try {
-				while ((s = buffer.readLine()) != null) {
-					String[] sArray = s.split(" ");
+			while ((s = buffer.readLine()) != null) {
+				String[] sArray = s.split(" ");
 
-					if (sArray.length == 2) {
-						list.add(sArray[0] + " " + sArray[1]);
-					} else if (sArray.length == 3 && sArray[0].equals("#UPPGIFT")) {
-						uppgiftsList.add(sArray[1] + " " + sArray[2]);
-					}
+				if (sArray.length == 2) {
+					list.add(sArray[0] + " " + sArray[1]);
+				} else if (sArray.length == 3 && sArray[0].equals("#UPPGIFT")) {
+					uppgiftsList.add(sArray[1] + " " + sArray[2]);
 				}
-			} catch (IOException e1) {
-				e1.printStackTrace();
 			}
 		} else if (filename.equals("INFO.SRU")) {
-			try {
-				while ((s = buffer.readLine()) != null) {
-					String[] sArray = s.split(" ");
-
-					if (sArray.length == 2) {
-						infoList.add(sArray[0] + " " + sArray[1]);
-					} else if (sArray.length == 3) {
-						infoList.add(sArray[0] + " " + sArray[1] + " " + sArray[2]);
-					}
-				}
-			} catch (IOException e1) {
-				e1.printStackTrace();
+			while ((s = buffer.readLine()) != null) {
+				infoList.add(s);
 			}
 		}
-		for(String m : infoList)
-			System.out.println(m);
+
+		buffer.close();
 	}
 
 	public ArrayList<JTextField> getNumericAList() {
@@ -97,10 +79,14 @@ public class GetFilesListener {
 		return numericBList;
 	}
 
+	public ArrayList<JTextField> getFieldList() {
+		return fieldList;
+	}
+
 	public ArrayList<String> getUppgiftsList() {
 		return uppgiftsList;
 	}
-	
+
 	public ArrayList<String> getInfoList() {
 		return infoList;
 	}
